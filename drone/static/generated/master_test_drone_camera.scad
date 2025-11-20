@@ -1,0 +1,1 @@
+use </home/j/Desktop/viz_it/drone/cad/library.scad>; $fn=30; proxy_camera(14.0);

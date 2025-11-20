@@ -1,0 +1,1 @@
+use </home/j/Desktop/viz_it/drone/cad/library.scad>; proxy_battery(60, 12, 7);

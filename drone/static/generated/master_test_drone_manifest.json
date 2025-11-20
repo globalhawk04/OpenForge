@@ -1,0 +1,441 @@
+{
+  "project_id": "master_test_drone",
+  "created_at": "2025-11-20T21:47:46.049193",
+  "status": "complete",
+  "user_intent": {
+    "original_prompt": "I want to build a rugged 5 inch freestyle drone with a camera for digital video",
+    "interview_answers": [
+      "Question: Budget? | Answer: $400",
+      "Question: Analog or Digital? | Answer: DJI O3 (Digital)",
+      "Question: DIY or Prebuilt? | Answer: DIY",
+      "Question: Battery? | Answer: 6S",
+      "Question: Build Style? | Answer: Rugged/Durable"
+    ]
+  },
+  "engineering": {
+    "initial_analysis": {
+      "project_type": "5-inch Freestyle",
+      "confidence_score": 65,
+      "constraints": {
+        "budget_usd": null,
+        "frame_size": "5inch",
+        "video_system": "Digital",
+        "battery_cell_count": null,
+        "skill_level": "Beginner"
+      },
+      "required_agents": [
+        "ComponentSelectionAgent",
+        "SourcingAgent",
+        "AssemblyGuideAgent",
+        "FlightControlSoftwareAgent"
+      ],
+      "clarifying_questions": [
+        "What is your total budget for the drone itself, not including goggles or a radio controller?",
+        "Which digital FPV system do you plan to use (DJI, Walksnail, HDZero), and do you already own the compatible goggles?",
+        "What is your experience level with building, soldering, and configuring drones?",
+        "Do you have a preference for battery voltage (e.g., 4S or 6S)? 6S is more common for modern 5-inch builds.",
+        "When you say 'rugged,' are you prioritizing maximum crash durability over flight performance and low weight?"
+      ]
+    },
+    "final_plan": {
+      "final_constraints": {
+        "budget_usd": 400.0,
+        "frame_size": "5inch",
+        "video_system": "DJI O3",
+        "battery_cell_count": "6S",
+        "build_standard": "Ruggedized Professional",
+        "fastening_method": "M3 Heat-Set Inserts",
+        "wiring_standard": "Direct Solder with Mesh Sleeving"
+      },
+      "build_summary": "This Engineering Brief outlines the fabrication of a 5-inch Freestyle drone optimized for durability. The build will adhere to a 'Ruggedized Professional' standard, incorporating a 6S power system and the DJI O3 digital video transmitter. Assembly will utilize stainless steel hardware for maximum frame rigidity and crash resistance. All 3D printed components, such as camera mounts and antenna holders, will be secured using M3 Heat-Set Inserts to ensure robust, serviceable connections. Motor wiring will be direct-soldered to the ESC and protected with nylon mesh sleeving to mitigate risks from propeller strikes and environmental abrasion.",
+      "approval_status": "ready_for_approval"
+    },
+    "spec_sheet": {
+      "buy_list": [
+        {
+          "category": "Core",
+          "part_type": "Motors",
+          "search_query": "4x 2207 1750KV 6S brushless motor",
+          "critical_specs_to_extract": [
+            "Mounting Pattern"
+          ]
+        },
+        {
+          "category": "Core",
+          "part_type": "Propellers",
+          "search_query": "HQProp Ethix S5 5-inch freestyle propellers",
+          "critical_specs_to_extract": []
+        },
+        {
+          "category": "Electronics",
+          "part_type": "FC_ESC_Stack",
+          "search_query": "F722 30x30 50A 6S BLHeli_32 4-in-1 ESC Stack",
+          "critical_specs_to_extract": [
+            "Mounting Pattern"
+          ]
+        },
+        {
+          "category": "Electronics",
+          "part_type": "Video_System",
+          "search_query": "DJI O3 Air Unit",
+          "critical_specs_to_extract": []
+        },
+        {
+          "category": "Electronics",
+          "part_type": "Capacitor",
+          "search_query": "1000uF 35V Low ESR Capacitor",
+          "reason": "Required for voltage spike filtering on a 6S system to protect electronics."
+        },
+        {
+          "category": "Electronics",
+          "part_type": "Receiver",
+          "search_query": "ExpressLRS 2.4GHz Diversity Receiver",
+          "reason": "Provides a robust, long-range control link suitable for a professional build."
+        },
+        {
+          "category": "Hardware",
+          "part_type": "Motor_Screws",
+          "search_query": "M3x8mm socket head stainless steel screws (16 pack)",
+          "reason": "Required to mount motors to 6mm arms (allows 2mm thread grip)."
+        },
+        {
+          "category": "Hardware",
+          "part_type": "Frame_Inserts",
+          "search_query": "M3 brass heat set inserts for 3D printing (50 pack)",
+          "reason": "Specified fastening method for professional, serviceable mounting points on printed parts."
+        },
+        {
+          "category": "Hardware",
+          "part_type": "Stack_Mounting_Kit",
+          "search_query": "M3 flight controller soft mount kit with gummies and steel nuts",
+          "reason": "Isolates the flight controller's gyro from frame vibrations for clean flight performance."
+        },
+        {
+          "category": "Consumables",
+          "part_type": "Filament",
+          "search_query": "Carbon Fiber Nylon (PA12-CF) 1.75mm Filament",
+          "reason": "High-strength material for ruggedized 3D printed components."
+        },
+        {
+          "category": "Consumables",
+          "part_type": "Wiring_Supplies",
+          "search_query": "18AWG silicone wire, 30AWG silicone wire, assorted heat shrink tubing",
+          "reason": "Spare wire for repairs and various sizes of heat shrink for insulating solder joints."
+        },
+        {
+          "category": "Consumables",
+          "part_type": "Assembly_Kit",
+          "search_query": "Blue threadlocker, small zip ties, VHB double-sided tape",
+          "reason": "Essential supplies for securing hardware, managing wires, and mounting components."
+        },
+        {
+          "category": "Consumables",
+          "part_type": "Wire_Sleeving",
+          "search_query": "4mm expandable nylon mesh wire sleeving black",
+          "reason": "Specified in wiring standard to protect motor wires from propeller strikes and abrasion."
+        }
+      ],
+      "print_list": [
+        {
+          "part_type": "Main_Frame",
+          "design_requirements": "5-inch freestyle geometry, 6mm thick arms, main body with 30x30 M3 mounting holes. Designed for printability.",
+          "material_recommendation": "Carbon Fiber Nylon (PA12-CF)"
+        },
+        {
+          "part_type": "Accessory_Mounts",
+          "design_requirements": "DJI O3 camera mount, O3 Air Unit holder, and rear antenna mount. All screw holes sized for M3 heat-set inserts (e.g., a 4.2mm diameter hole for a standard M3 insert).",
+          "material_recommendation": "Carbon Fiber Nylon (PA12-CF) or TPU for camera mount for vibration damping."
+        }
+      ],
+      "engineering_notes": "Bill of Materials configured for a high-endurance 5-inch 6S build. All hardware is specified as M3 stainless steel for maximum durability. The requirement for M3 Heat-Set Inserts and Nylon Mesh Sleeving ensures the build meets the 'Ruggedized Professional' standard. A high-capacitance, low-ESR capacitor is critical for the 6S power system's longevity."
+    }
+  },
+  "sourcing": {
+    "bill_of_materials": [
+      {
+        "part_type": "Motors",
+        "product_name": "XING2 2207 2-6S FPV Motor",
+        "price": "$23.99 $",
+        "source_url": "https://shop.iflight.com/XING2-2207-4S-6S-FPV-Motor-Unibell-Black-for-Nazgul-Evoque-F5-pro1610",
+        "engineering_specs": {
+          "mounting_mm": 16.0,
+          "shaft_mm": null,
+          "source": "text_inference"
+        },
+        "reference_image": "https://m.media-amazon.com/images/I/418iJ6KmQ1L._SX342_SY445_QL70_FMwebp_.jpg",
+        "data_source_method": "text_inference",
+        "alternatives_checked": 2
+      },
+      {
+        "part_type": "Propellers",
+        "product_name": "16pcs HQProp Ethix S5 5x4x3 Smooth FPV Racing ... - Amazon.com",
+        "price": "Check Site",
+        "source_url": "https://www.amazon.com/HQProp-Carbonate-Tri-Blade-Durable-Propellers/dp/B0BX9ZKD8M",
+        "engineering_specs": {},
+        "reference_image": "https://m.media-amazon.com/images/I/51+qb87xROL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 1
+      },
+      {
+        "part_type": "FC_ESC_Stack",
+        "product_name": "SkyStars Fly Stack - F722 HD Pro 4 OSD FC + KM50 Pro 50A 3-6S 4 ...",
+        "price": "Check Site",
+        "source_url": "https://www.getfpv.com/skystars-fly-stack-f722-hd-pro-4-osd-fc-km50-pro-50a-3-6s-4-in-1-blheli-32-esc-30x30.html",
+        "engineering_specs": {
+          "mounting_mm": null,
+          "usb_orientation": "SIDE",
+          "source": "vision"
+        },
+        "reference_image": "https://cdn-v2.getfpv.com/media/catalog/product/cache/6305596479836c3bfef8b369c2d05576/s/k/skystars-fly-stack---f722-hd-pro-3-osd-fc-_-km50-pro-50a-esc30x30_2_.jpg",
+        "data_source_method": "vision",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Video_System",
+        "product_name": "Buy DJI O3 Air Unit - DJI Store",
+        "price": "Check Site",
+        "source_url": "https://store.dji.com/product/dji-o3-air-unit",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 1
+      },
+      {
+        "part_type": "Capacitor",
+        "product_name": "1000uf 35v Capacitor - Amazon.com",
+        "price": "Check Site",
+        "source_url": "https://www.amazon.com/1000uf-35v-capacitor/s?k=1000uf+35v+capacitor",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Receiver",
+        "product_name": "RP4TD ExpressLRS 2.4GHz True Diversity Receiver \u2013 RadioMaster ...",
+        "price": "Check Site",
+        "source_url": "https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver",
+        "engineering_specs": {},
+        "reference_image": "https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP4TD-Details-PC_06_600x600.jpg?v=1700558752",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 2
+      },
+      {
+        "part_type": "Motor_Screws",
+        "product_name": "M3 Pan Head Torx Socket Cap 304 Stainless Steel ... - Amazon.com",
+        "price": "Check Site",
+        "source_url": "https://www.amazon.com/Socket-Stainless-Steel-Machine-100-piece/dp/B0792BWFLG",
+        "engineering_specs": {
+          "mounting_mm": null,
+          "shaft_mm": null,
+          "source": "vision"
+        },
+        "reference_image": "https://m.media-amazon.com/images/I/61BFRtAG6qL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+        "data_source_method": "vision",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Frame_Inserts",
+        "product_name": "Brass Heat-Set Inserts for Plastic - M3 x 3mm - 50 pack : ID 4256 ...",
+        "price": "Check Site",
+        "source_url": "https://www.adafruit.com/product/4256",
+        "engineering_specs": {},
+        "reference_image": "https://cdn-shop.adafruit.com/product-videos/1024x768/4256-00.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Stack_Mounting_Kit",
+        "product_name": "FPVDrone M3 Flight Controller Anti-Vibration ... - Amazon.com",
+        "price": "Check Site",
+        "source_url": "https://www.amazon.com/Controller-Anti-Vibration-Mounting-Hardware-Standoffs/dp/B06ZXT21DX",
+        "engineering_specs": {
+          "mounting_mm": null,
+          "usb_orientation": null,
+          "source": "vision"
+        },
+        "reference_image": "https://m.media-amazon.com/images/I/41Ubt0rk9AL._SX342_SY445_QL70_FMwebp_.jpg",
+        "data_source_method": "vision",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Filament",
+        "product_name": "Nylon PA12+CF15 Filament - 1.75 mm - 0.5 kg",
+        "price": "Check Site",
+        "source_url": "https://fiberlogy.com/en/Nylon-PA12CF15-Filament-1_75mm-0_5kg",
+        "engineering_specs": {},
+        "reference_image": "https://fiberlogy.com/environment/cache/images/productGfx_6392_750_750/Filament-Fiberlogy-Nylon-PA12-CF---Black.webp",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Wiring_Supplies",
+        "product_name": "TUOFENG 18 AWG Stranded Wire Spool, Silicone Rubber Insulated ...",
+        "price": "Check Site",
+        "source_url": "https://www.amazon.com/TUOFENG-18-Stranded-Insulated-Automotive/dp/B07G744V5Z",
+        "engineering_specs": {},
+        "reference_image": "https://m.media-amazon.com/images/I/51uEvbhaNcL._SX342_SY445_QL70_FMwebp_.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Assembly_Kit",
+        "status": "failed",
+        "query": "Blue threadlocker, small zip ties, VHB double-sided tape"
+      },
+      {
+        "part_type": "Wire_Sleeving",
+        "product_name": "1-50M Cable Sleeves 3-25mm Purple Snakeskin ... - Amazon.com",
+        "price": "Check Site",
+        "source_url": "https://www.amazon.com/Snakeskin-Protecting-Expandable-Insulation-Sheathing/dp/B0DBJ7DZKM",
+        "engineering_specs": {},
+        "reference_image": "https://m.media-amazon.com/images/I/71-yXAGrvxL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      }
+    ],
+    "extracted_cad_params": {
+      "motor_mounting_mm": 16.0,
+      "use_inserts": true
+    }
+  },
+  "simulation": {
+    "total_weight_g": 345,
+    "twr": 0.46,
+    "hover_throttle_percent": 215.6,
+    "est_flight_time_min": 0.0,
+    "disk_loading": 0,
+    "top_speed_kmh": 0,
+    "status": "UNDERPOWERED"
+  },
+  "fabrication": {
+    "wheelbase": 77.0,
+    "frame": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_frame.stl",
+    "motor": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_motor.stl",
+    "fc": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_fc.stl",
+    "prop": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_prop.stl",
+    "battery": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_battery.stl",
+    "camera": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_camera.stl"
+  },
+  "assembly": {
+    "guide_md": "# Assembly Guide: 5-inch Freestyle Drone\n\n## 1. Preparation & Tools\n\nYou will need the following tools for this build:\n- Soldering Iron (with a chisel tip)\n- M3 Hex Drivers\n- Wire Cutters & Strippers\n- A tool for installing M3 heat-set inserts (a soldering iron can be used)\n\n## 2. Frame & Motor Assembly\n\nFirst, carefully press the M3 heat-set inserts into the designated holes on the 3D printed frame arms using your soldering iron. Allow them to cool completely.\n\nNext, mount the **XING2 2207 motors** onto the arms using M3 screws on the 16x16mm pattern. Ensure you use the correct screw length to avoid contact with the motor windings inside.\n\n## 3. Electronics Mounting\n\nInstall the M3 anti-vibration gummies from your mounting kit into the frame's central stack mounting holes (30.5x30.5mm pattern).\n\nMount the **SkyStars KM50 Pro ESC** onto the standoffs first. Place the **SkyStars F722 HD Pro FC** on top, ensuring the arrow on the board points forward.\n\n## 4. Wiring\n\nSolder the motor wires to the corresponding pads on the SkyStars ESC. It is critical to solder the **1000uf 35v capacitor** directly to the main battery pads on the ESC to protect the electronics from damaging voltage spikes from the 6S battery.\n\n## 5. Firmware Configuration\n\nWhen connecting to the Betaflight configurator to flash or set up your drone, use the correct firmware target for your flight controller: `SKYSTARSF7HDPRO`.",
+    "steps": [
+      {
+        "step": "Install Inserts & Motors",
+        "detail": "Use a soldering iron to press the M3 heat-set inserts into the frame arms. Mount the XING2 2207 motors using M3 screws on the 16mm pattern."
+      },
+      {
+        "step": "Mount Electronics Stack",
+        "detail": "Install the SkyStars KM50 Pro ESC and F722 HD FC onto the frame's central M3 posts (30.5x30.5mm)."
+      },
+      {
+        "step": "Final Wiring & Assembly",
+        "detail": "Solder motor and power leads (with capacitor) to the ESC. Install the DJI O3 Air Unit and attach the HQProp Ethix S5 propellers."
+      }
+    ],
+    "schematic_diagram": "/home/j/Desktop/viz_it/drone/static/generated/master_test_drone_schematic.png"
+  },
+  "procurement": {
+    "currency": "USD",
+    "subtotal": 23.99,
+    "estimated_shipping": 1.2,
+    "estimated_tax": 1.92,
+    "total_estimated_cost": 27.11,
+    "vendors": {
+      "shop.iflight.com": [
+        {
+          "part": "Motors",
+          "name": "XING2 2207 2-6S FPV Motor",
+          "price": 23.99,
+          "link": "https://shop.iflight.com/XING2-2207-4S-6S-FPV-Motor-Unibell-Black-for-Nazgul-Evoque-F5-pro1610"
+        }
+      ],
+      "amazon.com": [
+        {
+          "part": "Propellers",
+          "name": "16pcs HQProp Ethix S5 5x4x3 Smooth FPV Racing ... - Amazon.com",
+          "price": 0.0,
+          "link": "https://www.amazon.com/HQProp-Carbonate-Tri-Blade-Durable-Propellers/dp/B0BX9ZKD8M"
+        },
+        {
+          "part": "Capacitor",
+          "name": "1000uf 35v Capacitor - Amazon.com",
+          "price": 0.0,
+          "link": "https://www.amazon.com/1000uf-35v-capacitor/s?k=1000uf+35v+capacitor"
+        },
+        {
+          "part": "Motor_Screws",
+          "name": "M3 Pan Head Torx Socket Cap 304 Stainless Steel ... - Amazon.com",
+          "price": 0.0,
+          "link": "https://www.amazon.com/Socket-Stainless-Steel-Machine-100-piece/dp/B0792BWFLG"
+        },
+        {
+          "part": "Stack_Mounting_Kit",
+          "name": "FPVDrone M3 Flight Controller Anti-Vibration ... - Amazon.com",
+          "price": 0.0,
+          "link": "https://www.amazon.com/Controller-Anti-Vibration-Mounting-Hardware-Standoffs/dp/B06ZXT21DX"
+        },
+        {
+          "part": "Wiring_Supplies",
+          "name": "TUOFENG 18 AWG Stranded Wire Spool, Silicone Rubber Insulated ...",
+          "price": 0.0,
+          "link": "https://www.amazon.com/TUOFENG-18-Stranded-Insulated-Automotive/dp/B07G744V5Z"
+        },
+        {
+          "part": "Wire_Sleeving",
+          "name": "1-50M Cable Sleeves 3-25mm Purple Snakeskin ... - Amazon.com",
+          "price": 0.0,
+          "link": "https://www.amazon.com/Snakeskin-Protecting-Expandable-Insulation-Sheathing/dp/B0DBJ7DZKM"
+        }
+      ],
+      "getfpv.com": [
+        {
+          "part": "FC_ESC_Stack",
+          "name": "SkyStars Fly Stack - F722 HD Pro 4 OSD FC + KM50 Pro 50A 3-6S 4 ...",
+          "price": 0.0,
+          "link": "https://www.getfpv.com/skystars-fly-stack-f722-hd-pro-4-osd-fc-km50-pro-50a-3-6s-4-in-1-blheli-32-esc-30x30.html"
+        }
+      ],
+      "store.dji.com": [
+        {
+          "part": "Video_System",
+          "name": "Buy DJI O3 Air Unit - DJI Store",
+          "price": 0.0,
+          "link": "https://store.dji.com/product/dji-o3-air-unit"
+        }
+      ],
+      "radiomasterrc.com": [
+        {
+          "part": "Receiver",
+          "name": "RP4TD ExpressLRS 2.4GHz True Diversity Receiver \u2013 RadioMaster ...",
+          "price": 0.0,
+          "link": "https://radiomasterrc.com/products/rp4td-expresslrs-2-4ghz-diversity-receiver"
+        }
+      ],
+      "adafruit.com": [
+        {
+          "part": "Frame_Inserts",
+          "name": "Brass Heat-Set Inserts for Plastic - M3 x 3mm - 50 pack : ID 4256 ...",
+          "price": 0.0,
+          "link": "https://www.adafruit.com/product/4256"
+        }
+      ],
+      "fiberlogy.com": [
+        {
+          "part": "Filament",
+          "name": "Nylon PA12+CF15 Filament - 1.75 mm - 0.5 kg",
+          "price": 0.0,
+          "link": "https://fiberlogy.com/en/Nylon-PA12CF15-Filament-1_75mm-0_5kg"
+        }
+      ],
+      "Unknown": [
+        {
+          "part": "Assembly_Kit",
+          "name": null,
+          "price": 0.0,
+          "link": ""
+        }
+      ]
+    }
+  }
+}

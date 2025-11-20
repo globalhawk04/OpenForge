@@ -1,0 +1,676 @@
+{
+  "project_id": "master_rev_test",
+  "created_at": "2025-11-20T22:03:38.178361",
+  "status": "complete",
+  "revisions": [
+    {
+      "revision_id": 1,
+      "timestamp": "2025-11-20T22:05:42.803502",
+      "bom_snapshot": [
+        {
+          "part_type": "Frame",
+          "product_name": "FPVDrone 225mm FPV Racing Drone Frame Carbon Fiber 5 inch ...",
+          "price": "35",
+          "source_url": "https://www.amazon.com/FPVDrone-Racing-Quadcopter-Freestyle-Battery/dp/B082SPT5D9",
+          "engineering_specs": {},
+          "reference_image": "https://m.media-amazon.com/images/I/717Y9ZhMgBL._AC_SX679_.jpg",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Motors",
+          "product_name": "Discount 1750kv motor Best Sale Black Friday",
+          "price": "51.00 USD",
+          "source_url": "https://kdfoundation.org/?k=159971616",
+          "engineering_specs": {
+            "mounting_mm": 16.0,
+            "source": "text_inference"
+          },
+          "reference_image": null,
+          "data_source_method": "text_inference",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "FC_ESC_Stack",
+          "product_name": "SpeedyBee F7 V3 BL32 50A 30x30 Stack - Speedy Bee",
+          "price": "89.99",
+          "source_url": "https://www.speedybee.com/speedybee-f7-v3-bl32-50a-30x30-stack/",
+          "engineering_specs": {
+            "mounting_mm": 30.5,
+            "usb_orientation": "SIDE",
+            "source": "vision"
+          },
+          "reference_image": "https://cdn11.bigcommerce.com/s-fhxxhuiq8q/images/stencil/500x500/products/155/1567/f7v3-11__57176.1730865025.png?c=2",
+          "data_source_method": "vision",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Video_System",
+          "product_name": "Buy DJI O3 Air Unit - DJI Store",
+          "price": "Check Site",
+          "source_url": "https://store.dji.com/product/dji-o3-air-unit",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 1
+        },
+        {
+          "part_type": "Receiver",
+          "product_name": "RadioMaster RP3 ELRS Receiver 2.4GHz ... - Amazon.com",
+          "price": "23",
+          "source_url": "https://www.amazon.com/SoloGood-RadioMaster-RP3-ExpressLRS-Quadcopter/dp/B0BGBKG635",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Motor_Screws",
+          "product_name": "M3 Hex Cap Screws - REV Robotics",
+          "price": "10.5",
+          "source_url": "https://www.revrobotics.com/M3-Hex-Cap-Screws/",
+          "engineering_specs": {
+            "mounting_mm": null,
+            "shaft_mm": null,
+            "source": "vision"
+          },
+          "reference_image": "https://cdn11.bigcommerce.com/s-t3eo8vwp22/images/stencil/608x608/products/722/2894/M3x10mm_Hex_Cap_Screws_Pack_Photo_From_Bundle_Shot__18790.1614451259.1280.1280__98672.1654289750.png?c=2",
+          "data_source_method": "vision",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Frame_Inserts",
+          "product_name": "M3x5x4 Threaded Heat Inserts Brass Heatset Inserts / Heated Inserts",
+          "price": "9.99",
+          "source_url": "https://west3d.com/products/m3x4x5-threaded-heat-inserts",
+          "engineering_specs": {},
+          "reference_image": "https://west3d.com/cdn/shop/products/m3x5x4-threaded-heat-inserts-west3d-printing-west3d-354958.jpg?v=1691189626&width=2048",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Stack_Mounting_Kit",
+          "product_name": "Standoff M3 Aluminium Hex 5mm x 14.5mm Black (4 Pack ...",
+          "price": "5.96",
+          "source_url": "https://impulserc.com/products/standoff-m3-aluminium-hex-5mm-x-14-5mm-black-4-pack",
+          "engineering_specs": {
+            "mounting_mm": null,
+            "usb_orientation": null,
+            "source": "vision"
+          },
+          "reference_image": "https://impulserc.com/cdn/shop/products/ALU-STANDOFF-M3-145-BLK-4PK_2000x.JPG?v=1519099700\n      \n    \n  ",
+          "data_source_method": "vision",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Capacitor",
+          "product_name": "Low Esr Capacitor - Amazon.com",
+          "price": "109",
+          "source_url": "https://www.amazon.com/low-esr-capacitor/s?k=low+esr+capacitor",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Battery_Connector",
+          "product_name": "3 Pairs XT60 Plug Female and Male Connector with ... - Amazon.com",
+          "price": "8",
+          "source_url": "https://www.amazon.com/Pairs-Female-Connector-Silicon-Battery/dp/B07QH249CR",
+          "engineering_specs": {},
+          "reference_image": "https://m.media-amazon.com/images/I/413SUM9i-DL._SX342_SY445_QL70_FMwebp_.jpg",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Assembly_Supplies",
+          "product_name": "BlueROV2 Assembly and Build Instructions",
+          "price": "4,900.00",
+          "source_url": "https://bluerobotics.com/learn/bluerov2-assembly/",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Wiring_Supplies",
+          "product_name": "Black Nylon Mesh Tube PET Wire Sleeving Spiral Wrapping ...",
+          "price": "Check Site",
+          "source_url": "https://www.aliexpress.com/item/4001075939017.html",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Spare_Wire",
+          "product_name": "TUOFENG 20awg Wire Flexible Stranded Wire,20 Gauge Wire ...",
+          "price": "16",
+          "source_url": "https://www.amazon.com/Electronics-different-Insulated-Temperature-Resistance/dp/B07G2GLKMP",
+          "engineering_specs": {},
+          "reference_image": "https://m.media-amazon.com/images/I/41ApuwVhoDL._SX342_SY445_QL70_FMwebp_.jpg",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        }
+      ],
+      "physics_snapshot": {
+        "total_weight_g": 375,
+        "twr": 0.43,
+        "hover_throttle_percent": 234.4,
+        "est_flight_time_min": 0.0,
+        "disk_loading": 0,
+        "top_speed_kmh": 0,
+        "status": "UNDERPOWERED"
+      },
+      "status": "fail"
+    },
+    {
+      "revision_id": 2,
+      "timestamp": "2025-11-20T22:06:22.699931",
+      "bom_snapshot": [
+        {
+          "part_type": "Frame",
+          "product_name": "FPVDrone 225mm FPV Racing Drone Frame Carbon Fiber 5 inch ...",
+          "price": "35",
+          "source_url": "https://www.amazon.com/FPVDrone-Racing-Quadcopter-Freestyle-Battery/dp/B082SPT5D9",
+          "engineering_specs": {},
+          "reference_image": "https://m.media-amazon.com/images/I/717Y9ZhMgBL._AC_SX679_.jpg",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "FC_ESC_Stack",
+          "product_name": "SpeedyBee F7 V3 BL32 50A 30x30 Stack - Speedy Bee",
+          "price": "89.99",
+          "source_url": "https://www.speedybee.com/speedybee-f7-v3-bl32-50a-30x30-stack/",
+          "engineering_specs": {
+            "mounting_mm": 30.5,
+            "usb_orientation": "SIDE",
+            "source": "vision"
+          },
+          "reference_image": "https://cdn11.bigcommerce.com/s-fhxxhuiq8q/images/stencil/500x500/products/155/1567/f7v3-11__57176.1730865025.png?c=2",
+          "data_source_method": "vision",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Video_System",
+          "product_name": "Buy DJI O3 Air Unit - DJI Store",
+          "price": "Check Site",
+          "source_url": "https://store.dji.com/product/dji-o3-air-unit",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 1
+        },
+        {
+          "part_type": "Receiver",
+          "product_name": "RadioMaster RP3 ELRS Receiver 2.4GHz ... - Amazon.com",
+          "price": "23",
+          "source_url": "https://www.amazon.com/SoloGood-RadioMaster-RP3-ExpressLRS-Quadcopter/dp/B0BGBKG635",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Motor_Screws",
+          "product_name": "M3 Hex Cap Screws - REV Robotics",
+          "price": "10.5",
+          "source_url": "https://www.revrobotics.com/M3-Hex-Cap-Screws/",
+          "engineering_specs": {
+            "mounting_mm": null,
+            "shaft_mm": null,
+            "source": "vision"
+          },
+          "reference_image": "https://cdn11.bigcommerce.com/s-t3eo8vwp22/images/stencil/608x608/products/722/2894/M3x10mm_Hex_Cap_Screws_Pack_Photo_From_Bundle_Shot__18790.1614451259.1280.1280__98672.1654289750.png?c=2",
+          "data_source_method": "vision",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Frame_Inserts",
+          "product_name": "M3x5x4 Threaded Heat Inserts Brass Heatset Inserts / Heated Inserts",
+          "price": "9.99",
+          "source_url": "https://west3d.com/products/m3x4x5-threaded-heat-inserts",
+          "engineering_specs": {},
+          "reference_image": "https://west3d.com/cdn/shop/products/m3x5x4-threaded-heat-inserts-west3d-printing-west3d-354958.jpg?v=1691189626&width=2048",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Stack_Mounting_Kit",
+          "product_name": "Standoff M3 Aluminium Hex 5mm x 14.5mm Black (4 Pack ...",
+          "price": "5.96",
+          "source_url": "https://impulserc.com/products/standoff-m3-aluminium-hex-5mm-x-14-5mm-black-4-pack",
+          "engineering_specs": {
+            "mounting_mm": null,
+            "usb_orientation": null,
+            "source": "vision"
+          },
+          "reference_image": "https://impulserc.com/cdn/shop/products/ALU-STANDOFF-M3-145-BLK-4PK_2000x.JPG?v=1519099700\n      \n    \n  ",
+          "data_source_method": "vision",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Capacitor",
+          "product_name": "Low Esr Capacitor - Amazon.com",
+          "price": "109",
+          "source_url": "https://www.amazon.com/low-esr-capacitor/s?k=low+esr+capacitor",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Battery_Connector",
+          "product_name": "3 Pairs XT60 Plug Female and Male Connector with ... - Amazon.com",
+          "price": "8",
+          "source_url": "https://www.amazon.com/Pairs-Female-Connector-Silicon-Battery/dp/B07QH249CR",
+          "engineering_specs": {},
+          "reference_image": "https://m.media-amazon.com/images/I/413SUM9i-DL._SX342_SY445_QL70_FMwebp_.jpg",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Assembly_Supplies",
+          "product_name": "BlueROV2 Assembly and Build Instructions",
+          "price": "4,900.00",
+          "source_url": "https://bluerobotics.com/learn/bluerov2-assembly/",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Wiring_Supplies",
+          "product_name": "Black Nylon Mesh Tube PET Wire Sleeving Spiral Wrapping ...",
+          "price": "Check Site",
+          "source_url": "https://www.aliexpress.com/item/4001075939017.html",
+          "engineering_specs": {},
+          "reference_image": null,
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Spare_Wire",
+          "product_name": "TUOFENG 20awg Wire Flexible Stranded Wire,20 Gauge Wire ...",
+          "price": "16",
+          "source_url": "https://www.amazon.com/Electronics-different-Insulated-Temperature-Resistance/dp/B07G2GLKMP",
+          "engineering_specs": {},
+          "reference_image": "https://m.media-amazon.com/images/I/41ApuwVhoDL._SX342_SY445_QL70_FMwebp_.jpg",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Motors",
+          "product_name": "Discount 1750kv motor Best Sale Black Friday",
+          "price": "51.00 USD",
+          "source_url": "https://kdfoundation.org/?k=159971616",
+          "engineering_specs": {
+            "mounting_mm": null,
+            "shaft_mm": null,
+            "source": "vision"
+          },
+          "reference_image": "https://img-meps.mepsking.top/material/1/default.png?x-oss-process=image/format,webp,image/resize,m_lfit,w_600",
+          "data_source_method": "vision",
+          "alternatives_checked": 2
+        },
+        {
+          "part_type": "Battery",
+          "product_name": "Tattu 1300mAh 6S 100C 22.2V FunFly lipo battery pack with XT60 ...",
+          "price": "26",
+          "source_url": "https://genstattu.com/ta-ff-100c-1300-6s1p.html",
+          "engineering_specs": {},
+          "reference_image": "https://cdn11.bigcommerce.com/s-99ohneivnb/images/stencil/754x1000/products/2820/8569/2_63__97631.1627117022.jpg?c=1",
+          "data_source_method": "raw_search",
+          "alternatives_checked": 3
+        },
+        {
+          "part_type": "Propellers",
+          "product_name": "Gemfan Hurricane 51366 MCK ReV3 FPV Racing ... - Amazon.com",
+          "price": "16",
+          "source_url": "https://www.amazon.com/Gemfan-Hurricane-Propellers-Compatible-Quadcopter/dp/B0CH8PV58Y",
+          "engineering_specs": {
+            "diameter_mm": 127.0,
+            "source": "text_inference"
+          },
+          "reference_image": "https://pyrodrone.com/cdn/shop/products/GemfanHurricane5127-3ClearPurplePropPicture2_512x512.jpg?v=1678754093",
+          "data_source_method": "text_inference",
+          "alternatives_checked": 3
+        }
+      ],
+      "physics_snapshot": {
+        "total_weight_g": 587,
+        "twr": 8.85,
+        "hover_throttle_percent": 11.3,
+        "est_flight_time_min": 3.5,
+        "disk_loading": 116.0,
+        "top_speed_kmh": 113,
+        "status": "FLYABLE"
+      },
+      "status": "pass"
+    }
+  ],
+  "final_build": {
+    "bom": [
+      {
+        "part_type": "Frame",
+        "product_name": "FPVDrone 225mm FPV Racing Drone Frame Carbon Fiber 5 inch ...",
+        "price": "35",
+        "source_url": "https://www.amazon.com/FPVDrone-Racing-Quadcopter-Freestyle-Battery/dp/B082SPT5D9",
+        "engineering_specs": {},
+        "reference_image": "https://m.media-amazon.com/images/I/717Y9ZhMgBL._AC_SX679_.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "FC_ESC_Stack",
+        "product_name": "SpeedyBee F7 V3 BL32 50A 30x30 Stack - Speedy Bee",
+        "price": "89.99",
+        "source_url": "https://www.speedybee.com/speedybee-f7-v3-bl32-50a-30x30-stack/",
+        "engineering_specs": {
+          "mounting_mm": 30.5,
+          "usb_orientation": "SIDE",
+          "source": "vision"
+        },
+        "reference_image": "https://cdn11.bigcommerce.com/s-fhxxhuiq8q/images/stencil/500x500/products/155/1567/f7v3-11__57176.1730865025.png?c=2",
+        "data_source_method": "vision",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Video_System",
+        "product_name": "Buy DJI O3 Air Unit - DJI Store",
+        "price": "Check Site",
+        "source_url": "https://store.dji.com/product/dji-o3-air-unit",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 1
+      },
+      {
+        "part_type": "Receiver",
+        "product_name": "RadioMaster RP3 ELRS Receiver 2.4GHz ... - Amazon.com",
+        "price": "23",
+        "source_url": "https://www.amazon.com/SoloGood-RadioMaster-RP3-ExpressLRS-Quadcopter/dp/B0BGBKG635",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Motor_Screws",
+        "product_name": "M3 Hex Cap Screws - REV Robotics",
+        "price": "10.5",
+        "source_url": "https://www.revrobotics.com/M3-Hex-Cap-Screws/",
+        "engineering_specs": {
+          "mounting_mm": null,
+          "shaft_mm": null,
+          "source": "vision"
+        },
+        "reference_image": "https://cdn11.bigcommerce.com/s-t3eo8vwp22/images/stencil/608x608/products/722/2894/M3x10mm_Hex_Cap_Screws_Pack_Photo_From_Bundle_Shot__18790.1614451259.1280.1280__98672.1654289750.png?c=2",
+        "data_source_method": "vision",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Frame_Inserts",
+        "product_name": "M3x5x4 Threaded Heat Inserts Brass Heatset Inserts / Heated Inserts",
+        "price": "9.99",
+        "source_url": "https://west3d.com/products/m3x4x5-threaded-heat-inserts",
+        "engineering_specs": {},
+        "reference_image": "https://west3d.com/cdn/shop/products/m3x5x4-threaded-heat-inserts-west3d-printing-west3d-354958.jpg?v=1691189626&width=2048",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 2
+      },
+      {
+        "part_type": "Stack_Mounting_Kit",
+        "product_name": "Standoff M3 Aluminium Hex 5mm x 14.5mm Black (4 Pack ...",
+        "price": "5.96",
+        "source_url": "https://impulserc.com/products/standoff-m3-aluminium-hex-5mm-x-14-5mm-black-4-pack",
+        "engineering_specs": {
+          "mounting_mm": null,
+          "usb_orientation": null,
+          "source": "vision"
+        },
+        "reference_image": "https://impulserc.com/cdn/shop/products/ALU-STANDOFF-M3-145-BLK-4PK_2000x.JPG?v=1519099700\n      \n    \n  ",
+        "data_source_method": "vision",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Capacitor",
+        "product_name": "Low Esr Capacitor - Amazon.com",
+        "price": "109",
+        "source_url": "https://www.amazon.com/low-esr-capacitor/s?k=low+esr+capacitor",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 2
+      },
+      {
+        "part_type": "Battery_Connector",
+        "product_name": "3 Pairs XT60 Plug Female and Male Connector with ... - Amazon.com",
+        "price": "8",
+        "source_url": "https://www.amazon.com/Pairs-Female-Connector-Silicon-Battery/dp/B07QH249CR",
+        "engineering_specs": {},
+        "reference_image": "https://m.media-amazon.com/images/I/413SUM9i-DL._SX342_SY445_QL70_FMwebp_.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Assembly_Supplies",
+        "product_name": "BlueROV2 Assembly and Build Instructions",
+        "price": "4,900.00",
+        "source_url": "https://bluerobotics.com/learn/bluerov2-assembly/",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 2
+      },
+      {
+        "part_type": "Wiring_Supplies",
+        "product_name": "Black Nylon Mesh Tube PET Wire Sleeving Spiral Wrapping ...",
+        "price": "Check Site",
+        "source_url": "https://www.aliexpress.com/item/4001075939017.html",
+        "engineering_specs": {},
+        "reference_image": null,
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Spare_Wire",
+        "product_name": "TUOFENG 20awg Wire Flexible Stranded Wire,20 Gauge Wire ...",
+        "price": "16",
+        "source_url": "https://www.amazon.com/Electronics-different-Insulated-Temperature-Resistance/dp/B07G2GLKMP",
+        "engineering_specs": {},
+        "reference_image": "https://m.media-amazon.com/images/I/41ApuwVhoDL._SX342_SY445_QL70_FMwebp_.jpg",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Motors",
+        "product_name": "Discount 1750kv motor Best Sale Black Friday",
+        "price": "51.00 USD",
+        "source_url": "https://kdfoundation.org/?k=159971616",
+        "engineering_specs": {
+          "mounting_mm": null,
+          "shaft_mm": null,
+          "source": "vision"
+        },
+        "reference_image": "https://img-meps.mepsking.top/material/1/default.png?x-oss-process=image/format,webp,image/resize,m_lfit,w_600",
+        "data_source_method": "vision",
+        "alternatives_checked": 2
+      },
+      {
+        "part_type": "Battery",
+        "product_name": "Tattu 1300mAh 6S 100C 22.2V FunFly lipo battery pack with XT60 ...",
+        "price": "26",
+        "source_url": "https://genstattu.com/ta-ff-100c-1300-6s1p.html",
+        "engineering_specs": {},
+        "reference_image": "https://cdn11.bigcommerce.com/s-99ohneivnb/images/stencil/754x1000/products/2820/8569/2_63__97631.1627117022.jpg?c=1",
+        "data_source_method": "raw_search",
+        "alternatives_checked": 3
+      },
+      {
+        "part_type": "Propellers",
+        "product_name": "Gemfan Hurricane 51366 MCK ReV3 FPV Racing ... - Amazon.com",
+        "price": "16",
+        "source_url": "https://www.amazon.com/Gemfan-Hurricane-Propellers-Compatible-Quadcopter/dp/B0CH8PV58Y",
+        "engineering_specs": {
+          "diameter_mm": 127.0,
+          "source": "text_inference"
+        },
+        "reference_image": "https://pyrodrone.com/cdn/shop/products/GemfanHurricane5127-3ClearPurplePropPicture2_512x512.jpg?v=1678754093",
+        "data_source_method": "text_inference",
+        "alternatives_checked": 3
+      }
+    ],
+    "cad_assets": {
+      "wheelbase": 269.0,
+      "frame": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_frame.stl",
+      "motor": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_motor.stl",
+      "fc": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_fc.stl",
+      "prop": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_prop.stl",
+      "battery": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_battery.stl",
+      "camera": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_camera.stl"
+    },
+    "assembly_guide": {
+      "guide_md": "# Assembly Instructions for 5\" FPV Drone\n\n## 1. Preparation\n\n*   **Tools Required:** Soldering iron with a suitable tip, M3 hex drivers, wire cutters/strippers, and a multimeter.\n*   **Component Check:** Before starting, verify all components from your Bill of Materials are present.\n\n## 2. Frame and Motor Assembly\n\n*   Begin by assembling the carbon fiber arms and plates of the **FPVDrone 225mm frame**.\n*   Mount the **1750kv motors** to the end of each arm using the M3 screws. Ensure the screws are not long enough to touch the internal motor windings. \n*   Route the motor wires along the arms towards the frame's center, using the provided mesh sleeving for abrasion resistance.\n\n## 3. Electronics Mounting\n\n*   Mount the **SpeedyBee F7 V3 BL32 50A** stack onto the frame's 30.5x30.5mm mounting posts. Start with the ESC board.\n*   Solder the Low ESR capacitor and the XT60 pigtail to the main power pads on the ESC. **CRITICAL: Observe correct polarity (+ to +, - to -).**\n*   Place the F7 Flight Controller on top of the ESC, connecting them with the provided harness. Ensure the orientation arrow on the FC points to the front of the drone.\n\n## 4. Wiring\n\n*   Solder the three wires from each motor to the corresponding M1, M2, M3, and M4 solder pads on the SpeedyBee ESC. The order can be corrected in software later if a motor spins the wrong way.\n*   Connect the **DJI O3 Air Unit** and the **RadioMaster RP3 receiver** to the appropriate UART ports on the F7 flight controller, referencing the SpeedyBee wiring diagram.\n\n## 5. Configuration & Final Steps\n\n*   Secure all electronics and complete the top plate assembly, ensuring no wires are pinched.\n*   **Firmware Tip:** When connecting to Betaflight Configurator, the correct firmware target for your flight controller is **SPEEDYBEEF7V3**.\n*   After software setup and with the battery **UNPLUGGED**, install the **Gemfan Hurricane 51366** propellers, ensuring they match your configured motor direction.",
+      "steps": [
+        {
+          "step": "Assemble Frame & Motors",
+          "detail": "Assemble the 225mm carbon fiber frame and secure the 1750kv motors to the arms using M3 screws."
+        },
+        {
+          "step": "Mount Electronics Stack",
+          "detail": "Install the SpeedyBee F7 V3 30x30 stack onto the frame standoffs. Solder the capacitor and XT60 power leads to the ESC board."
+        },
+        {
+          "step": "Solder Components",
+          "detail": "Solder motor wires to the ESC pads. Wire the DJI O3 Air Unit and RP3 ELRS receiver to the F7 flight controller."
+        },
+        {
+          "step": "Configure and Finalize",
+          "detail": "Use the 'SPEEDYBEEF7V3' firmware target in Betaflight. Install the Gemfan 51366 propellers after configuration."
+        }
+      ]
+    },
+    "schematic": "/home/j/Desktop/viz_it/drone/static/generated/master_rev_test_schematic.png",
+    "procurement": {
+      "currency": "USD",
+      "subtotal": 646.94,
+      "estimated_shipping": 32.35,
+      "estimated_tax": 51.76,
+      "total_estimated_cost": 731.04,
+      "vendors": {
+        "amazon.com": [
+          {
+            "part": "Frame",
+            "name": "FPVDrone 225mm FPV Racing Drone Frame Carbon Fiber 5 inch ...",
+            "price": 0.0,
+            "link": "https://www.amazon.com/FPVDrone-Racing-Quadcopter-Freestyle-Battery/dp/B082SPT5D9"
+          },
+          {
+            "part": "Receiver",
+            "name": "RadioMaster RP3 ELRS Receiver 2.4GHz ... - Amazon.com",
+            "price": 0.0,
+            "link": "https://www.amazon.com/SoloGood-RadioMaster-RP3-ExpressLRS-Quadcopter/dp/B0BGBKG635"
+          },
+          {
+            "part": "Capacitor",
+            "name": "Low Esr Capacitor - Amazon.com",
+            "price": 0.0,
+            "link": "https://www.amazon.com/low-esr-capacitor/s?k=low+esr+capacitor"
+          },
+          {
+            "part": "Battery_Connector",
+            "name": "3 Pairs XT60 Plug Female and Male Connector with ... - Amazon.com",
+            "price": 0.0,
+            "link": "https://www.amazon.com/Pairs-Female-Connector-Silicon-Battery/dp/B07QH249CR"
+          },
+          {
+            "part": "Spare_Wire",
+            "name": "TUOFENG 20awg Wire Flexible Stranded Wire,20 Gauge Wire ...",
+            "price": 0.0,
+            "link": "https://www.amazon.com/Electronics-different-Insulated-Temperature-Resistance/dp/B07G2GLKMP"
+          },
+          {
+            "part": "Propellers",
+            "name": "Gemfan Hurricane 51366 MCK ReV3 FPV Racing ... - Amazon.com",
+            "price": 0.0,
+            "link": "https://www.amazon.com/Gemfan-Hurricane-Propellers-Compatible-Quadcopter/dp/B0CH8PV58Y"
+          }
+        ],
+        "speedybee.com": [
+          {
+            "part": "FC_ESC_Stack",
+            "name": "SpeedyBee F7 V3 BL32 50A 30x30 Stack - Speedy Bee",
+            "price": 89.99,
+            "link": "https://www.speedybee.com/speedybee-f7-v3-bl32-50a-30x30-stack/"
+          }
+        ],
+        "store.dji.com": [
+          {
+            "part": "Video_System",
+            "name": "Buy DJI O3 Air Unit - DJI Store",
+            "price": 0.0,
+            "link": "https://store.dji.com/product/dji-o3-air-unit"
+          }
+        ],
+        "revrobotics.com": [
+          {
+            "part": "Motor_Screws",
+            "name": "M3 Hex Cap Screws - REV Robotics",
+            "price": 0.0,
+            "link": "https://www.revrobotics.com/M3-Hex-Cap-Screws/"
+          }
+        ],
+        "west3d.com": [
+          {
+            "part": "Frame_Inserts",
+            "name": "M3x5x4 Threaded Heat Inserts Brass Heatset Inserts / Heated Inserts",
+            "price": 9.99,
+            "link": "https://west3d.com/products/m3x4x5-threaded-heat-inserts"
+          }
+        ],
+        "impulserc.com": [
+          {
+            "part": "Stack_Mounting_Kit",
+            "name": "Standoff M3 Aluminium Hex 5mm x 14.5mm Black (4 Pack ...",
+            "price": 5.96,
+            "link": "https://impulserc.com/products/standoff-m3-aluminium-hex-5mm-x-14-5mm-black-4-pack"
+          }
+        ],
+        "bluerobotics.com": [
+          {
+            "part": "Assembly_Supplies",
+            "name": "BlueROV2 Assembly and Build Instructions",
+            "price": 490.0,
+            "link": "https://bluerobotics.com/learn/bluerov2-assembly/"
+          }
+        ],
+        "aliexpress.com": [
+          {
+            "part": "Wiring_Supplies",
+            "name": "Black Nylon Mesh Tube PET Wire Sleeving Spiral Wrapping ...",
+            "price": 0.0,
+            "link": "https://www.aliexpress.com/item/4001075939017.html"
+          }
+        ],
+        "kdfoundation.org": [
+          {
+            "part": "Motors",
+            "name": "Discount 1750kv motor Best Sale Black Friday",
+            "price": 51.0,
+            "link": "https://kdfoundation.org/?k=159971616"
+          }
+        ],
+        "genstattu.com": [
+          {
+            "part": "Battery",
+            "name": "Tattu 1300mAh 6S 100C 22.2V FunFly lipo battery pack with XT60 ...",
+            "price": 0.0,
+            "link": "https://genstattu.com/ta-ff-100c-1300-6s1p.html"
+          }
+        ]
+      }
+    }
+  }
+}
