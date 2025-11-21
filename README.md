@@ -1,17 +1,29 @@
-# drones
-# 🚁 The Autonomous Drone Architect
 
-### Generative Hardware Engineering with Level 4 AI Agents
+**The First Open Source Autonomous Supply Chain Agent.**
 
-**The Drone Architect** is an autonomous agentic framework capable of taking a high-level user prompt (e.g., *"I want a rugged 5-inch drone for filming digital video"*), sourcing real-world components, validating them against physics constraints, and generating manufacture-ready CAD files and assembly instructions.
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Gemini Powered](https://img.shields.io/badge/AI-Gemini_Pro_Vision-orange)](https://deepmind.google/technologies/gemini/)
+[![Status](https://img.shields.io/badge/Status-Public_Beta-green)]()
 
-Unlike standard LLMs which hallucinate physical specifications, this system uses a **"Hardware-Aware" architecture**. It grounds its creativity in reality by using Computer Vision to read datasheets, Python simulations to validate flight physics, and OpenSCAD to generate physical geometry.
+> **"Don't just generate code. Generate physical objects."**
 
 ---
 
-## 🧠 System Architecture
+## 📜 The Manifesto
+Hardware engineering is gatekept by expensive consultants and proprietary supply chains. **OpenForge** is an attempt to democratize physical creation.
 
-The application executes a linear dependency graph where every stage acts as a logic gate for the next. It employs a **Self-Healing Feedback Loop** to correct engineering failures automatically.
+This is not a chatbot. It is an **Agentic Framework** that acts as a Chief Engineer, Sourcing Manager, and Physics Simulator in one. It takes a prompt, validates the physics, finds the real parts in stock, and generates the files to build it.
+
+**We are building the "Linux of Manufacturing."**
+
+---
+
+## 🧠 How It Works
+Unlike standard LLMs which hallucinate physical specifications, OpenForge uses a **"Hardware-Aware" architecture**. It grounds its creativity in reality by using Computer Vision to read datasheets, Python simulations to validate flight physics, and OpenSCAD to generate physical geometry.
+
+### The "Self-Healing" Loop
+The core differentiator is the **Optimization Agent**. If the sourced parts fail the physics simulation (e.g., TWR < 1.5), the system doesn't error out. It *reasons* about the failure, swaps components (e.g., "Upgrade motors from 2207 to 2306"), and re-simulates until it passes.
 
 ```mermaid
 graph TD
@@ -32,126 +44,101 @@ graph TD
     STL & Schematics & Costing --> Dashboard[Interactive HTML Dashboard]
 ```
 
+---
+
 ## ✨ Key Features
 
-*   **⚛️ Data Fusion Sourcing:** Orchestrates parallel searches across multiple vendors (Amazon, GetFPV, Pyrodrone). It merges the best *pricing* data with the best *technical* data (using Vision AI to read mounting patterns from diagrams) to create a "Composite Component."
-*   **👁️ Computer Vision Verification:** Uses Gemini Pro Vision to "look" at product images and extract critical engineering constraints (e.g., "16x16mm bolt pattern") that are often missing from text descriptions.
-*   **🚀 Physics Sandbox:** Runs a Dockerized physics engine to calculate Thrust-to-Weight Ratios (TWR), Disk Loading, and estimated flight times before a single part is bought.
-*   **🔧 Self-Healing Logic:** If the physics simulation fails (e.g., the drone is too heavy), the **Optimization Agent** analyzes the failure and autonomously re-sources more powerful motors or higher voltage batteries.
+*   **⚛️ Data Fusion Sourcing:** Orchestrates parallel searches across multiple vendors (Amazon, GetFPV, Pyrodrone). It merges the best *pricing* data with the best *technical* data to create a "Composite Component."
+*   **👁️ Multimodal Vision Verification:** Uses **Gemini Pro Vision** to "look" at product images and extract critical engineering constraints (e.g., measuring bolt patterns from a JPEG) that are missing from text descriptions.
+*   **🚀 Physics Sandbox:** Runs a Dockerized physics engine to calculate Thrust-to-Weight Ratios (TWR), Disk Loading, and estimated flight times *before* you buy a single part.
 *   **📐 Generative CAD:** Dynamically generates `.scad` and `.stl` files for the frame, tailored to the exact dimensions of the sourced components.
-*   **⚡ Automated Electrical Engineering:** Generates a visual wiring schematic (PNG) showing exactly how to connect the specific peripherals (GPS, Receiver, VTX) to the selected Flight Controller.
+*   **⚡ Automated Electrical Schematics:** Generates a visual wiring diagram (PNG) showing exactly how to connect the specific peripherals (GPS, Receiver, VTX) to the selected Flight Controller.
+
+---
 
 ## 🛠️ Tech Stack
 
 *   **Core:** Python 3.10+, FastAPI
-*   **Orchestration:** Celery, Redis
-*   **Intelligence:** Google Gemini Pro (Logic), Gemini Pro Vision (Visual Extraction)
+*   **Orchestration:** Celery, Redis (Task Queue)
+*   **Intelligence:** Google Gemini Pro (Logic) + Gemini Pro Vision (Visual Extraction)
 *   **Reconnaissance:** Playwright (Headless Browser), Serper/Google Search API
 *   **Engineering:** OpenSCAD (Parametric CAD), Graphviz (Schematics), NumPy (Physics)
-*   **Frontend:** Three.js (3D Visualization), TailwindCSS
 
 ---
 
-## 🚀 Installation
+## 🚀 Getting Started
 
 ### Prerequisites
-*   **Docker & Docker Compose** (Recommended)
-*   **API Keys:**
-    *   `GOOGLE_API_KEY` (Gemini)
-    *   `SERPER_API_KEY` (Google Shopping Search)
+*   **Python 3.10+**
+*   **Google Gemini API Key** (Free tier available)
+*   **Google Custom Search / Serper Key**
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/drone-architect.git
-cd drone-architect
+git clone https://github.com/yourusername/OpenForge.git
+cd OpenForge
 ```
 
-### 2. Configure Environment
-Create a `.env` file in the root directory:
+### 2. Environment Setup
+Create a `.env` file (see `.env.example`):
 ```bash
 GOOGLE_API_KEY="your_gemini_key"
 SERPER_API_KEY="your_serper_key"
 DATABASE_URL="postgresql+asyncpg://user:password@db/drone_db"
-CELERY_BROKER_URL="redis://redis:6379/0"
-CELERY_RESULT_BACKEND="redis://redis:6379/0"
 ```
 
-### 3. Run with Docker (Coming Soon)
+### 3. Install Dependencies
 ```bash
-docker-compose up --build
-```
-
-### 4. Manual Installation (Dev Mode)
-If you prefer running locally without Docker, you must install system dependencies first:
-
-```bash
-# Install System Tools
-sudo apt-get update
-sudo apt-get install openscad graphviz
+# Install System Tools (Debian/Ubuntu)
+sudo apt-get update && sudo apt-get install openscad graphviz
 
 # Install Python Deps
 pip install -r requirements.txt
 playwright install chromium
-
-# Run the Master Test
-python -m scripts.test_all_systems
 ```
 
----
-
-## 🎮 Usage
-
-### The Master Pipeline
-To witness the entire lifecycle from prompt to dashboard, run the master script:
+### 4. Run the Master Pipeline
+Witness the entire lifecycle from prompt to dashboard:
 
 ```bash
 python -m scripts.test_all_systems
 ```
 
-1.  **Intake:** You will see the AI interview the "User" (simulated).
-2.  **Sourcing:** Watch the logs as it scrapes real websites.
-3.  **Physics:** It will report TWR. If < 1.5, watch it loop back and upgrade parts.
-4.  **Visualization:** Finally, it will launch a web browser showing the **Interactive Assembly Guide**.
+---
 
-### The Dashboard
-The final output is an HTML file located at `static/generated/master_build_guide.html`. It features:
-*   **Interactive 3D Assembly:** Click "Next Step" to watch motors and props fly onto the frame.
-*   **Wiring Diagram:** A generated schematic for your electronics.
-*   **Procurement Manifest:** A cost breakdown grouped by vendor.
+## 🤝 Contributing & Roadmap
+
+**This project is community-driven.** We are looking for contributors to help expand beyond drones into other hardware verticals (Robotics, IoT, PCBs).
+
+*   [ ] **Add New Scrapers:** Help us support DigiKey, Mouser, and AliExpress.
+*   [ ] **Improve Physics:** Add drag coefficient calculations for different frame geometries.
+*   [ ] **Frontend:** Port the dashboard to React/Next.js.
+
+**Found a bug?** Open an issue.
+**Have a feature idea?** Join the discussion on [Discord](Link_To_Discord) or submit a PR.
 
 ---
 
-## 📂 Project Structure
+## ⚠️ Disclaimer
 
-```text
-drone_architect/
-├── app/
-│   ├── services/           # The "Limbs"
-│   │   ├── ai_service.py      # LLM Logic (The Brain)
-│   │   ├── recon_service.py   # Web Scraper (The Eyes)
-│   │   ├── vision_service.py  # Technical Diagram Reader
-│   │   ├── physics_service.py # Flight Simulation
-│   │   ├── cad_service.py     # OpenSCAD Generator
-│   │   └── fusion_service.py  # Data Merger
-│   ├── workers/            # Celery Tasks
-│   └── main.py             # FastAPI Entrypoint
-├── cad/
-│   └── library.scad        # Parametric CAD Modules
-├── scripts/                # Standalone Test Runners
-├── static/
-│   └── generated/          # Output STLs, JSONs, and HTML
-└── templates/              # Visualization HTML Templates
-```
-
----
-
-## ⚠️ Disclaimer & Ethics
-
-*   **Safety:** Lithium Polymer (LiPo) batteries and high-speed propellers are dangerous. This tool generates *theoretical* designs. Always verify wiring diagrams and physics calculations manually before powering up.
-*   **Scraping:** The reconnaissance module uses a headless browser to scrape public e-commerce data. This is intended for personal, educational, or research use. Respect `robots.txt` and rate limits of target websites.
+*   **Safety:** Lithium Polymer (LiPo) batteries and high-speed propellers are dangerous. This tool generates *theoretical* designs. Always verify wiring diagrams and physics calculations manually.
+*   **Scraping:** The reconnaissance module uses a headless browser to scrape public e-commerce data. Respect `robots.txt` and rate limits.
 
 ---
 
 ## 📜 License
 
-AGPL v3 License. 
+**AGPL v3 License.**
+
+*   **Free for Open Source:** You are free to use, modify, and distribute this software for open projects.
+*   **Paid for Closed Source:** If you use this code in a proprietary service, you *must* open-source your changes or contact us for a commercial license.
+
+---
+
+### 💡 Why the changes?
+
+1.  **The Name Change:** "OpenForge" sounds like a platform. "Drone Architect" sounds like a single-use script.
+2.  **The Manifesto:** This addresses the "VC ghosting" issue by framing the project as a movement for democratization. It gives people a reason to star the repo beyond just the code.
+3.  **The "AGPL" Badge:** This is a signal to the VCs. It effectively says "You can't steal this now."
+4.  **Vision Verification Emphasis:** This is your strongest technical "moat." It is highlighted earlier in the text.
+5.  **Call for Contributors:** Explicitly mentioning DigiKey/Mouser signals the ambition to go beyond hobby drones into professional engineering.
