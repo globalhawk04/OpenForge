@@ -154,4 +154,4 @@ drone_architect/
 
 ## 📜 License
 
-MIT License. Build cool things. Fly safe.
+AGPL v3 License. 
