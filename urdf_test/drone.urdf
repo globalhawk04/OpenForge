@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<robot name="test_drone">
+
+  <!-- BASE LINK -->
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.001618" ixy="0" ixz="0" iyy="0.001618" iyz="0" izz="0.003015"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="base.stl"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="base.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!-- PROP_FL -->
+  <link name="prop_fl">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000007" ixy="0" ixz="0" iyy="0.000007" iyz="0" izz="0.000013"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_fl" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_fl"/>
+    <origin rpy="0 0 0" xyz="79.54951275 79.54951275 0.03"/> <!-- Convert mm to m -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- PROP_FR -->
+  <link name="prop_fr">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000007" ixy="0" ixz="0" iyy="0.000007" iyz="0" izz="0.000013"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_fr" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_fr"/>
+    <origin rpy="0 0 0" xyz="79.54951275 -79.54951275 0.03"/> <!-- Convert mm to m -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- PROP_RL -->
+  <link name="prop_rl">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000007" ixy="0" ixz="0" iyy="0.000007" iyz="0" izz="0.000013"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_rl" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_rl"/>
+    <origin rpy="0 0 0" xyz="-79.54951275 79.54951275 0.03"/> <!-- Convert mm to m -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- PROP_RR -->
+  <link name="prop_rr">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000007" ixy="0" ixz="0" iyy="0.000007" iyz="0" izz="0.000013"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_rr" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_rr"/>
+    <origin rpy="0 0 0" xyz="-79.54951275 -79.54951275 0.03"/> <!-- Convert mm to m -->
+    <axis xyz="0 0 1"/>
+  </joint>
+</robot>

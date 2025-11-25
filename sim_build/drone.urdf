@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<robot name="Interceptor_V1">
+
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.45"/>
+      <inertia ixx="0.00145623" ixy="0" ixz="0" iyy="0.00145623" iyz="0" izz="0.00271354"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="base.stl" scale="0.001 0.001 0.001"/> 
+      </geometry>
+      <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="prop_fl">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.004"/>
+      <inertia ixx="0.00000540" ixy="0" ixz="0" iyy="0.00000540" iyz="0" izz="0.00001076"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_fl" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_fl"/>
+    <origin rpy="0 0 0" xyz="0.07954951275000001 0.07954951275000001 0.03"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="prop_fr">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.004"/>
+      <inertia ixx="0.00000540" ixy="0" ixz="0" iyy="0.00000540" iyz="0" izz="0.00001076"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_fr" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_fr"/>
+    <origin rpy="0 0 0" xyz="0.07954951275000001 -0.07954951275000001 0.03"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="prop_rl">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.004"/>
+      <inertia ixx="0.00000540" ixy="0" ixz="0" iyy="0.00000540" iyz="0" izz="0.00001076"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_rl" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_rl"/>
+    <origin rpy="0 0 0" xyz="-0.07954951275000001 0.07954951275000001 0.03"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="prop_rr">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.004"/>
+      <inertia ixx="0.00000540" ixy="0" ixz="0" iyy="0.00000540" iyz="0" izz="0.00001076"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.0635"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_prop_rr" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_rr"/>
+    <origin rpy="0 0 0" xyz="-0.07954951275000001 -0.07954951275000001 0.03"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+</robot>
