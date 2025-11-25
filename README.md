@@ -37,18 +37,17 @@ If a design fails the flight test (e.g., crashes during a loop-de-loop), the sys
 
 ```mermaid
 graph TD
-    User[User Prompt] --> Architect(Architect Agent)
-    Architect --> Specs[Parametric Specs]
-    Specs --> CAD{CAD Engine}
-    CAD -->|Generate| STL[STL Meshes]
-    CAD -->|Calculate| URDF[Physics Definition]
-    URDF --> Sim{PyBullet Sim}
-    Sim -->|Run Scenario| FlightController(Virtual Pilot)
-    FlightController -->|Telemetry| Report[Flight Report]
-    Report -->|Success| Master[Master Record (DNA)]
-    Report -->|Crash/Fail| Optimizer(Optimization Agent)
-    Optimizer -->|Mutate Specs| Specs
-```
+    User["User Prompt"] --> Architect("Architect Agent")
+    Architect --> Specs["Parametric Specs"]
+    Specs --> CAD{"CAD Engine"}
+    CAD -->|"Generate"| STL["STL Meshes"]
+    CAD -->|"Calculate"| URDF["Physics Definition"]
+    URDF --> Sim{"PyBullet Sim"}
+    Sim -->|"Run Scenario"| FlightController("Virtual Pilot")
+    FlightController -->|"Telemetry"| Report["Flight Report"]
+    Report -->|"Success"| Master["Master Record (DNA)"]
+    Report -->|"Crash/Fail"| Optimizer("Optimization Agent")
+    Optimizer -->|"Mutate Specs"| Specs
 
 ---
 
