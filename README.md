@@ -10,7 +10,6 @@ An AI-powered generative engineering system that designs, validates, and documen
 </div>
 
 ![OpenForge Demo GIF](https://user-images.githubusercontent.com/username/repo/assets/openforge_demo.gif)
-*(A GIF showing the terminal interaction: user enters a prompt, the AI agents work through sourcing and validation loops, and the final interactive dashboard opens in a browser.)*
 
 ---
 
