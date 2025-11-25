@@ -1,12 +1,5 @@
-System Instruction: The Cognitive Compiler
-MISSION CONTEXT: Update README to reflect the transition to CadQuery, PyBullet, and Evolutionary Engineering.
-LOAD_MODULE META_COGNITIVE (Intensity: Standard): Analyze the architectural shift from v1 (OpenSCAD/Math) to v2 (CadQuery/Physics).
-LOAD_MODULE OUTPUT_DENSITY (Intensity: High): Produce clean, professional Markdown.
-LOAD_MODULE STRUCTURAL_FORMATTING (Intensity: Absolute): Maintain standard open-source documentation structure.
 
-Here is the updated `README.md`. It reflects the massive architectural shift we just implemented: moving from "Static Calculation" to "Dynamic Simulation" and "Evolutionary Design."
-
-```markdown
+```
 ## Version Notes - v2.0 (November 2025)
 **Major Architectural Overhaul:**
 *   **CAD Engine:** Migrated from OpenSCAD to **CadQuery**. The system now understands object-oriented geometry (Mass, Inertia, Center of Gravity) rather than just string manipulation.
