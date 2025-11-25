@@ -1,5 +1,3 @@
-
-```
 ## Version Notes - v2.0 (November 2025)
 **Major Architectural Overhaul:**
 *   **CAD Engine:** Migrated from OpenSCAD to **CadQuery**. The system now understands object-oriented geometry (Mass, Inertia, Center of Gravity) rather than just string manipulation.
@@ -37,7 +35,7 @@ The core differentiator of OpenForge is the **Self-Healing Loop**. It does not j
 
 If a design fails the flight test (e.g., crashes during a loop-de-loop), the system catches the failure event. The Optimization Agent reasons about the physics (e.g., *"The drone was too heavy to recover from the dive; increasing propeller surface area"*), modifies the blueprint, and re-runs the simulation.
 
-```mermaid
+mermaid
 graph TD
     User[User Prompt] --> Architect(Architect Agent)
     Architect --> Specs[Parametric Specs]
