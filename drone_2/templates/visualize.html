@@ -1,0 +1,171 @@
+<!-- FILE: templates/visualize.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Architect Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        #3d-viewer { width: 100%; height: 500px; background: #1a202c; border-radius: 8px; }
+        .gauge-container { width: 100%; background: #e2e8f0; height: 24px; border-radius: 12px; position: relative; overflow: hidden; }
+        .gauge-bar { height: 100%; transition: width 1s ease-in-out; }
+        .marker { position: absolute; top: 0; bottom: 0; width: 2px; background: black; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-8">
+    
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- LEFT COL: 3D VIEW -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">📐 CAD Visualization</h2>
+            <div id="3d-viewer"></div>
+            <p class="mt-4 text-sm text-gray-500">Left Click to Rotate • Right Click to Pan • Scroll to Zoom</p>
+        </div>
+
+        <!-- RIGHT COL: PHYSICS & SPECS -->
+        <div class="space-y-8">
+            
+            <!-- Physics Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">🚀 Physics Simulation</h2>
+                
+                <!-- TWR Gauge -->
+                <div class="mb-6">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-bold">Thrust-to-Weight Ratio</span>
+                        <span class="text-2xl font-bold" id="twr-val">0.0</span>
+                    </div>
+                    <div class="gauge-container">
+                        <div id="twr-bar" class="gauge-bar bg-blue-500" style="width: 0%"></div>
+                        <div class="marker" style="left: 37%;" title="Min Flyable (1.5)"></div> <!-- 1.5 out of 4.0 scale -->
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0.0</span>
+                        <span>Flyable (1.5)</span>
+                        <span>Rocket (4.0+)</span>
+                    </div>
+                </div>
+
+                <!-- Hover Gauge -->
+                <div class="mb-6">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-bold">Hover Throttle</span>
+                        <span class="text-2xl font-bold" id="hover-val">0%</span>
+                    </div>
+                    <div class="gauge-container">
+                        <div id="hover-bar" class="gauge-bar bg-green-500" style="width: 0%"></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">Ideal is 20% - 40%</p>
+                </div>
+
+                <!-- Flight Time -->
+                <div class="flex items-center justify-between bg-gray-50 p-4 rounded">
+                    <span class="font-bold text-gray-600">Est. Flight Time</span>
+                    <span class="text-3xl font-bold text-blue-600" id="time-val">0 min</span>
+                </div>
+            </div>
+
+            <!-- Specs Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-2">📋 Build Specs</h2>
+                <ul class="space-y-2 text-sm" id="spec-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // INJECT DATA HERE
+        const STL_FILE_URL = "[[STL_PATH]]"; 
+        const PHYSICS_DATA = [[PHYSICS_JSON]];
+        const SPECS_DATA = [[SPECS_JSON]];
+
+        // --- 1. SETUP PHYSICS UI ---
+        document.getElementById('twr-val').innerText = PHYSICS_DATA.twr;
+        document.getElementById('hover-val').innerText = PHYSICS_DATA.hover_throttle_percent + "%";
+        document.getElementById('time-val').innerText = PHYSICS_DATA.est_flight_time_min + " min";
+
+        // TWR Bar (Scale 0 to 4)
+        let twrPct = (PHYSICS_DATA.twr / 4.0) * 100;
+        document.getElementById('twr-bar').style.width = Math.min(twrPct, 100) + "%";
+        
+        if(PHYSICS_DATA.twr < 1.5) document.getElementById('twr-bar').classList.replace('bg-blue-500', 'bg-red-500');
+        else if(PHYSICS_DATA.twr > 3.0) document.getElementById('twr-bar').classList.replace('bg-blue-500', 'bg-purple-500');
+
+        // Hover Bar
+        document.getElementById('hover-bar').style.width = Math.min(PHYSICS_DATA.hover_throttle_percent, 100) + "%";
+
+        // Specs List
+        const specList = document.getElementById('spec-list');
+        for (const [key, value] of Object.entries(SPECS_DATA)) {
+            let li = document.createElement('li');
+            li.className = "flex justify-between border-b pb-1";
+            li.innerHTML = `<span class='text-gray-500 capitalize'>${key.replace(/_/g, ' ')}</span> <span class='font-medium'>${value}</span>`;
+            specList.appendChild(li);
+        }
+
+        // --- 2. SETUP 3D VIEWER (Three.js) ---
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1a202c); // Dark Gray
+
+        // Camera
+        const camera = new THREE.PerspectiveCamera(45, document.getElementById('3d-viewer').clientWidth / 500, 0.1, 1000);
+        camera.position.set(0, 0, 150);
+
+        // Renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(document.getElementById('3d-viewer').clientWidth, 500);
+        document.getElementById('3d-viewer').appendChild(renderer.domElement);
+
+        // Controls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0x404040, 2);
+        scene.add(ambientLight);
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+        dirLight.position.set(0, 1, 1);
+        scene.add(dirLight);
+
+        // Load STL
+        const loader = new THREE.STLLoader();
+        loader.load(STL_FILE_URL, function (geometry) {
+            const material = new THREE.MeshPhongMaterial({ 
+                color: 0x00ff00, 
+                specular: 0x111111, 
+                shininess: 200 
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            
+            // Center the model
+            geometry.center();
+            mesh.rotation.x = -Math.PI / 2; // Rotate to flat
+            
+            scene.add(mesh);
+        }, undefined, function (error) {
+            console.error(error);
+        });
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            const width = document.getElementById('3d-viewer').clientWidth;
+            renderer.setSize(width, 500);
+            camera.aspect = width / 500;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
