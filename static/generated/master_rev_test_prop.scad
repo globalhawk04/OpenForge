@@ -1,1 +1,0 @@
-use </home/j/Desktop/viz_it/drone/cad/library.scad>; $fn=30; proxy_prop(88.89999999999999);
