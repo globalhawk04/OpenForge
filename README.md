@@ -1,3 +1,6 @@
+need to improve fusion service to grab all the specs for the parts as will as improve the prompts to be more specific in the parts it asks for.  there is also a lot of misclassification of parts that are add ons rather than fundemental to a build.  bacially we need to redo how the parts information is pulled so that we have the most amount of information possible.  we also need to loop the fabricate back so that when it finds a part is missing something a program is activated to either reclassify the part find needed information or add information or remove the part from the list.  what we have now is a good example of an ai that can think about needs search for them find info on them assemble and interconnect then test to see what works.  from a process standpoint it is good.  from a detailed standpoint of putting something togther we are not there yet.  this may be that we have pushed to boundries of open information and ai processing or we just have not cracked the correct prompt structure to gather enough info to construct an approved one.  either way it is a few more steps forward.
+
+happy thanksgiving!! 
 # OpenForge: Autonomous Supply Chain & Engineering Platform
 
 <div align="center">
