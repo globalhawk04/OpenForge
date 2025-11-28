@@ -21,18 +21,6 @@ Traditional AI tools operate on text. OpenForge operates on **Physics and Supply
 
 It transforms **Natural Language Intent** (e.g., "I need to inspect fences autonomously") into **Verified Engineering Reality** (BOMs, Blueprints, and Flight Simulations).
 
----
-
-## 🚧 State of the Union (Thanksgiving Update)
-
-We have moved beyond simple RAG (Retrieval-Augmented Generation) into **Agentic Reasoning**.
-
-*   **The Good:** The system can now "think" about requirements, search for specific hardware classes, autonomously browse websites to find hidden specs (via the Refinery Agent), assemble components in memory, and physically test them in a simulator. From a process standpoint, the architecture is sound.
-*   **The Challenge:** We are pushing the boundaries of unstructured data extraction. While our "Active Recon" agents are impressive, they still struggle with the "Dirty Data" problem of the open internet (misclassified parts, vague product pages).
-*   **Next Steps:** We are working on closing the loop—enabling the Fabricator to "reject and repair" data in real-time. If a part is missing a weight spec during assembly, the system should trigger a dedicated scraper to find just that one number.
-
----
-
 ## 🚀 Key Capabilities
 
 ### 1. The Arsenal (Active Supply Chain)
@@ -60,26 +48,47 @@ OpenForge separates Data Acquisition, Product Generation, and User Interaction i
 
 ```mermaid
 graph TD
-    subgraph Layer 1: The Active Supply Chain
-        A[Seed Agent] -->|Constraint Search| B[Raw Inventory];
-        B -->|Audit| C[Refinery Agent];
-        C -->|Click & Scrape| D[(Verified Arsenal)];
+    %% --- STYLING ---
+    classDef agent fill:#1a202c,stroke:#00ff88,stroke-width:2px,color:#fff,rx:5,ry:5;
+    classDef data fill:#2d3748,stroke:#F6E05E,stroke-width:2px,color:#fff,shape:cylinder;
+    classDef logic fill:#1a202c,stroke:#FF5555,stroke-width:2px,color:#fff,shape:rhombus;
+    classDef output fill:#1a202c,stroke:#3182ce,stroke-width:2px,color:#fff;
+    classDef cluster fill:#111,stroke:#444,stroke-width:1px,color:#ccc;
+
+    %% --- LAYER 1 ---
+    subgraph L1 [Layer 1: The Active Supply Chain]
+        direction TB
+        Seed[Seed Agent]:::agent -->|Broad Search| Raw[Raw Inventory]:::data
+        Raw -->|Audit Missing Specs| Refinery[Refinery Agent]:::agent
+        Refinery -->|Agentic Browsing / Clicks| Arsenal[(Verified Arsenal)]:::data
     end
 
-    subgraph Layer 2: The Factory
-        D --> E[Fabricator Script];
-        E -->|Deterministic Logic Gate| F{Compatibility Check};
-        F -->|Pass| G[AI Assembler];
-        F -->|Fail| H[Discard];
-        G -->|Generate| I[(Catalog JSON)];
+    %% --- LAYER 2 ---
+    subgraph L2 [Layer 2: The Factory]
+        direction TB
+        Arsenal --> Fabricator[Fabricator Script]:::agent
+        Fabricator -->|Classify & Bucket| Gate{Logic Gate}:::logic
+        Gate -- Physics Fail --> Discard[Discard]:::output
+        Gate -- Pass --> Builder[AI Assembler]:::agent
+        Builder -->|Mint SKU| Catalog[(Catalog JSON)]:::data
     end
 
-    subgraph Layer 3: The Interface
-        User -->|Natural Language| Architect;
-        Architect -->|Select Best Build| J[Digital Twin];
-        J --> K[Flight Simulator];
-        J --> L[Assembly Guide];
+    %% --- LAYER 3 ---
+    subgraph L3 [Layer 3: The Interface]
+        direction TB
+        User((User)):::output -->|Natural Language| Architect[Architect Agent]:::agent
+        Architect <-->|Query Matches| Catalog
+        Architect -->|Select Anchor| Twin[Digital Twin Generator]:::output
+        
+        Twin --> Sim[Three.js Flight Sim]:::output
+        Twin --> Docs[Assembly Guide]:::output
     end
+
+    %% --- CONNECTIONS BETWEEN LAYERS ---
+    %% (Implicitly handled by node placement, but enforced here for clarity)
+    style L1 fill:#0d1117,stroke:#333,stroke-width:2px
+    style L2 fill:#0d1117,stroke:#333,stroke-width:2px
+    style L3 fill:#0d1117,stroke:#333,stroke-width:2px
 ```
 </div>
 
