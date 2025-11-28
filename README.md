@@ -1,4 +1,4 @@
-Drone_3 works end to end however the physics video game simulator needs work as drones are difficult to control and graphics could be less blocky.  However the serires or programs will render 2 drone constuctions which is pretty good since we start from scratch with some basic user requriments and end up with enough parts with good specs through the fusion process to create unique drones.  
+Drone_3 works end to end however the physics video game simulator needs work as drones are difficult to control and graphics could be less blocky.  The program will render 2 drone constructions which is pretty good since we start from scratch with some basic user requriments and end up with enough parts with good specs through the fusion process to create unique drones.  
 
 # OpenForge: Neuro-Symbolic Manufacturing Engine
 
