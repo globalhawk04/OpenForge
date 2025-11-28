@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>OpenForge | Virtual Prototyping Lab</title>
+    
+    <!-- ENGINE LIBRARIES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Physics Engine -->
+    <script src="https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"></script>
+    <!-- Cinematic Environment -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+    <!-- Post Processing (Bloom) -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #050505; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; user-select: none; }
+        
+        /* HUD OVERLAY */
+        #hud { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .hud-panel { position: absolute; background: rgba(10, 15, 20, 0.85); border: 1px solid #334455; padding: 15px; border-radius: 4px; pointer-events: auto; backdrop-filter: blur(5px); box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        
+        /* TOP LEFT: Info */
+        #panel-info { top: 20px; left: 20px; color: #00ffcc; width: 300px; }
+        h1 { margin: 0 0 10px 0; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #00ffcc; padding-bottom: 5px; }
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px; color: #aabbcc; }
+        .stat-val { font-weight: bold; color: white; font-family: monospace; }
+        
+        /* BOTTOM CENTER: Telemetry */
+        #panel-telemetry { bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center; display: flex; gap: 20px; }
+        .gauge { display: flex; flex-direction: column; align-items: center; }
+        .gauge-val { font-size: 24px; font-weight: bold; color: #fff; font-family: monospace; text-shadow: 0 0 10px rgba(0,255,204,0.3); }
+        .gauge-label { font-size: 10px; color: #00ffcc; text-transform: uppercase; }
+
+        /* TOP RIGHT: Controls */
+        #panel-controls { top: 20px; right: 20px; text-align: right; }
+        .btn { background: transparent; border: 1px solid #00ffcc; color: #00ffcc; padding: 8px 16px; margin-left: 10px; cursor: pointer; font-size: 11px; text-transform: uppercase; transition: 0.2s; letter-spacing: 1px; }
+        .btn:hover { background: #00ffcc; color: black; box-shadow: 0 0 15px #00ffcc; }
+        
+        /* KEYBOARD HINTS */
+        #keys-hint { position: absolute; bottom: 20px; right: 20px; text-align: right; font-size: 10px; color: rgba(255,255,255,0.4); }
+        
+        #loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #00ffcc; font-size: 24px; font-weight: bold; letter-spacing: 4px; }
+    </style>
+</head>
+<body>
+
+    <div id="loading">INITIALIZING OPENFORGE SIMULATOR...</div>
+
+    <div id="hud" style="display:none;">
+        <div id="panel-info" class="hud-panel">
+            <h1>Mission Config</h1>
+            <div class="stat-row"><span>MISSION:</span><span class="stat-val" id="ui-mission">--</span></div>
+            <div class="stat-row"><span>FRAME TYPE:</span><span class="stat-val" id="ui-frame">CUSTOM X-FRAME</span></div>
+            <div class="stat-row"><span>MASS (AUW):</span><span class="stat-val" id="ui-mass">--</span></div>
+            <div class="stat-row"><span>MAX THRUST:</span><span class="stat-val" id="ui-thrust">--</span></div>
+            <div class="stat-row"><span>TWR:</span><span class="stat-val" id="ui-twr" style="color: #00ffcc;">--</span></div>
+            <br>
+            <div style="font-size: 10px; color: #667788;">VISUAL DNA VERIFIED</div>
+        </div>
+
+        <div id="panel-telemetry" class="hud-panel">
+            <div class="gauge">
+                <div class="gauge-val" id="tel-alt">0.0</div>
+                <div class="gauge-label">Alt (m)</div>
+            </div>
+            <div class="gauge">
+                <div class="gauge-val" id="tel-spd">0</div>
+                <div class="gauge-label">Speed (km/h)</div>
+            </div>
+            <div class="gauge">
+                <div class="gauge-val" id="tel-bat" style="color: #00ff00;">100%</div>
+                <div class="gauge-label">Battery</div>
+            </div>
+             <div class="gauge">
+                <div class="gauge-val" id="tel-thr">0%</div>
+                <div class="gauge-label">Throttle</div>
+            </div>
+        </div>
+
+        <div id="panel-controls" class="hud-panel" style="background:none; border:none;">
+            <button class="btn" onclick="sim.reset()">Respawn (R)</button>
+            <button class="btn" onclick="sim.toggleView()" id="btn-cam">View: Orbit</button>
+            <button class="btn" onclick="sim.toggleBlueprint()" id="btn-blue">Mode: Realistic</button>
+        </div>
+
+        <div id="keys-hint">
+            <b>SHIFT</b> Throttle Up &bull; <b>SPACE</b> Cut Motors<br>
+            <b>W/S</b> Pitch &bull; <b>A/D</b> Roll &bull; <b>Q/E</b> Yaw
+        </div>
+    </div>
+
+    <script>
+        // =====================================================================
+        // 1. DATA INJECTION (Python Backend Replaces These Placeholders)
+        // =====================================================================
+        const SCENE_GRAPH = [[SCENE_GRAPH]];     // Visuals (Dimensions, Materials)
+        const PHYSICS_CFG = [[PHYSICS_CONFIG]];  // Mass, Drag, Motor Force
+        const ENV_CONFIG = [[ENV_CONFIG]];       // Map Data
+        
+        // =====================================================================
+        // 2. PROCEDURAL TEXTURES (The "AAA" Look)
+        // =====================================================================
+        function generateCarbonFiberTexture() {
+            const size = 512;
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            // Fill Dark Grey
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, size, size);
+
+            // Draw Weave Pattern
+            ctx.fillStyle = '#262626'; // Subtle variation
+            const squareSize = 64;
+            for (let y = 0; y < size; y += squareSize) {
+                for (let x = 0; x < size; x += squareSize) {
+                    if ((x / squareSize + y / squareSize) % 2 === 0) {
+                        ctx.fillRect(x, y, squareSize, squareSize);
+                        // Horizontal micro-scratches
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(60,60,60,0.3)`;
+                        for(let i=0; i<8; i++) {
+                            const oy = y + Math.random() * squareSize;
+                            ctx.moveTo(x, oy); ctx.lineTo(x+squareSize, oy);
+                        }
+                        ctx.stroke();
+                    } else {
+                        // Vertical micro-scratches
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(40,40,40,0.3)`;
+                        for(let i=0; i<8; i++) {
+                            const ox = x + Math.random() * squareSize;
+                            ctx.moveTo(ox, y); ctx.lineTo(ox, y+squareSize);
+                        }
+                        ctx.stroke();
+                    }
+                }
+            }
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.wrapS = THREE.RepeatWrapping;
+            tex.wrapT = THREE.RepeatWrapping;
+            tex.repeat.set(2, 2);
+            return tex;
+        }
+
+        const CARBON_TEXTURE = generateCarbonFiberTexture();
+
+        // =====================================================================
+        // 3. MATERIAL SYSTEM (Visual DNA + PBR)
+        // =====================================================================
+        const MAT_CACHE = {};
+
+        function getMaterial(visuals, type) {
+            const key = JSON.stringify(visuals || type);
+            if(MAT_CACHE[key]) return MAT_CACHE[key];
+
+            const color = visuals?.primary_color_hex || (type === 'PROPELLER' ? '#00ccff' : '#333333');
+            const finish = visuals?.surface_finish || 'MATTE';
+            const matType = visuals?.material_type || type;
+
+            let mat;
+
+            // CARBON FIBER (REALISTIC)
+            if(matType === 'CARBON_FIBER' || type === 'FRAME_BODY' || type === 'FRAME_ARM') {
+                mat = new THREE.MeshStandardMaterial({
+                    color: 0xffffff, // White base so texture shows color
+                    map: CARBON_TEXTURE,
+                    roughness: 0.4, 
+                    metalness: 0.3,
+                    bumpMap: CARBON_TEXTURE,
+                    bumpScale: 0.002
+                });
+            }
+            // METALS (ANODIZED / HIGH POLISH)
+            else if(matType === 'ALUMINUM' || finish === 'ANODIZED' || type === 'MOTOR') {
+                mat = new THREE.MeshStandardMaterial({
+                    color: new THREE.Color(color), 
+                    roughness: 0.15, 
+                    metalness: 0.95,
+                    envMapIntensity: 1.0 
+                });
+            }
+            // PROPS (SEMI-TRANSPARENT PLASTIC)
+            else if(type === 'PROPELLER') {
+                mat = new THREE.MeshPhysicalMaterial({
+                    color: new THREE.Color(color),
+                    transmission: 0.6, opacity: 0.9, transparent: true,
+                    roughness: 0.2, metalness: 0.0, clearcoat: 1.0, clearcoatRoughness: 0.1
+                });
+            }
+            // PCB
+            else if(type === 'PCB_STACK') {
+                mat = new THREE.MeshStandardMaterial({
+                    color: 0x003300, roughness: 0.5, metalness: 0.4,
+                    emissive: 0x001100, emissiveIntensity: 0.2
+                });
+            }
+            else {
+                mat = new THREE.MeshStandardMaterial({ color: new THREE.Color(color), roughness: 0.5 });
+            }
+            
+            MAT_CACHE[key] = mat;
+            return mat;
+        }
+
+        // =====================================================================
+        // 4. ENGINE CORE
+        // =====================================================================
+        class Simulator {
+            constructor() {
+                this.container = document.body;
+                this.initGraphics();
+                this.initPhysics();
+                this.initInput();
+                this.buildLevel();
+                this.buildDrone();
+                
+                this.updateUI();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('hud').style.display = 'block';
+                
+                this.lastTime = 0;
+                this.camMode = 'orbit'; // 'orbit', 'chase', 'fpv'
+                this.isBlueprint = false;
+                
+                this.animate = this.animate.bind(this);
+                requestAnimationFrame(this.animate);
+            }
+
+            initGraphics() {
+                this.scene = new THREE.Scene();
+                this.scene.fog = new THREE.FogExp2(0x050510, 0.02);
+                
+                this.camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+                this.camera.position.set(2, 1.5, 2);
+
+                // HIGH PERFORMANCE RENDERER
+                this.renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.shadowMap.enabled = true;
+                this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+                
+                // CINEMATIC TONE MAPPING
+                this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+                this.renderer.toneMappingExposure = 1.0;
+                this.renderer.outputEncoding = THREE.sRGBEncoding;
+
+                this.container.appendChild(this.renderer.domElement);
+
+                // STUDIO LIGHTING ENVIRONMENT
+                const pmremGenerator = new THREE.PMREMGenerator(this.renderer);
+                this.scene.environment = pmremGenerator.fromScene(new THREE.RoomEnvironment(), 0.04).texture;
+
+                // MAIN SUN
+                const sun = new THREE.DirectionalLight(0xffffff, 3);
+                sun.position.set(20, 50, 20);
+                sun.castShadow = true;
+                sun.shadow.mapSize.width = 2048;
+                sun.shadow.mapSize.height = 2048;
+                sun.shadow.bias = -0.0001;
+                this.scene.add(sun);
+
+                // BLOOM (Post Processing)
+                this.composer = new THREE.EffectComposer(this.renderer);
+                this.composer.addPass(new THREE.RenderPass(this.scene, this.camera));
+                
+                this.bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+                this.bloomPass.threshold = 0.85; 
+                this.bloomPass.strength = 0.4;
+                this.bloomPass.radius = 0.5;
+                this.composer.addPass(this.bloomPass);
+
+                this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+                this.controls.enableDamping = true;
+                this.controls.maxPolarAngle = Math.PI / 2 - 0.05;
+            }
+
+            initPhysics() {
+                this.world = new CANNON.World();
+                this.world.gravity.set(0, -9.81, 0);
+                
+                const groundMat = new CANNON.Material();
+                const droneMat = new CANNON.Material();
+                const matContact = new CANNON.ContactMaterial(groundMat, droneMat, { friction: 0.5, restitution: 0.2 });
+                this.world.addContactMaterial(matContact);
+                
+                const groundBody = new CANNON.Body({ mass: 0, material: groundMat });
+                groundBody.addShape(new CANNON.Plane());
+                groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
+                this.world.addBody(groundBody);
+            }
+
+            buildLevel() {
+                // Ground Visual
+                const grid = new THREE.GridHelper(500, 100, 0x112233, 0x050505);
+                this.scene.add(grid);
+
+                // Env Config Logic
+                if(ENV_CONFIG.type === 'RANCH') {
+                    this.scene.background = new THREE.Color(0x87CEEB).multiplyScalar(0.05); // Dark Night
+                    // Trees
+                    const obs = ENV_CONFIG.obstacles.find(o => o.type === 'TREE');
+                    if(obs) this.spawnObstacles(obs.count, 'TREE', obs.spread_radius);
+                } else {
+                    this.scene.background = new THREE.Color(0x050510); // City
+                    // Buildings
+                    const obs = ENV_CONFIG.obstacles.find(o => o.type === 'BUILDING');
+                    if(obs) this.spawnObstacles(obs.count, 'BUILDING', obs.spread_radius);
+                }
+            }
+
+            spawnObstacles(count, type, radius) {
+                const geo = type === 'TREE' ? new THREE.ConeGeometry(1, 6, 8) : new THREE.BoxGeometry(4, 10, 4);
+                const mat = new THREE.MeshStandardMaterial({ 
+                    color: type === 'TREE' ? 0x113311 : 0x222222,
+                    roughness: 0.8
+                });
+                
+                for(let i=0; i<count; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const r = (Math.random() * radius) + 8;
+                    const x = Math.cos(angle) * r;
+                    const z = Math.sin(angle) * r;
+                    
+                    // Visual
+                    const mesh = new THREE.Mesh(geo, mat);
+                    const y = type === 'TREE' ? 3 : 5;
+                    mesh.position.set(x, y, z);
+                    mesh.castShadow = true;
+                    this.scene.add(mesh);
+                    
+                    // Physics
+                    const phyShape = new CANNON.Box(new CANNON.Vec3(type==='TREE'?0.5:2, type==='TREE'?3:5, type==='TREE'?0.5:2));
+                    const body = new CANNON.Body({ mass: 0 });
+                    body.addShape(phyShape);
+                    body.position.set(x, y, z);
+                    this.world.addBody(body);
+                }
+            }
+
+            buildDrone() {
+                this.droneGroup = new THREE.Group();
+                this.scene.add(this.droneGroup);
+                this.props = [];
+
+                // 1. VISUAL CONSTRUCTION (High Fidelity)
+                SCENE_GRAPH.components.forEach(comp => {
+                    let mesh;
+                    const mat = getMaterial(comp.visuals, comp.type);
+                    
+                    if(comp.type === 'FRAME_CORE') {
+                        const geo = new THREE.BoxGeometry(comp.dims.length/1000, comp.dims.thickness/1000, comp.dims.width/1000);
+                        mesh = new THREE.Mesh(geo, mat);
+                    } 
+                    else if(comp.type === 'FRAME_ARM') {
+                        const geo = new THREE.BoxGeometry(comp.dims.length/1000, comp.dims.thickness/1000, comp.dims.width/1000);
+                        geo.translate((comp.dims.length/1000)/2, 0, 0); // Pivot
+                        mesh = new THREE.Mesh(geo, mat);
+                        
+                        // Wireframe overlay for Blueprint mode
+                        const edges = new THREE.EdgesGeometry(geo);
+                        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x00ffcc, transparent: true, opacity: 0, depthTest: false }));
+                        line.visible = false;
+                        line.name = "blueprint_lines";
+                        mesh.add(line);
+                    }
+                    else if(comp.type === 'MOTOR') {
+                        const geo = new THREE.CylinderGeometry(comp.dims.radius/1000, comp.dims.radius/1000, comp.dims.height/1000, 32);
+                        mesh = new THREE.Mesh(geo, mat);
+                    }
+                    else if(comp.type === 'PROPELLER') {
+                        const geo = new THREE.BoxGeometry(comp.dims.radius*2/1000, 0.002, 0.015);
+                        mesh = new THREE.Mesh(geo, mat);
+                        this.props.push(mesh); 
+                    }
+                    else {
+                        const w = (comp.dims?.width || 20)/1000;
+                        const h = (comp.dims?.height || 20)/1000;
+                        const l = (comp.dims?.length || 20)/1000;
+                        mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, l), mat);
+                    }
+
+                    mesh.position.set(comp.pos[0]/1000, comp.pos[1]/1000, comp.pos[2]/1000);
+                    mesh.rotation.set(comp.rot[0], comp.rot[1], comp.rot[2]);
+                    mesh.castShadow = true;
+                    mesh.receiveShadow = true;
+                    this.droneGroup.add(mesh);
+                });
+
+                // 2. PHYSICS BODY CONSTRUCTION
+                const size = PHYSICS_CFG.collider_size_m;
+                const shape = new CANNON.Box(new CANNON.Vec3(size[0], size[1], size[2]));
+                
+                this.droneBody = new CANNON.Body({
+                    mass: PHYSICS_CFG.mass_kg,
+                    linearDamping: PHYSICS_CFG.dynamics.linear_damping,
+                    angularDamping: PHYSICS_CFG.dynamics.angular_damping
+                });
+                this.droneBody.addShape(shape);
+                this.droneBody.position.set(0, 0.5, 0);
+                this.world.addBody(this.droneBody);
+            }
+
+            initInput() {
+                this.input = { thrust: 0, pitch: 0, roll: 0, yaw: 0, active: false };
+                
+                window.addEventListener('keydown', (e) => {
+                    if(e.code === 'ShiftLeft') this.input.active = true;
+                    if(e.code === 'KeyW') this.input.pitch = 1;
+                    if(e.code === 'KeyS') this.input.pitch = -1;
+                    if(e.code === 'KeyA') this.input.roll = 1;
+                    if(e.code === 'KeyD') this.input.roll = -1;
+                    if(e.code === 'KeyQ') this.input.yaw = 1;
+                    if(e.code === 'KeyE') this.input.yaw = -1;
+                    if(e.code === 'KeyR') this.reset();
+                });
+                
+                window.addEventListener('keyup', (e) => {
+                    if(e.code === 'ShiftLeft') this.input.active = false;
+                    if(e.code === 'KeyW' || e.code === 'KeyS') this.input.pitch = 0;
+                    if(e.code === 'KeyA' || e.code === 'KeyD') this.input.roll = 0;
+                    if(e.code === 'KeyQ' || e.code === 'KeyE') this.input.yaw = 0;
+                });
+            }
+
+            applyPhysics() {
+                if(!this.droneBody) return;
+
+                // Physics Model
+                const maxForce = PHYSICS_CFG.motor_max_force_n * 4;
+                
+                let currentThrust = 0;
+                if(this.input.active) {
+                     currentThrust = maxForce * 0.75; // Cap at 75% for control
+                } else {
+                    currentThrust = 0;
+                }
+
+                // Apply Thrust
+                const forceVec = new CANNON.Vec3(0, currentThrust, 0);
+                const worldForce = this.droneBody.quaternion.vmult(forceVec);
+                this.droneBody.applyForce(worldForce, this.droneBody.position);
+
+                // Apply Torque
+                const torqueAmt = 1.0; 
+                const torque = new CANNON.Vec3(
+                    this.input.pitch * torqueAmt,
+                    this.input.yaw * torqueAmt,
+                    this.input.roll * torqueAmt
+                );
+                this.droneBody.applyLocalTorque(torque);
+                
+                // Prop Animation
+                const spinSpeed = this.input.active ? 1.5 : 0.1;
+                this.props.forEach(p => p.rotation.y += spinSpeed);
+                
+                // UI
+                const throttlePct = Math.round((currentThrust / maxForce) * 100);
+                document.getElementById('tel-thr').innerText = throttlePct + "%";
+            }
+
+            updateUI() {
+                document.getElementById('ui-mission').innerText = SCENE_GRAPH.environment.type;
+                document.getElementById('ui-frame').innerText = "CUSTOM X-FRAME"; 
+                document.getElementById('ui-mass').innerText = PHYSICS_CFG.meta.total_weight_g + "g";
+                document.getElementById('ui-thrust').innerText = PHYSICS_CFG.motor_max_force_n + "N/motor";
+                document.getElementById('ui-twr').innerText = PHYSICS_CFG.dynamics.twr;
+            }
+
+            reset() {
+                if(!this.droneBody) return;
+                this.droneBody.position.set(0, 0.5, 0);
+                this.droneBody.velocity.set(0, 0, 0);
+                this.droneBody.angularVelocity.set(0, 0, 0);
+                this.droneBody.quaternion.set(0, 0, 0, 1);
+            }
+
+            toggleView() {
+                const modes = ['orbit', 'chase'];
+                const idx = modes.indexOf(this.camMode);
+                this.camMode = modes[(idx + 1) % modes.length];
+                document.getElementById('btn-cam').innerText = "View: " + this.camMode.charAt(0).toUpperCase() + this.camMode.slice(1);
+            }
+            
+            toggleBlueprint() {
+                this.isBlueprint = !this.isBlueprint;
+                document.getElementById('btn-blue').innerText = this.isBlueprint ? "Mode: Blueprint" : "Mode: Realistic";
+                
+                this.droneGroup.traverse((child) => {
+                    if(child.isMesh) {
+                        // Toggle wireframe
+                        child.material.wireframe = this.isBlueprint;
+                        
+                        // Toggle secondary lines
+                        const lines = child.children.find(c => c.name === "blueprint_lines");
+                        if(lines) {
+                            lines.visible = this.isBlueprint;
+                            lines.material.opacity = this.isBlueprint ? 1 : 0;
+                        }
+                    }
+                });
+                
+                if(this.isBlueprint) {
+                    this.renderer.setClearColor(0x001133);
+                    this.bloomPass.strength = 1.5; 
+                } else {
+                    this.renderer.setClearColor(0x000000);
+                    this.bloomPass.strength = 0.4;
+                }
+            }
+
+            animate(time) {
+                requestAnimationFrame(this.animate);
+
+                this.world.step(1/60);
+                this.applyPhysics();
+
+                this.droneGroup.position.copy(this.droneBody.position);
+                this.droneGroup.quaternion.copy(this.droneBody.quaternion);
+
+                if(this.camMode === 'chase') {
+                    const offset = new THREE.Vector3(0, 1.5, -3).applyQuaternion(this.droneGroup.quaternion);
+                    const targetPos = this.droneGroup.position.clone().add(offset);
+                    this.camera.position.lerp(targetPos, 0.1);
+                    this.camera.lookAt(this.droneGroup.position);
+                } else {
+                    this.controls.update();
+                }
+
+                // Telemetry
+                const alt = Math.max(0, this.droneBody.position.y).toFixed(1);
+                const spd = this.droneBody.velocity.length().toFixed(1); 
+                document.getElementById('tel-alt').innerText = alt;
+                document.getElementById('tel-spd').innerText = Math.round(spd * 3.6);
+
+                this.composer.render();
+            }
+        }
+
+        // Start Engine
+        window.onload = () => {
+            window.sim = new Simulator();
+        };
+
+    </script>
+</body>
+</html>

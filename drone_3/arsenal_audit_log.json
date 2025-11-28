@@ -1,0 +1,2029 @@
+{
+  "events": [
+    {
+      "timestamp": "2025-11-28T10:00:01.829100",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Herd Counter",
+        "derived_constraints": {
+          "project_name": "The Herd Counter",
+          "topology": {
+            "class": "Long Range 7-inch",
+            "target_voltage": "6S",
+            "prop_size_inch": 7.0,
+            "radio_protocol": "ELRS 900MHz"
+          },
+          "technical_constraints": {
+            "frame_style": "Cruiser / Deadcat",
+            "min_arm_thickness_mm": 6.0,
+            "motor_stator_index": "2806.5 or larger",
+            "preferred_kv_range": "1100-1500",
+            "video_system_preference": "Digital HD (High Power)"
+          },
+          "reasoning_trace": "The mission requires long flight times to cover large areas while carrying a heavy, power-intensive payload (Dual Sensor, AI Computer). This immediately disqualifies smaller classes. A 7-inch platform on a 6S Li-Ion battery system is the optimal starting point for endurance and lift capacity. Low KV motors (~1300KV) paired with large props ensure maximum flight efficiency. A long-range 900MHz radio protocol is mandated by the telemetry requirement, and a cruiser-style frame is necessary to keep the large propellers out of the primary sensor's field of view during automated grid searches."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:00:28.462120",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Herd Counter",
+        "context": "{\"mission\": {\"mission_name\": \"The Herd Counter\", \"primary_goal\": \"Livestock Census & Location\", \"autonomy_level\": \"L3 (Grid Search with AI Identification)\", \"key_requirements\": [\"Dual Thermal/RGB Sensor\", \"AI Companion Computer\", \"Long-Range Telemetry\", \"Extended Flight Battery\"]}, \"constraints\": {\"frame_style\": \"Cruiser / Deadcat\", \"min_arm_thickness_mm\": 6.0, \"motor_stator_index\": \"2806.5 or larger\", \"preferred_kv_range\": \"1100-1500\", \"video_system_preference\": \"Digital HD (High Power)\"}, \"topology\": {\"class\": \"Long Range 7-inch\", \"target_voltage\": \"6S\", \"prop_size_inch\": 7.0, \"radio_protocol\": \"ELRS 900MHz\"}}",
+        "proposed_parts": {
+          "Frame_Kit": [
+            "iFlight Chimera7 Pro V2",
+            "HGLRC Rekon 7 Pro Long Range Frame Kit"
+          ],
+          "Motors": [
+            "iFlight XING2 2809 1250KV",
+            "BrotherHobby Avenger 2806.5 1300KV"
+          ],
+          "FC_Stack": [
+            "Holybro Kakute H7 v2 Stack (w/ Tekko32 F4 4in1 65A ESC)",
+            "SpeedyBee F7 V3 BL32 50A 30x30 Stack"
+          ],
+          "Companion_Computer": [
+            "NVIDIA Jetson Orin Nano Developer Kit",
+            "Raspberry Pi 5 (8GB) with Google Coral USB Accelerator"
+          ],
+          "Lidar_Module": [],
+          "GPS_Module": [
+            "Matek Systems M10Q-5883 GPS Module",
+            "Holybro M9N GPS"
+          ],
+          "Camera_Payload": [
+            "SIYI A8 Mini 4K 8MP AI Gimbal Camera (with Thermal)",
+            "Teledyne FLIR Hadron 640R"
+          ],
+          "Battery": [
+            "Custom 6S2P Molicel P42A 21700 8400mAh Li-Ion Pack",
+            "Auline 6S 4000mAh 21700 Li-Ion Pack"
+          ],
+          "Propellers": [
+            "HQProp Durable Prop 7X3.5X3 V2S",
+            "Gemfan 7037-3"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:00:46.042927",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Herd Counter",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Mavic 3T",
+            "Autel EVO II Dual 640T V3",
+            "DJI Matrice 30T"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:01:07.467559",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Herd Counter",
+        "input_list": [
+          "Frame_Kit: iFlight Chimera7 Pro V2",
+          "Frame_Kit: HGLRC Rekon 7 Pro Long Range Frame Kit",
+          "Motors: iFlight XING2 2809 1250KV",
+          "Motors: BrotherHobby Avenger 2806.5 1300KV",
+          "FC_Stack: Holybro Kakute H7 v2 Stack (w/ Tekko32 F4 4in1 65A ESC)",
+          "FC_Stack: SpeedyBee F7 V3 BL32 50A 30x30 Stack",
+          "Companion_Computer: NVIDIA Jetson Orin Nano Developer Kit",
+          "Companion_Computer: Raspberry Pi 5 (8GB) with Google Coral USB Accelerator",
+          "GPS_Module: Matek Systems M10Q-5883 GPS Module",
+          "GPS_Module: Holybro M9N GPS",
+          "Camera_Payload: SIYI A8 Mini 4K 8MP AI Gimbal Camera (with Thermal)",
+          "Camera_Payload: Teledyne FLIR Hadron 640R",
+          "Battery: Custom 6S2P Molicel P42A 21700 8400mAh Li-Ion Pack",
+          "Battery: Auline 6S 4000mAh 21700 Li-Ion Pack",
+          "Propellers: HQProp Durable Prop 7X3.5X3 V2S",
+          "Propellers: Gemfan 7037-3",
+          "Complete_Drone: DJI Mavic 3T",
+          "Complete_Drone: Autel EVO II Dual 640T V3",
+          "Complete_Drone: DJI Matrice 30T"
+        ],
+        "generated_queries": [
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "iFlight Chimera7 Pro V2",
+            "search_query": "iFlight Chimera7 Pro V2 frame kit specs dimensions"
+          },
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "HGLRC Rekon 7 Pro Long Range Frame Kit",
+            "search_query": "HGLRC Rekon 7 Pro Long Range frame specifications manual"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "iFlight XING2 2809 1250KV",
+            "search_query": "iFlight XING2 2809 1250KV motor datasheet thrust data"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "BrotherHobby Avenger 2806.5 1300KV",
+            "search_query": "BrotherHobby Avenger 2806.5 1300KV specs performance chart"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "Holybro Kakute H7 v2 Stack (w/ Tekko32 F4 4in1 65A ESC)",
+            "search_query": "Holybro Kakute H7 v2 Tekko32 F4 65A stack manual pinout"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "SpeedyBee F7 V3 BL32 50A 30x30 Stack",
+            "search_query": "SpeedyBee F7 V3 BL32 50A stack product page specs"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "NVIDIA Jetson Orin Nano Developer Kit",
+            "search_query": "NVIDIA Jetson Orin Nano Developer Kit technical specifications datasheet"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "Raspberry Pi 5 (8GB) with Google Coral USB Accelerator",
+            "search_query": "Raspberry Pi 5 8GB specs AND Google Coral USB Accelerator datasheet"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Matek Systems M10Q-5883 GPS Module",
+            "search_query": "Matek Systems M10Q-5883 GPS module specs pinout"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Holybro M9N GPS",
+            "search_query": "Holybro M9N GPS module specifications manual"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "SIYI A8 Mini 4K 8MP AI Gimbal Camera (with Thermal)",
+            "search_query": "SIYI A8 Mini 4K AI thermal gimbal camera datasheet"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "Teledyne FLIR Hadron 640R",
+            "search_query": "Teledyne FLIR Hadron 640R technical specifications datasheet"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Custom 6S2P Molicel P42A 21700 8400mAh Li-Ion Pack",
+            "search_query": "Molicel P42A 21700 cell datasheet discharge curve"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Auline 6S 4000mAh 21700 Li-Ion Pack",
+            "search_query": "Auline 6S 4000mAh 21700 Li-Ion pack specs weight"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "HQProp Durable Prop 7X3.5X3 V2S",
+            "search_query": "HQProp 7X3.5X3 V2S propeller specs thrust data"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "Gemfan 7037-3",
+            "search_query": "Gemfan 7037-3 propeller specifications"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Mavic 3T",
+            "search_query": "DJI Mavic 3T enterprise technical specifications"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Autel EVO II Dual 640T V3",
+            "search_query": "Autel EVO II Dual 640T V3 drone specs datasheet"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Matrice 30T",
+            "search_query": "DJI Matrice 30T technical specs product page"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:02:23.025424",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "iFlight Chimera7 Pro V2",
+        "url": "https://anubisrc.com/product/iflight-chimera7-pro-v2-frame-kit/",
+        "specs_found": {
+          "electronics_mount_mm": "30.5*30.5/25.5*25.5/20*20",
+          "motor_mount_mm": "16x16",
+          "wheelbase_mm": 327.0,
+          "max_prop_size_inch": 7.5,
+          "fpv_camera_width_mm": 20.0,
+          "arm_thickness_mm": 6.0,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:03:25.424770",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "HGLRC Rekon 7 Pro Long Range Frame Kit",
+        "url": "https://manuals.plus/asin/B0DL2LD45C",
+        "specs_found": {
+          "wheelbase_mm": 324.0,
+          "max_prop_size_inch": 7.0,
+          "electronics_mounting_patterns_mm": [
+            "20x20"
+          ],
+          "motor_mounting_pattern_mm": "16x16 / 19x19",
+          "arm_thickness_mm": 6.0,
+          "fpv_camera_mount_width_mm": "19x19 / 20x20",
+          "material": "3K Carbon Fiber",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:04:31.319308",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "iFlight XING2 2809 1250KV",
+        "url": "https://yourfpv.co.uk/product/iflight-xing2-2809-cinelifter-motor-1250kv/",
+        "specs_found": {
+          "mounting_bolt_pattern_mm": "19x19",
+          "stator_size": "2809",
+          "kv_rating": 1250,
+          "shaft_diameter_mm": 5.0,
+          "wire_gauge_awg": 18,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:05:18.206429",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "BrotherHobby Avenger 2806.5 1300KV",
+        "url": "https://intofpv.com/t-motor-size-for-longest-flight-time",
+        "specs_found": {
+          "mounting_pattern_mm": "16x16",
+          "kv_rating": 1900,
+          "stator_size": "2306",
+          "shaft_diameter_mm": 4.0,
+          "wire_gauge_awg": 20,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:06:35.973888",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Holybro Kakute H7 v2 Stack (w/ Tekko32 F4 4in1 65A ESC)",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:08:02.419959",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "SpeedyBee F7 V3 BL32 50A 30x30 Stack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:09:24.113785",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "NVIDIA Jetson Orin Nano Developer Kit",
+        "url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/hardware_spec.html",
+        "specs_found": {
+          "cpu_model": "Jetson Orin Nano",
+          "emmc_gb": 0.0,
+          "has_microsd_slot": true,
+          "csi_port_count": 2,
+          "has_gigabit_ethernet": true,
+          "usb3_port_count": 4,
+          "power_input_connector_type": "DC Barrel Jack (5.5mm x 2.5mm)",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:10:36.398561",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Raspberry Pi 5 (8GB) with Google Coral USB Accelerator",
+        "url": "https://www.raspberrypi.com/products/ai-hat/",
+        "specs_found": {
+          "cpu_model": "Broadcom BCM2712",
+          "csi_port_count": 2,
+          "has_gigabit_ethernet": true,
+          "usb_3_port_count": 2,
+          "usb_2_port_count": 2,
+          "power_input_connector_type": "USB-C",
+          "power_input_voltage_range": "5V",
+          "has_m2_slot": false,
+          "has_microsd_slot": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:11:42.434477",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Matek Systems M10Q-5883 GPS Module",
+        "url": "https://www.amazon.com/M10Q-5883-Compass-SAM-M10Q-QMC5883L-Magnetic/dp/B0BZ7VJKHV",
+        "specs_found": {
+          "gnss_chipset": "u-blox SAM-M10Q",
+          "has_magnetometer": true,
+          "magnetometer_chipset": "QMC5883L",
+          "interface_protocol": "UART / I2C",
+          "connector_pin_count": 6,
+          "antenna_size_mm": "15x15x4",
+          "has_saw_lna": true,
+          "has_backup_battery": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:12:52.307521",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro M9N GPS",
+        "url": "https://holybro.com/products/m9n-gps",
+        "specs_found": {
+          "gnss_chipset": "Ublox M10",
+          "has_magnetometer": true,
+          "magnetometer_chipset": "IST8310",
+          "antenna_type": "Ceramic Patch",
+          "antenna_size_mm": "25 x 25 x 4",
+          "connector_type": "JST-GH-10pin",
+          "input_voltage_v": "4.7-5.2",
+          "has_pps_led": false,
+          "has_fix_led": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:14:05.515531",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "SIYI A8 Mini 4K 8MP AI Gimbal Camera (with Thermal)",
+        "url": "https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera",
+        "specs_found": {
+          "weight_g": 95.0,
+          "video_output_type": "Ethernet",
+          "control_interface": "S.Bus/UART/UDP",
+          "sensor_model": "1/1.7\" Sony",
+          "max_resolution": "4K / 8MP",
+          "is_global_shutter": false,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:15:14.901655",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Teledyne FLIR Hadron 640R",
+        "url": "https://www.flircameras.com/product/hadron-640r-htm/",
+        "specs_found": {
+          "sensor_model": "Boson 640x512 & IMX586 64MP",
+          "interface_type": "Hirose DF40C-50DP-0.4V(51) (MIPI, USB, I2C)",
+          "lens_mount": "Integrated/Fixed",
+          "focal_length_mm": 13.6,
+          "input_voltage_v": "5",
+          "mounting_pattern_mm": "Screw mount to back plate (dimensions not provided)",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:16:02.824982",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Custom 6S2P Molicel P42A 21700 8400mAh Li-Ion Pack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:17:10.123065",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Auline 6S 4000mAh 21700 Li-Ion Pack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:18:06.402260",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "HQProp Durable Prop 7X3.5X3 V2S",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:19:17.946097",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Gemfan 7037-3",
+        "url": "https://www.getfpv.com/gemfan-cl-cinelifter-7037-3-blade-propeller-set-of-4-polycarbonate.html",
+        "specs_found": {
+          "diameter_inches": 7.0,
+          "pitch_inches": 3.7,
+          "blade_count": 3,
+          "hub_mount_type": "5mm Shaft",
+          "rotation": "CW & CCW",
+          "source": "text_inference_fallback",
+          "diameter_mm": 177.79999999999998
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:20:46.250354",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "DJI Mavic 3T",
+        "url": "https://www.dji.com/products/enterprise",
+        "specs_found": {
+          "frame_wheelbase_mm": 220.0,
+          "frame_propeller_size_inches": 5.1,
+          "motor_stator_size": "2207",
+          "motor_kv": 1950,
+          "recommended_lipo_cells": 6,
+          "battery_connector_type": "XT60",
+          "stack_mount_mm": "30x30",
+          "flight_controller_mcu": "STM32F722",
+          "video_system_type": "DJI O3",
+          "receiver_protocol": "ELRS",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:22:04.520764",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Autel EVO II Dual 640T V3",
+        "url": "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-drones/",
+        "specs_found": {
+          "frame_size_class_inches": 15.6,
+          "stack_mounting_mm": "20x20",
+          "fc_mcu": "STM32F427IIH6",
+          "video_system_type": "Proprietary Digital HD",
+          "vtx_antenna_connector": "MMCX",
+          "receiver_protocol": "Proprietary",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:23:32.983431",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "DJI Matrice 30T",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:23:57.806422",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Fence Rider",
+        "derived_constraints": {
+          "project_name": "The Fence Rider",
+          "topology": {
+            "class": "Industrial Inspection Hexacopter (13-inch+)",
+            "target_voltage": "12S",
+            "prop_size_inch": 13.0,
+            "radio_protocol": "ELRS 900MHz or Herelink"
+          },
+          "technical_constraints": {
+            "frame_style": "Heavy Lift Hexacopter (Carbon Tube Arms)",
+            "min_arm_thickness_mm": 25.0,
+            "motor_stator_index": "4108 or larger",
+            "preferred_kv_range": "300-450",
+            "video_system_preference": "Digital HD (for FPV monitoring, distinct from payload)"
+          },
+          "reasoning_trace": "The user's request is for an L4 autonomous industrial inspection platform. The specified payload of Lidar, High-Precision GPS, and a 4K Gimbaled Camera necessitates a heavy-lift class vehicle. To achieve reasonable flight times for 'fence line' inspection with this payload, high efficiency is paramount. This drives the topology towards larger propellers (13-inch+), high voltage (12S) to reduce current draw, and low KV motors (300-450 range). A hexacopter configuration is recommended for motor redundancy, which is critical for an autonomous platform carrying an expensive payload. The frame must be a robust carbon tube design to support the weight and minimize vibrations."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:24:25.526262",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Fence Rider",
+        "context": "{\"mission\": {\"mission_name\": \"The Fence Rider\", \"primary_goal\": \"Autonomous Fence Line Inspection\", \"autonomy_level\": \"L4 (Obstacle Avoidance + Waypoint Following)\", \"key_requirements\": [\"Lidar\", \"High-Precision GPS\", \"Optical Flow Sensor\", \"4K Gimbaled Camera\"]}, \"constraints\": {\"frame_style\": \"Heavy Lift Hexacopter (Carbon Tube Arms)\", \"min_arm_thickness_mm\": 25.0, \"motor_stator_index\": \"4108 or larger\", \"preferred_kv_range\": \"300-450\", \"video_system_preference\": \"Digital HD (for FPV monitoring, distinct from payload)\"}, \"topology\": {\"class\": \"Industrial Inspection Hexacopter (13-inch+)\", \"target_voltage\": \"12S\", \"prop_size_inch\": 13.0, \"radio_protocol\": \"ELRS 900MHz or Herelink\"}}",
+        "proposed_parts": {
+          "Frame_Kit": [
+            "Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+            "Gryphon Dynamics GD-28X Hexacopter Frame"
+          ],
+          "Motors": [
+            "T-Motor U7 V2.0 420KV",
+            "T-Motor Antigravity MN5008 KV340"
+          ],
+          "FC_Stack": [
+            "CubePilot Cube Orange+ with ADSB Carrier Board",
+            "Holybro Pixhawk 6X"
+          ],
+          "Companion_Computer": [
+            "NVIDIA Jetson AGX Orin Developer Kit",
+            "NVIDIA Jetson Xavier NX Developer Kit"
+          ],
+          "Lidar_Module": [
+            "Benewake TF03 Long Range LiDAR (180m)",
+            "Slamtec RPLIDAR S2 360\u00b0 Laser Scanner"
+          ],
+          "GPS_Module": [
+            "Holybro H-RTK F9P Helical (Rover + Base Station Kit)",
+            "CUAV C-RTK 9P GPS Module (Rover + Base Station Kit)"
+          ],
+          "Camera_Payload": [
+            "SIYI ZR30 4K 8MP 30x Hybrid Zoom Gimbal Camera",
+            "Gremsy T3V3 Gimbal with Sony a6400 Camera"
+          ],
+          "Battery": [
+            "Tattu 12S 22000mAh 25C LiPo Battery Pack",
+            "Gens Ace TATTU 12S 16000mAh 15C LiPo Battery Pack"
+          ],
+          "Propellers": [
+            "T-Motor Carbon Fiber Propeller 18x6.1",
+            "APC 17x5.5 MR Multi-Rotor Propeller"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:24:42.926392",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Fence Rider",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Matrice 350 RTK",
+            "Freefly Systems Astro",
+            "Inspired Flight IF1200A",
+            "DJI Matrice 30"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:25:07.935666",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Fence Rider",
+        "input_list": [
+          "Frame_Kit: Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+          "Frame_Kit: Gryphon Dynamics GD-28X Hexacopter Frame",
+          "Motors: T-Motor U7 V2.0 420KV",
+          "Motors: T-Motor Antigravity MN5008 KV340",
+          "FC_Stack: CubePilot Cube Orange+ with ADSB Carrier Board",
+          "FC_Stack: Holybro Pixhawk 6X",
+          "Companion_Computer: NVIDIA Jetson AGX Orin Developer Kit",
+          "Companion_Computer: NVIDIA Jetson Xavier NX Developer Kit",
+          "Lidar_Module: Benewake TF03 Long Range LiDAR (180m)",
+          "Lidar_Module: Slamtec RPLIDAR S2 360\u00b0 Laser Scanner",
+          "GPS_Module: Holybro H-RTK F9P Helical (Rover + Base Station Kit)",
+          "GPS_Module: CUAV C-RTK 9P GPS Module (Rover + Base Station Kit)",
+          "Camera_Payload: SIYI ZR30 4K 8MP 30x Hybrid Zoom Gimbal Camera",
+          "Camera_Payload: Gremsy T3V3 Gimbal with Sony a6400 Camera",
+          "Battery: Tattu 12S 22000mAh 25C LiPo Battery Pack",
+          "Battery: Gens Ace TATTU 12S 16000mAh 15C LiPo Battery Pack",
+          "Propellers: T-Motor Carbon Fiber Propeller 18x6.1",
+          "Propellers: APC 17x5.5 MR Multi-Rotor Propeller",
+          "Complete_Drone: DJI Matrice 350 RTK",
+          "Complete_Drone: Freefly Systems Astro",
+          "Complete_Drone: Inspired Flight IF1200A",
+          "Complete_Drone: DJI Matrice 30"
+        ],
+        "generated_queries": [
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+            "search_query": "\"Tarot T960 Folding Hexacopter Frame Kit\" manual specs"
+          },
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Gryphon Dynamics GD-28X Hexacopter Frame",
+            "search_query": "\"Gryphon Dynamics GD-28X\" datasheet specifications"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor U7 V2.0 420KV",
+            "search_query": "\"T-Motor U7 V2.0 420KV\" motor datasheet thrust data"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor Antigravity MN5008 KV340",
+            "search_query": "\"T-Motor Antigravity MN5008 KV340\" specs performance chart"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "CubePilot Cube Orange+ with ADSB Carrier Board",
+            "search_query": "\"CubePilot Cube Orange+ ADSB\" documentation pinout specs"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "Holybro Pixhawk 6X",
+            "search_query": "\"Holybro Pixhawk 6X\" technical specifications manual"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "NVIDIA Jetson AGX Orin Developer Kit",
+            "search_query": "\"NVIDIA Jetson AGX Orin Developer Kit\" datasheet product brief"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "NVIDIA Jetson Xavier NX Developer Kit",
+            "search_query": "\"NVIDIA Jetson Xavier NX Developer Kit\" technical specs"
+          },
+          {
+            "part_type": "Lidar_Module",
+            "model_name": "Benewake TF03 Long Range LiDAR (180m)",
+            "search_query": "\"Benewake TF03 LiDAR\" datasheet manual"
+          },
+          {
+            "part_type": "Lidar_Module",
+            "model_name": "Slamtec RPLIDAR S2 360\u00b0 Laser Scanner",
+            "search_query": "\"Slamtec RPLIDAR S2\" datasheet user manual"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Holybro H-RTK F9P Helical (Rover + Base Station Kit)",
+            "search_query": "\"Holybro H-RTK F9P Helical\" specs documentation"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "CUAV C-RTK 9P GPS Module (Rover + Base Station Kit)",
+            "search_query": "\"CUAV C-RTK 9P\" user manual datasheet"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "SIYI ZR30 4K 8MP 30x Hybrid Zoom Gimbal Camera",
+            "search_query": "\"SIYI ZR30 30x zoom gimbal\" specifications manual"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "Gremsy T3V3 Gimbal with Sony a6400 Camera",
+            "search_query": "\"Gremsy T3V3 for Sony a6400\" specs payload manual"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Tattu 12S 22000mAh 25C LiPo Battery Pack",
+            "search_query": "\"Tattu 12S 22000mAh 25C LiPo\" spec sheet dimensions weight"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Gens Ace TATTU 12S 16000mAh 15C LiPo Battery Pack",
+            "search_query": "\"Tattu 12S 16000mAh 15C\" datasheet specs"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "T-Motor Carbon Fiber Propeller 18x6.1",
+            "search_query": "\"T-Motor Carbon Fiber Propeller 18x6.1\" performance data specs"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "APC 17x5.5 MR Multi-Rotor Propeller",
+            "search_query": "\"APC 17x5.5 MR\" propeller datasheet thrust data"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Matrice 350 RTK",
+            "search_query": "\"DJI Matrice 350 RTK\" specs official product page"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Freefly Systems Astro",
+            "search_query": "\"Freefly Systems Astro\" technical specifications payload options"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Inspired Flight IF1200A",
+            "search_query": "\"Inspired Flight IF1200A\" drone spec sheet capabilities"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Matrice 30",
+            "search_query": "\"DJI Matrice 30\" specifications datasheet"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:25:32.464091",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:25:55.901707",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Gryphon Dynamics GD-28X Hexacopter Frame",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:27:18.482677",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "T-Motor U7 V2.0 420KV",
+        "url": "https://www.premium-modellbau.de/t-motor-mn3110-26-470kv-tiger-brushless-motor-3s-6s-80g-quad-hexa-multicopter",
+        "specs_found": {
+          "kv_rating": 470,
+          "stator_size": "31x10",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:28:27.909823",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "T-Motor Antigravity MN5008 KV340",
+        "url": "https://store.tmotor.com/product/mn5008-kv340-motor-antigravity-type.html",
+        "specs_found": {
+          "mounting_pattern_mm": "25mm / 30mm",
+          "stator_size": "50x8",
+          "kv_rating": 400,
+          "shaft_diameter_mm": 6.0,
+          "wire_gauge_awg": 18,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:28:54.637202",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CubePilot Cube Orange+ with ADSB Carrier Board",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:30:24.679723",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro Pixhawk 6X",
+        "url": "https://docs.px4.io/main/en/flight_controller/pixhawk6x",
+        "specs_found": {
+          "mounting_pattern_mm": "Not Specified",
+          "mcu": "STM32H753",
+          "gyro": "3x ICM-45686",
+          "has_barometer": true,
+          "input_voltage_range": "0-36V",
+          "uart_count": 8,
+          "has_dedicated_esc_connector": true,
+          "has_blackbox_flash": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:32:00.379818",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "NVIDIA Jetson AGX Orin Developer Kit",
+        "url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/",
+        "specs_found": {
+          "cpu_model": "12-core Arm Cortex-A78AE v8.2",
+          "ram_gb": 64.0,
+          "power_input_type": "DC Jack",
+          "csi_port_count": 1,
+          "has_gigabit_ethernet": true,
+          "usb_3_port_count": 6,
+          "has_microsd_slot": true,
+          "has_m2_slot": true,
+          "has_emmc": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:33:22.273496",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "NVIDIA Jetson Xavier NX Developer Kit",
+        "url": "https://jetsonhacks.com/2020/05/16/nvidia-jetson-xavier-nx-developer-kit/",
+        "specs_found": {
+          "processor_model": "NVIDIA Jetson Xavier NX",
+          "ram_gb": 8,
+          "csi_port_count": 2,
+          "has_gigabit_ethernet": true,
+          "usb_3_port_count": 4,
+          "power_input_type": "DC Barrel Jack",
+          "has_microsd_slot": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:34:12.677454",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Benewake TF03 Long Range LiDAR (180m)",
+        "url": "https://manuals.plus/m/7eaea0930bea51f0b8680e67abb6d7ceac7b322e30b5c4e7895270f6bd4c7401",
+        "specs_found": {
+          "model_name": "TFS20-L",
+          "interface_type": "UART / I2C",
+          "connector_type": "WF08006-01207 (0.8mm pitch, 6-pin)",
+          "input_voltage_v": "3.3",
+          "max_range_m": 20.0,
+          "mounting_pattern_mm": "13.0",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:34:59.205892",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Slamtec RPLIDAR S2 360\u00b0 Laser Scanner",
+        "url": "https://manuals.plus/slamtec/rplidar-s2-low-cost-360-degree-laser-range-scanner-manual",
+        "specs_found": {
+          "model_name": "RPLIDAR S2",
+          "interface_protocol": "UART",
+          "input_voltage_v": 5.0,
+          "max_range_m": 30.0,
+          "mounting_pattern_mm": "29x37",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:36:20.610823",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro H-RTK F9P Helical (Rover + Base Station Kit)",
+        "url": "https://docs.px4.io/main/en/gps_compass/rtk_gps",
+        "specs_found": {
+          "gnss_chipset": "u-blox ZED-F9P",
+          "has_magnetometer": true,
+          "magnetometer_chipset": "RM3100",
+          "interface_protocols": [
+            "DroneCAN",
+            "UART"
+          ],
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:37:24.389112",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "CUAV C-RTK 9P GPS Module (Rover + Base Station Kit)",
+        "url": "https://www.worldronemarket.com/product/cuav-c-rtk-9ps-gnss-module/",
+        "specs_found": {
+          "gnss_receiver_model": "ZED-F9P",
+          "has_compass": true,
+          "compass_model": "IST8310",
+          "antenna_type": "MMCX",
+          "connector_type": "JST-GH",
+          "pin_count": 10,
+          "input_voltage_v": 5.0,
+          "protocols": [
+            "NMEA",
+            "UBX binary",
+            "RTCM 3.x"
+          ],
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:38:32.216341",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "SIYI ZR30 4K 8MP 30x Hybrid Zoom Gimbal Camera",
+        "url": "https://www.motionew.com/shop/gimbal-and-payload/siyi-zr30-4k-8mp-ultra-hd-30x-optical-gimbal-camera-hdr-starlight-night-vision-3-axis-stabilizer-uav-ugv-usv-pod-payload-for-drone-surveillance-inspection/",
+        "specs_found": {
+          "input_voltage_v": "11 ~ 25.2",
+          "video_output_ports": [
+            "Ethernet",
+            "Micro-HDMI"
+          ],
+          "control_interfaces": [
+            "S.Bus",
+            "UART",
+            "Ethernet"
+          ],
+          "has_microsd_slot": true,
+          "sensor_model": "1/2.7 Inch Sony CMOS",
+          "max_video_resolution": "4096x2160 @ 25fps",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:38:59.945604",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Gremsy T3V3 Gimbal with Sony a6400 Camera",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:39:24.811476",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Tattu 12S 22000mAh 25C LiPo Battery Pack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:39:43.448212",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Gens Ace TATTU 12S 16000mAh 15C LiPo Battery Pack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:40:03.802545",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor Carbon Fiber Propeller 18x6.1",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:40:24.715774",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "APC 17x5.5 MR Multi-Rotor Propeller",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:41:40.621728",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "DJI Matrice 350 RTK",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:42:48.693011",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Freefly Systems Astro",
+        "url": "https://grescouas.com/item/950-00158",
+        "specs_found": {
+          "video_system_type": "Digital",
+          "receiver_protocol": "Herelink",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:44:14.012518",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Inspired Flight IF1200A",
+        "url": "https://www.floridadronesupply.com/products/inspired-flight-if1200a-hexacopter-with-blue-herelink-controller-certified-blue-uas",
+        "specs_found": {
+          "frame_class_inch": 47.2,
+          "fc_usb_type": "USB-C",
+          "video_system_type": "Herelink Digital HD",
+          "has_gps": true,
+          "has_compass": true,
+          "battery_cell_count": 12,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:45:20.305257",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "DJI Matrice 30",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:45:42.587284",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Coyote Chaser",
+        "derived_constraints": {
+          "project_name": "The Coyote Chaser",
+          "topology": {
+            "class": "Heavy 9-inch Interceptor (X8)",
+            "target_voltage": "12S",
+            "prop_size_inch": 9.0,
+            "radio_protocol": "ELRS 2.4GHz"
+          },
+          "technical_constraints": {
+            "frame_style": "X8 Cinelifter/Bus",
+            "min_arm_thickness_mm": 8.0,
+            "motor_stator_index": "3110 or larger",
+            "preferred_kv_range": "700-900",
+            "video_system_preference": "High-Bandwidth Digital with Thermal/NV Input"
+          },
+          "reasoning_trace": "The combination of a heavy, gimbaled night vision payload with acoustic/visual deterrents, plus the requirement for high-performance 'chasing' capability, necessitates a large, powerful platform. A 9-inch X8 configuration on 12S provides the required thrust, redundancy, stability, and payload capacity. The large stator motors (3110+) and thick arms (8mm+) are required to handle the immense torque and all-up-weight while maintaining aggressive flight characteristics. A high-bandwidth digital video system is essential for piloting and target locking with a specialized thermal/NV camera feed."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:46:12.386771",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Coyote Chaser",
+        "context": "{\"mission\": {\"mission_name\": \"The Coyote Chaser\", \"primary_goal\": \"Nocturnal Predator Deterrence\", \"autonomy_level\": \"L2 (Human-Piloted with Target Lock)\", \"key_requirements\": [\"Gimbaled Night Vision Camera\", \"High-Performance Motors\", \"Acoustic Deterrent\", \"LED Spotlight\"]}, \"constraints\": {\"frame_style\": \"X8 Cinelifter/Bus\", \"min_arm_thickness_mm\": 8.0, \"motor_stator_index\": \"3110 or larger\", \"preferred_kv_range\": \"700-900\", \"video_system_preference\": \"High-Bandwidth Digital with Thermal/NV Input\"}, \"topology\": {\"class\": \"Heavy 9-inch Interceptor (X8)\", \"target_voltage\": \"12S\", \"prop_size_inch\": 9.0, \"radio_protocol\": \"ELRS 2.4GHz\"}}",
+        "proposed_parts": {
+          "Frame_Kit": [
+            "Siccario X8 V2 Cinelifter Frame",
+            "Vulcan UAV Black Widow X8 (9-inch configuration)"
+          ],
+          "Motors": [
+            "T-Motor P3110 700KV",
+            "RCINPOWER WASP MAJOR W35 3510 700KV"
+          ],
+          "FC_Stack": [
+            "Holybro Pixhawk 6X Pro Flight Controller",
+            "CUAV X7+ Pro Core Flight Controller"
+          ],
+          "Companion_Computer": [
+            "NVIDIA Jetson Orin Nano Developer Kit",
+            "NVIDIA Jetson Xavier NX Developer Kit"
+          ],
+          "Lidar_Module": [],
+          "GPS_Module": [
+            "CUAV NEO 3 Pro CAN GPS",
+            "Holybro M10 GPS"
+          ],
+          "Camera_Payload": [
+            "SIYI ZR10 2K QHD Gimbal Camera with 10x Optical Zoom & Starlight Night Vision",
+            "Custom: Gremsy T3V3 Gimbal with FLIR Hadron 640R"
+          ],
+          "Battery": [
+            "CNHL Black Series 12S 5000mAh 90C",
+            "2x Tattu R-Line 6S 5200mAh 150C (run in series for 12S)"
+          ],
+          "Propellers": [
+            "HQProp MacroQuad 9X5X3 Tri-Blade",
+            "T-Motor Carbon Fiber 9.5x6.5 Propeller"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:46:26.829482",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Coyote Chaser",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Mavic 3T",
+            "Autel EVO II Dual 640T",
+            "DJI Matrice 30T",
+            "DJI Mavic 2 Enterprise Advanced"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:46:56.410247",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Coyote Chaser",
+        "input_list": [
+          "Frame_Kit: Siccario X8 V2 Cinelifter Frame",
+          "Frame_Kit: Vulcan UAV Black Widow X8 (9-inch configuration)",
+          "Motors: T-Motor P3110 700KV",
+          "Motors: RCINPOWER WASP MAJOR W35 3510 700KV",
+          "FC_Stack: Holybro Pixhawk 6X Pro Flight Controller",
+          "FC_Stack: CUAV X7+ Pro Core Flight Controller",
+          "Companion_Computer: NVIDIA Jetson Orin Nano Developer Kit",
+          "Companion_Computer: NVIDIA Jetson Xavier NX Developer Kit",
+          "GPS_Module: CUAV NEO 3 Pro CAN GPS",
+          "GPS_Module: Holybro M10 GPS",
+          "Camera_Payload: SIYI ZR10 2K QHD Gimbal Camera with 10x Optical Zoom & Starlight Night Vision",
+          "Camera_Payload: Custom: Gremsy T3V3 Gimbal with FLIR Hadron 640R",
+          "Battery: CNHL Black Series 12S 5000mAh 90C",
+          "Battery: 2x Tattu R-Line 6S 5200mAh 150C (run in series for 12S)",
+          "Propellers: HQProp MacroQuad 9X5X3 Tri-Blade",
+          "Propellers: T-Motor Carbon Fiber 9.5x6.5 Propeller",
+          "Complete_Drone: DJI Mavic 3T",
+          "Complete_Drone: Autel EVO II Dual 640T",
+          "Complete_Drone: DJI Matrice 30T",
+          "Complete_Drone: DJI Mavic 2 Enterprise Advanced"
+        ],
+        "generated_queries": [
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Siccario X8 V2 Cinelifter Frame",
+            "search_query": "Siccario X8 V2 Cinelifter Frame specifications dimensions"
+          },
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Vulcan UAV Black Widow X8 (9-inch configuration)",
+            "search_query": "Vulcan UAV Black Widow X8 9-inch frame kit specs"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor P3110 700KV",
+            "search_query": "T-Motor P3110 700KV motor specifications thrust chart"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "RCINPOWER WASP MAJOR W35 3510 700KV",
+            "search_query": "RCINPOWER WASP MAJOR W35 3510 700KV motor datasheet"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "Holybro Pixhawk 6X Pro Flight Controller",
+            "search_query": "Holybro Pixhawk 6X Pro flight controller technical specifications"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "CUAV X7+ Pro Core Flight Controller",
+            "search_query": "CUAV X7+ Pro Core flight controller datasheet manual"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "NVIDIA Jetson Orin Nano Developer Kit",
+            "search_query": "NVIDIA Jetson Orin Nano Developer Kit datasheet specs"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "NVIDIA Jetson Xavier NX Developer Kit",
+            "search_query": "NVIDIA Jetson Xavier NX Developer Kit technical specifications"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "CUAV NEO 3 Pro CAN GPS",
+            "search_query": "CUAV NEO 3 Pro CAN GPS module datasheet pinout"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Holybro M10 GPS",
+            "search_query": "Holybro M10 GPS technical specifications"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "SIYI ZR10 2K QHD Gimbal Camera with 10x Optical Zoom & Starlight Night Vision",
+            "search_query": "SIYI ZR10 gimbal camera 10x zoom specs datasheet"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "Custom: Gremsy T3V3 Gimbal with FLIR Hadron 640R",
+            "search_query": "Gremsy T3V3 gimbal FLIR Hadron 640R integration specs"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "CNHL Black Series 12S 5000mAh 90C",
+            "search_query": "CNHL Black Series 12S 5000mAh 90C specifications weight"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Tattu R-Line 6S 5200mAh 150C",
+            "search_query": "Tattu R-Line 6S 5200mAh 150C LiPo battery specs dimensions"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "HQProp MacroQuad 9X5X3 Tri-Blade",
+            "search_query": "HQProp MacroQuad 9X5X3 propeller performance data"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "T-Motor Carbon Fiber 9.5x6.5 Propeller",
+            "search_query": "T-Motor Carbon Fiber 9.5x6.5 propeller thrust data specs"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Mavic 3T",
+            "search_query": "DJI Mavic 3T technical specifications"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Autel EVO II Dual 640T",
+            "search_query": "Autel EVO II Dual 640T spec sheet"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Matrice 30T",
+            "search_query": "DJI Matrice 30T datasheet specifications"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Mavic 2 Enterprise Advanced",
+            "search_query": "DJI Mavic 2 Enterprise Advanced specs page"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:48:17.020077",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Siccario X8 V2 Cinelifter Frame",
+        "url": "https://rrfpv.com/RR-Alligator-x8-12s-v2-BNF-p463794255",
+        "specs_found": {
+          "wheelbase_mm": 480.0,
+          "max_prop_size_inch": 10.0,
+          "stack_mount_patterns_mm": [
+            "30.5x30.5",
+            "20x20"
+          ],
+          "motor_mount_pattern_mm": "19x19 / 16x16",
+          "fpv_camera_width_mm": 19.0,
+          "arm_thickness_mm": 8.0,
+          "rear_mount_patterns_mm": [
+            "30.5x30.5",
+            "20x20"
+          ],
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:49:13.131423",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Vulcan UAV Black Widow X8 (9-inch configuration)",
+        "url": "https://www.computeralliance.com.au/partsText.aspx",
+        "specs_found": {
+          "wheelbase_mm": 225.0,
+          "max_prop_size_inch": 5.0,
+          "fc_mounting_patterns_mm": [
+            "30.5x30.5",
+            "20x20"
+          ],
+          "motor_mounting_pattern_mm": "16x16",
+          "camera_mount_width_mm": 20.0,
+          "arm_thickness_mm": 5.0,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:49:35.147025",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor P3110 700KV",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:49:58.771972",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "RCINPOWER WASP MAJOR W35 3510 700KV",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:51:24.504004",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro Pixhawk 6X Pro Flight Controller",
+        "url": "https://holybro.com/products/pixhawk-jetson-baseboard",
+        "specs_found": {
+          "mounting_mm": "N/A (Case Mount)",
+          "mcu": "STM32H753IIK6",
+          "gyro": "ICM-42688-P",
+          "has_barometer": true,
+          "uart_count": 8,
+          "input_voltage_lipocells": "4S-12S (via Power Module)",
+          "usb_type": "USB-C",
+          "target_firmware": "PX4 / ArduPilot",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:52:29.036880",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CUAV X7+ Pro Core Flight Controller",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:53:35.269330",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "NVIDIA Jetson Orin Nano Developer Kit",
+        "url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/hardware_spec.html",
+        "specs_found": {
+          "cpu_model": "NVIDIA Jetson Orin Nano",
+          "csi_port_count": 2,
+          "has_gigabit_ethernet": true,
+          "usb3_port_count": 4,
+          "power_connector_type": "DC Jack (5.5mm x 2.5mm)",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:55:01.474267",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "NVIDIA Jetson Xavier NX Developer Kit",
+        "url": "https://www.nvidia.com/en-in/autonomous-machines/embedded-systems/jetson-xavier-nx/",
+        "specs_found": {
+          "cpu_model": "6-core NVIDIA Carmel ARM v8.2 64-bit",
+          "ram_gb": 16.0,
+          "csi_port_count": 2,
+          "has_gigabit_ethernet": true,
+          "usb_3_port_count": 4,
+          "has_microsd_slot": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:55:54.552339",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "CUAV NEO 3 Pro CAN GPS",
+        "url": "https://doc.cuav.net/gps/neo-series-gnss/en/neo-3-pro.html",
+        "specs_found": {
+          "gnss_chipset": "UBLOX NEO M9N",
+          "has_compass": true,
+          "compass_chipset": "RM3100",
+          "connector_type": "GH1.25-4P",
+          "pin_count": 4,
+          "pinout_labels": [
+            "VCC",
+            "CAN_L",
+            "CAN_H",
+            "GND"
+          ],
+          "antenna_dimensions_mm": "40x40",
+          "input_voltage": "4.7-5.2V",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:56:53.354099",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro M10 GPS",
+        "url": "https://holybro.com/products/m10-gps",
+        "specs_found": {
+          "gnss_chip_model": "Ublox M10",
+          "has_magnetometer": true,
+          "magnetometer_chip_model": "IST8310",
+          "antenna_size_mm": "25x25",
+          "connector_type": "Molex 1.25mm",
+          "connector_pin_count": 6,
+          "interface_protocol": "UART",
+          "input_voltage": "4.7-5.2V",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:57:53.714199",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "SIYI ZR10 2K QHD Gimbal Camera with 10x Optical Zoom & Starlight Night Vision",
+        "url": "https://www.worldronemarket.com/product/siyi-zr10-30x-zoom-camera-gimbal/",
+        "specs_found": {
+          "sensor_model": "SIYI ZR10",
+          "data_interface": "Ethernet",
+          "lens_mount": "Integrated",
+          "mounting_pattern_mm": "Not specified in provided sources",
+          "input_voltage": "11-25.2V",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:59:00.277450",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Custom: Gremsy T3V3 Gimbal with FLIR Hadron 640R",
+        "url": "https://gremsy.com/gremsy-introduces-g-hadron-solution-for-drone-integrators",
+        "specs_found": {
+          "form_factor_width_mm": 63.0,
+          "connector_type": "USB 2.0, UART, Sbus",
+          "video_signal_standard": "MIPI CSI-2",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T10:59:58.256561",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CNHL Black Series 12S 5000mAh 90C",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:01:08.786735",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Tattu R-Line 6S 5200mAh 150C",
+        "url": "https://genstattu.com/tattu-r-line-version-5-0-1200mah-6s-150c-22-2v-lipo-battery-pack-with-xt60-plug/",
+        "specs_found": {
+          "capacity_mah": 1200,
+          "cell_count_s": 6,
+          "voltage_v": 22.2,
+          "c_rating": "150C / 260C Burst",
+          "connector_type": "XT60U",
+          "balance_connector_pins": 7,
+          "weight_g": 197.0,
+          "dimensions_mm": {
+            "length": 78.0,
+            "width": 40.0,
+            "height": 34.0
+          },
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:01:56.532232",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "HQProp MacroQuad 9X5X3 Tri-Blade",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:02:40.664302",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor Carbon Fiber 9.5x6.5 Propeller",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:03:46.816906",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "DJI Mavic 3T",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:04:55.661862",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Autel EVO II Dual 640T",
+        "url": "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-drones/",
+        "specs_found": {
+          "motor_stator_size": "2207",
+          "motor_kv": 1950,
+          "main_power_connector": "XT60",
+          "recommended_cell_count_s": "4S-6S",
+          "propeller_diameter_inches": 5.1,
+          "propeller_pitch_inches": 4.0,
+          "propeller_blade_count": 3,
+          "vtx_antenna_connector": "MMCX",
+          "fc_mount_pattern_mm": "30.5x30.5",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:05:52.664405",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "DJI Matrice 30T",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:06:58.985578",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "DJI Mavic 2 Enterprise Advanced",
+        "url": "https://www.dji.com/support/product/mavic-2-enterprise-advanced",
+        "specs_found": {
+          "drone_class": "Industrial",
+          "primary_connector": "Proprietary",
+          "has_gps": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:07:19.579166",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Surveyor",
+        "derived_constraints": {
+          "project_name": "The Surveyor",
+          "topology": {
+            "class": "VTOL Fixed-Wing Surveyor",
+            "target_voltage": "12S",
+            "prop_size_inch": 13.0,
+            "radio_protocol": "900MHz Datalink (e.g., SiK Telemetry Radio)"
+          },
+          "technical_constraints": {
+            "frame_style": "VTOL Fixed-Wing (Composite)",
+            "min_arm_thickness_mm": null,
+            "motor_stator_index": "Vertical: 4114 or larger, Forward: 5010 or larger",
+            "preferred_kv_range": "Vertical: ~320KV, Forward: ~280KV",
+            "video_system_preference": "N/A (Primary sensor is mapping payload)"
+          },
+          "reasoning_trace": "The user request specifies a VTOL airframe for high-precision mapping with a significant payload (RTK GPS, mapping camera, multispectral sensor). This dictates an industrial-grade, fixed-wing platform, not a conventional multirotor. The heavy payload and need for long endurance for 'Ranch Mapping' requires a high-voltage (12S) power system for efficiency and large, specialized motors for both vertical lift and forward cruise. The system's class is 'VTOL Fixed-Wing Surveyor'. Autonomous grid flight necessitates a robust, long-range datalink over a standard RC protocol. FPV video is secondary to the primary data-collecting payload."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:07:47.022093",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Surveyor",
+        "context": "{\"mission\": {\"mission_name\": \"The Surveyor\", \"primary_goal\": \"High-Precision Ranch Mapping\", \"autonomy_level\": \"L5 (Fully Autonomous Grid Flight)\", \"key_requirements\": [\"RTK GPS Module\", \"High-Resolution Mapping Camera\", \"Multispectral Sensor\", \"VTOL Airframe\"]}, \"constraints\": {\"frame_style\": \"VTOL Fixed-Wing (Composite)\", \"min_arm_thickness_mm\": null, \"motor_stator_index\": \"Vertical: 4114 or larger, Forward: 5010 or larger\", \"preferred_kv_range\": \"Vertical: ~320KV, Forward: ~280KV\", \"video_system_preference\": \"N/A (Primary sensor is mapping payload)\"}, \"topology\": {\"class\": \"VTOL Fixed-Wing Surveyor\", \"target_voltage\": \"12S\", \"prop_size_inch\": 13.0, \"radio_protocol\": \"900MHz Datalink (e.g., SiK Telemetry Radio)\"}}",
+        "proposed_parts": {
+          "Frame_Kit": [
+            "MFE Fighter 2400mm VTOL",
+            "Foxtech Nimbus Pro VTOL Mapping Drone"
+          ],
+          "Motors": [
+            "Vertical: Sunnysky X4112S 320KV",
+            "Forward: T-Motor U7 V2.0 280KV",
+            "Vertical: T-Motor Antigravity 4006 380KV",
+            "Forward: Sunnysky X5010S 280KV"
+          ],
+          "FC_Stack": [
+            "CubePilot Cube Orange+ with ADSB Carrier Board",
+            "Holybro Pixhawk 6X Autopilot"
+          ],
+          "Companion_Computer": [
+            "NVIDIA Jetson Xavier NX Developer Kit",
+            "Raspberry Pi 4 Model B (8GB)"
+          ],
+          "Lidar_Module": [],
+          "GPS_Module": [
+            "Holybro H-RTK F9P Rover",
+            "CubePilot Here3+ GPS"
+          ],
+          "Camera_Payload": [
+            "Sony a7R IV (Mapping)",
+            "MicaSense RedEdge-P (Multispectral)"
+          ],
+          "Battery": [
+            "Tattu 12S 22000mAh 25C LiPo",
+            "Gens Ace Tattu 12S 16000mAh 15C LiPo"
+          ],
+          "Propellers": [
+            "Vertical: T-Motor Carbon Fiber 13x4.4",
+            "Forward: APC 16x8 Thin Electric Propeller"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:07:59.720115",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Surveyor",
+        "found_drones": {
+          "Complete_Drone": [
+            "WingtraOne GEN II",
+            "Quantum-Systems Trinity F90+",
+            "Autel Dragonfish Pro"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:08:23.091738",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Surveyor",
+        "input_list": [
+          "Frame_Kit: MFE Fighter 2400mm VTOL",
+          "Frame_Kit: Foxtech Nimbus Pro VTOL Mapping Drone",
+          "Motors: Vertical: Sunnysky X4112S 320KV",
+          "Motors: Forward: T-Motor U7 V2.0 280KV",
+          "Motors: Vertical: T-Motor Antigravity 4006 380KV",
+          "Motors: Forward: Sunnysky X5010S 280KV",
+          "FC_Stack: CubePilot Cube Orange+ with ADSB Carrier Board",
+          "FC_Stack: Holybro Pixhawk 6X Autopilot",
+          "Companion_Computer: NVIDIA Jetson Xavier NX Developer Kit",
+          "Companion_Computer: Raspberry Pi 4 Model B (8GB)",
+          "GPS_Module: Holybro H-RTK F9P Rover",
+          "GPS_Module: CubePilot Here3+ GPS",
+          "Camera_Payload: Sony a7R IV (Mapping)",
+          "Camera_Payload: MicaSense RedEdge-P (Multispectral)",
+          "Battery: Tattu 12S 22000mAh 25C LiPo",
+          "Battery: Gens Ace Tattu 12S 16000mAh 15C LiPo",
+          "Propellers: Vertical: T-Motor Carbon Fiber 13x4.4",
+          "Propellers: Forward: APC 16x8 Thin Electric Propeller",
+          "Complete_Drone: WingtraOne GEN II",
+          "Complete_Drone: Quantum-Systems Trinity F90+",
+          "Complete_Drone: Autel Dragonfish Pro"
+        ],
+        "generated_queries": [
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "MFE Fighter 2400mm VTOL",
+            "search_query": "MFE Fighter 2400mm VTOL specifications datasheet"
+          },
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Foxtech Nimbus Pro VTOL Mapping Drone",
+            "search_query": "Foxtech Nimbus Pro VTOL frame kit specs manual"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "Sunnysky X4112S 320KV",
+            "search_query": "Sunnysky X4112S 320KV motor specs datasheet"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor U7 V2.0 280KV",
+            "search_query": "T-Motor U7 V2.0 280KV motor specs thrust data"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor Antigravity 4006 380KV",
+            "search_query": "T-Motor Antigravity MN4006 380KV specs sheet"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "Sunnysky X5010S 280KV",
+            "search_query": "Sunnysky X5010S 280KV motor technical data"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "CubePilot Cube Orange+ with ADSB Carrier Board",
+            "search_query": "CubePilot Cube Orange+ ADSB technical specifications"
+          },
+          {
+            "part_type": "FC_Stack",
+            "model_name": "Holybro Pixhawk 6X Autopilot",
+            "search_query": "Holybro Pixhawk 6X Autopilot datasheet specs"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "NVIDIA Jetson Xavier NX Developer Kit",
+            "search_query": "NVIDIA Jetson Xavier NX Developer Kit product page specs"
+          },
+          {
+            "part_type": "Companion_Computer",
+            "model_name": "Raspberry Pi 4 Model B (8GB)",
+            "search_query": "Raspberry Pi 4 Model B 8GB product brief datasheet"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Holybro H-RTK F9P Rover",
+            "search_query": "Holybro H-RTK F9P Rover datasheet specs"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "CubePilot Here3+ GPS",
+            "search_query": "CubePilot Here3+ GPS technical data sheet"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "Sony a7R IV (Mapping)",
+            "search_query": "Sony a7R IV full specifications"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "MicaSense RedEdge-P (Multispectral)",
+            "search_query": "MicaSense RedEdge-P sensor datasheet specs"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Tattu 12S 22000mAh 25C LiPo",
+            "search_query": "Tattu 12S 22000mAh 25C LiPo battery specifications"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Gens Ace Tattu 12S 16000mAh 15C LiPo",
+            "search_query": "Gens Ace Tattu 12S 16000mAh 15C specs weight dimensions"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "T-Motor Carbon Fiber 13x4.4",
+            "search_query": "T-Motor CF Propeller 13x4.4 specs"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "APC 16x8 Thin Electric Propeller",
+            "search_query": "APC 16x8E Propeller LP16080E technical data"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "WingtraOne GEN II",
+            "search_query": "WingtraOne GEN II drone technical specifications brochure"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Quantum-Systems Trinity F90+",
+            "search_query": "Quantum-Systems Trinity F90+ specs datasheet"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Autel Dragonfish Pro",
+            "search_query": "Autel Dragonfish Pro VTOL specs product page"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:09:24.667634",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "MFE Fighter 2400mm VTOL",
+        "url": "https://www.uavmodel.com/products/makeflyeasy-fighter-striver-2430mm-uav-fixed-wing",
+        "specs_found": {
+          "wheelbase_mm": 225.0,
+          "max_prop_size_inches": 5.0,
+          "stack_mount_patterns_mm": [
+            "30.5x30.5",
+            "20x20"
+          ],
+          "motor_mount_pattern_mm": "16x16",
+          "fpv_camera_widths_mm": [
+            19
+          ],
+          "arm_thickness_mm": 5.5,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:10:34.786461",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Foxtech Nimbus Pro VTOL Mapping Drone",
+        "url": "https://store.foxtech.com/baby-shark-260-vtol-industrial-drone-solutions/",
+        "specs_found": {
+          "wheelbase_mm": 1720.0,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:11:42.853649",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Sunnysky X4112S 320KV",
+        "url": "https://sunnyskyusa.com/products/sunnysky-v4006-motors",
+        "specs_found": {
+          "stator_size": "4006",
+          "kv_rating": 380,
+          "mounting_bolt_pattern_mm": "16x19",
+          "shaft_diameter_mm": 4.0,
+          "wire_gauge_awg": 18,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:12:46.751564",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "T-Motor U7 V2.0 280KV",
+        "url": "https://www.ligpower.com/categorys/drone-motors",
+        "specs_found": {
+          "mounting_pattern_mm": "16x16",
+          "kv_rating": 2550,
+          "stator_size": "2205",
+          "shaft_diameter_mm": 4.0,
+          "wire_awg": 20,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:13:50.158439",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "T-Motor Antigravity 4006 380KV",
+        "url": "https://shop.tmotor.com/products/mn4006-brushless-multirotor-motor",
+        "specs_found": {
+          "mounting_pattern_mm": "4-M3 \u230019mm / 4-M3 \u230025mm",
+          "kv_rating": 380,
+          "stator_size": "4006",
+          "shaft_diameter_mm": 4.0,
+          "recommended_lipo_cells": "4-6S",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:14:11.334512",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Sunnysky X5010S 280KV",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:15:26.424794",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CubePilot Cube Orange+ with ADSB Carrier Board",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:16:44.752896",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Holybro Pixhawk 6X Autopilot",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:18:05.013824",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "NVIDIA Jetson Xavier NX Developer Kit",
+        "url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-xavier-nx/",
+        "specs_found": {
+          "cpu_model": "6-core NVIDIA Carmel ARM v8.2",
+          "ram_gb": 16,
+          "mipi_csi_ports": 2,
+          "has_gigabit_ethernet": true,
+          "usb_3_ports": 4,
+          "power_input_type": "Barrel Jack",
+          "power_input_voltage": "9-19V",
+          "m2_slots_count": 1,
+          "dimensions_mm": "69.6 x 45",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:18:51.993957",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Raspberry Pi 4 Model B (8GB)",
+        "url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/",
+        "specs_found": {
+          "cpu_model": "Broadcom BCM2711",
+          "ram_gb": 8.0,
+          "csi_port_count": 1,
+          "has_gigabit_ethernet": true,
+          "usb3_port_count": 2,
+          "power_input_connector_type": "USB-C",
+          "power_input_voltage_range": "5V DC",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:20:17.106566",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro H-RTK F9P Rover",
+        "url": "https://holybro.com/products/h-rtk-f9p-gnss-series",
+        "specs_found": {
+          "gps_chipset": "u-blox ZED-F9P",
+          "has_compass": false,
+          "compass_chipset": "N/A",
+          "input_voltage": "4.75V~5.25V",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:21:19.883595",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "CubePilot Here3+ GPS",
+        "url": "https://www.readymaderc.com/products/details/here3-plus-gps-for-cube-and-pixhhawk-with-istand",
+        "specs_found": {
+          "gnss_chip": "u-blox M8P",
+          "has_magnetometer": true,
+          "magnetometer_chip": "ICM20948",
+          "connector_type": "JST-GH",
+          "connector_pin_count": 8,
+          "protocol": "CAN",
+          "input_voltage_v": "5",
+          "antenna_type": "Internal Patch",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:22:25.522227",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Sony a7R IV (Mapping)",
+        "url": "https://www.dpreview.com/products/sony/slrs/sony_a7riv",
+        "specs_found": {
+          "sensor_model": "IMX-455-C",
+          "resolution_mp": 61.0,
+          "interface_type": "MIPI CSI-2",
+          "mipi_lanes": 2,
+          "lens_mount": "Sony E",
+          "mounting_pattern_mm": "20x20",
+          "input_voltage_v": "7.2-14.8",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:23:15.889461",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "MicaSense RedEdge-P (Multispectral)",
+        "url": "https://wingtra.com/mapping-drone-wingtraone/drone-sensors/micasense-rededge-p/",
+        "specs_found": {
+          "sensor_model": "MicaSense RedEdge-P",
+          "focal_length_mm": 5.4,
+          "dimensions_mm": "82 x 62 x 54",
+          "mounting_pattern_mm": "30 x 30",
+          "input_voltage_v": "5.0 - 25.2",
+          "data_interface_type": "Ethernet / Serial / USB",
+          "weight_g": 350.0,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:24:03.646866",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Tattu 12S 22000mAh 25C LiPo",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:24:56.839561",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Gens Ace Tattu 12S 16000mAh 15C LiPo",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:25:49.732525",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor Carbon Fiber 13x4.4",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:26:39.526922",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "APC 16x8 Thin Electric Propeller",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:27:54.255502",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "WingtraOne GEN II",
+        "url": "https://wingtra.com/ray/",
+        "specs_found": {
+          "frame_class_inches": 5.0,
+          "fc_mounting_mm": "30.5x30.5",
+          "fc_mcu": "STM32F405",
+          "fc_usb_port": "USB-C",
+          "firmware_target": "FURYF4OSD",
+          "motor_stator_size": "2207",
+          "motor_kv": 1900,
+          "battery_cell_count_s": 6,
+          "battery_capacity_mah": 1100,
+          "battery_c_rating": 120,
+          "battery_connector": "XT60",
+          "video_system_type": "Digital HD",
+          "receiver_protocol": "Crossfire",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:29:15.796882",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Quantum-Systems Trinity F90+",
+        "url": "https://quantum-systems.com/trinity-pro/",
+        "specs_found": {
+          "system_voltage_s_count": 8,
+          "has_barometer": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-28T11:30:32.223154",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Autel Dragonfish Pro",
+        "reason": "No Search Results"
+      }
+    }
+  ]
+}

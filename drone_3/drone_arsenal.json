@@ -1,0 +1,1596 @@
+{
+  "components": [
+    {
+      "type": "component",
+      "category": "Frame_Kit",
+      "model_name": "IFLIGHT CHIMERA7 PRO V2 FRAME KIT - ANUBIS RC",
+      "price_est": 250.0,
+      "specs": {
+        "electronics_mount_mm": "30.5*30.5/25.5*25.5/20*20",
+        "motor_mount_mm": "16x16",
+        "wheelbase_mm": 327.0,
+        "max_prop_size_inch": 7.5,
+        "fpv_camera_width_mm": 20.0,
+        "arm_thickness_mm": 6.0,
+        "source": "active_refinery_agent",
+        "Weight": "175grams",
+        "Mounting Pattern": "Motor Mounting: 16x16mm / 19*19mm\nVTX Mounting: 30.5*30.5 \u03c63mm / 25*25 \u03c61.6mm / 20*20 \u03c62mm"
+      },
+      "visuals": {
+        "primary_color_hex": "#2A2A2A",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "SATIN",
+        "texture_pattern": "WEAVE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://anubisrc.com/wp-content/uploads/2023/12/IFLIGHT_CHIMERA7_PRO_V2_6.png",
+      "source_url": "https://anubisrc.com/product/iflight-chimera7-pro-v2-frame-kit/",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Frame_Kit",
+      "model_name": "HGLRC Rekon7 Long Range PRO HD O3 Frame Kit User Manual",
+      "price_est": 1719.0,
+      "specs": {
+        "wheelbase_mm": 324.0,
+        "max_prop_size_inch": 7.0,
+        "electronics_mounting_patterns_mm": [
+          "20x20"
+        ],
+        "motor_mounting_pattern_mm": "16x16 / 19x19",
+        "arm_thickness_mm": 6.0,
+        "fpv_camera_mount_width_mm": "19x19 / 20x20",
+        "material": "3K Carbon Fiber",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://manuals.plus/m/34209795c0f1fc4fd77bd855cab9d35a023534bce295bec312a84d7ebaf31bd3.png",
+      "source_url": "https://manuals.plus/asin/B0DL2LD45C",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "iFlight XING2 2809 Cinelifter Motor (1250kv)",
+      "price_est": 30.2,
+      "specs": {
+        "mounting_bolt_pattern_mm": "19x19",
+        "stator_size": "2809",
+        "kv_rating": 1250,
+        "shaft_diameter_mm": 5.0,
+        "wire_gauge_awg": 18,
+        "source": "active_refinery_agent",
+        "weight": "60.7g"
+      },
+      "visuals": {
+        "primary_color_hex": "#2E2E2E",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://yourfpv.co.uk/wp-content/uploads/2023/07/iFlight-XING2-2809-Cinelifter_1-510x510.png",
+      "source_url": "https://yourfpv.co.uk/product/iflight-xing2-2809-cinelifter-motor-1250kv/",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "Motor size for longest flight time | IntoFPV Forum",
+      "price_est": 1.15,
+      "specs": {
+        "mounting_pattern_mm": "16x16",
+        "kv_rating": 1900,
+        "stator_size": "2306",
+        "shaft_diameter_mm": 4.0,
+        "wire_gauge_awg": 20,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": null,
+      "source_url": "https://intofpv.com/t-motor-size-for-longest-flight-time",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "Jetson Orin Nano Developer Kit User Guide - Hardware Specs ...",
+      "price_est": 2.24,
+      "specs": {
+        "cpu_model": "NVIDIA Jetson Orin Nano",
+        "csi_port_count": 2,
+        "has_gigabit_ethernet": true,
+        "usb3_port_count": 4,
+        "power_connector_type": "DC Jack (5.5mm x 2.5mm)",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#3C3C3C",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "GRAIN",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://developer.download.nvidia.com/embedded/images/jetsonOrinNano/user_guide/images/jetson-orin-nano-qtr_numbered.png",
+      "source_url": "https://developer.nvidia.com/embedded/learn/jetson-orin-nano-devkit-user-guide/hardware_spec.html",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "AI_CAPABLE",
+        "Long Range 7-inch",
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "Buy a Raspberry Pi AI HAT+ \u2013 Raspberry Pi",
+      "price_est": 5.15,
+      "specs": {
+        "cpu_model": "Broadcom BCM2712",
+        "csi_port_count": 2,
+        "has_gigabit_ethernet": true,
+        "usb_3_port_count": 2,
+        "usb_2_port_count": 2,
+        "power_input_connector_type": "USB-C",
+        "power_input_voltage_range": "5V",
+        "has_m2_slot": false,
+        "has_microsd_slot": true,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#117855",
+        "secondary_color_hex": "#FFFFFF",
+        "material_type": "PCB",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://assets.raspberrypi.com/static/fd092e6b65cc480fe8d4ccf28ac5c7eb/1c2c6/banner.png",
+      "source_url": "https://www.raspberrypi.com/products/ai-hat/",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "AI_CAPABLE",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "Matek M10Q-5883 GNSS Compass Module GNSS ... - Amazon.com",
+      "price_est": 3.25,
+      "specs": {
+        "gnss_chipset": "u-blox SAM-M10Q",
+        "has_magnetometer": true,
+        "magnetometer_chipset": "QMC5883L",
+        "interface_protocol": "UART / I2C",
+        "connector_pin_count": 6,
+        "antenna_size_mm": "15x15x4",
+        "has_saw_lna": true,
+        "has_backup_battery": true,
+        "source": "active_refinery_agent",
+        "weight_g": 8,
+        "dimensions_mm": "20mm*20mm*12.4mm",
+        "input_voltage_range": "4~9V"
+      },
+      "visuals": {
+        "primary_color_hex": "#1E8E44",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://m.media-amazon.com/images/I/216-OX9rBaL.png",
+      "source_url": "https://www.amazon.com/M10Q-5883-Compass-SAM-M10Q-QMC5883L-Magnetic/dp/B0BZ7VJKHV",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "AUTONOMOUS_NAVIGATION",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "M9N GPS \u2013 Holybro Store",
+      "price_est": 54.99,
+      "specs": {
+        "gnss_chipset": "Ublox M10",
+        "has_magnetometer": true,
+        "magnetometer_chipset": "IST8310",
+        "antenna_type": "Ceramic Patch",
+        "antenna_size_mm": "25 x 25 x 4",
+        "connector_type": "JST-GH-10pin",
+        "input_voltage_v": "4.7-5.2",
+        "has_pps_led": false,
+        "has_fix_led": true,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#212121",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "SATIN",
+        "texture_pattern": "GRAIN",
+        "is_emissive": true,
+        "emissive_color_hex": "#F0F5FF"
+      },
+      "image_url": "https://holybro.com/cdn/shop/files/12027-1_c5253508-7aca-4197-8499-6bcc560891d5.jpg?v=1762501217&width=900",
+      "source_url": "https://holybro.com/products/m9n-gps",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "AUTONOMOUS_NAVIGATION",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "SIYI A8 mini 4K 8MP Ultra HD 6X Digital Zoom Gimbal Camera with ...",
+      "price_est": 241.26,
+      "specs": {
+        "weight_g": 95.0,
+        "video_output_type": "Ethernet",
+        "control_interface": "S.Bus/UART/UDP",
+        "sensor_model": "1/1.7\" Sony",
+        "max_resolution": "4K / 8MP",
+        "is_global_shutter": false,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#2A2A2A",
+        "secondary_color_hex": "#FFFFFF",
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://ueeshop.ly200-cdn.com/u_file/UPAV/UPAV102/2401/15/photo/A8minimobile10.jpg?x-oss-process=image/format,webp",
+      "source_url": "https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "Teledyne FLIR Hadron 640R High Performance, Dual Thermal and ...",
+      "price_est": 387.0,
+      "specs": {
+        "sensor_model": "Boson 640x512 & IMX586 64MP",
+        "interface_type": "Hirose DF40C-50DP-0.4V(51) (MIPI, USB, I2C)",
+        "lens_mount": "Integrated/Fixed",
+        "focal_length_mm": 13.6,
+        "input_voltage_v": "5",
+        "mounting_pattern_mm": "Screw mount to back plate (dimensions not provided)",
+        "source": "active_refinery_agent",
+        "weight_g": 56,
+        "dimensions_mm": "50 x 36 x 43",
+        "power_consumption_w": "2.9W max, 1.8W typical"
+      },
+      "visuals": {
+        "primary_color_hex": "#1E1E1E",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "GRAIN",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://www.flircameras.com/wp-content/uploads/2022/04/hadron-640-left.jpg",
+      "source_url": "https://www.flircameras.com/product/hadron-640r-htm/",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Propellers",
+      "model_name": "Gemfan CL Cinelifter 7037 3-Blade Propeller (Set of 4)",
+      "price_est": 5.49,
+      "specs": {
+        "diameter_inches": 7.0,
+        "pitch_inches": 3.7,
+        "blade_count": 3,
+        "hub_mount_type": "5mm Shaft",
+        "rotation": "CW & CCW",
+        "source": "text_inference_fallback",
+        "diameter_mm": 177.79999999999998
+      },
+      "visuals": {
+        "primary_color_hex": "#FBC42F",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#FBC42F"
+      },
+      "image_url": "https://www.getfpv.com/static/version1764245630/frontend/Getfpv/default/en_US/images/footer_google_review.webp",
+      "source_url": "https://www.getfpv.com/gemfan-cl-cinelifter-7037-3-blade-propeller-set-of-4-polycarbonate.html",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "DJI Enterprise - DJI",
+      "price_est": 0.65,
+      "specs": {
+        "frame_wheelbase_mm": 220.0,
+        "frame_propeller_size_inches": 5.1,
+        "motor_stator_size": "2207",
+        "motor_kv": 1950,
+        "recommended_lipo_cells": 6,
+        "battery_connector_type": "XT60",
+        "stack_mount_mm": "30x30",
+        "flight_controller_mcu": "STM32F722",
+        "video_system_type": "DJI O3",
+        "receiver_protocol": "ELRS",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#FFFFFF",
+        "secondary_color_hex": "#000000",
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#FFFFFF"
+      },
+      "image_url": "https://www-cdn.djiits.com/uploads/footer_social/cover/1798/51bab9bb7867de27a68b9ea14ae8f8b3.png",
+      "source_url": "https://www.dji.com/products/enterprise",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "EVO II Dual 640T V3",
+      "price_est": 1.11,
+      "specs": {
+        "motor_stator_size": "2207",
+        "motor_kv": 1950,
+        "main_power_connector": "XT60",
+        "recommended_cell_count_s": "4S-6S",
+        "propeller_diameter_inches": 5.1,
+        "propeller_pitch_inches": 4.0,
+        "propeller_blade_count": 3,
+        "vtx_antenna_connector": "MMCX",
+        "fc_mount_pattern_mm": "30.5x30.5",
+        "source": "active_refinery_agent",
+        "frame_wheelbase": "397 mm",
+        "battery_capacity": "7100 mAh",
+        "battery_weight": "365g",
+        "battery_cell_count": "3S"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://www.autelrobotics.com/wp-content/themes/autel/userfiles/images/2023/03/07/2023030719523120.svg",
+      "source_url": "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-drones/",
+      "verified": true,
+      "tags": [
+        "The Herd Counter",
+        "Long Range 7-inch",
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "T-Motor MN3110 - 26 470kv Tiger Brushless Motor 3S-6S 80g Quad ...",
+      "price_est": 4990.0,
+      "specs": {
+        "kv_rating": 470,
+        "stator_size": "31x10",
+        "source": "active_refinery_agent",
+        "shaft_diameter": "6mm",
+        "weight": "80g"
+      },
+      "visuals": {
+        "primary_color_hex": "#313131",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "GLOSSY",
+        "texture_pattern": "WEAVE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://bilder.premium-modellbau.de/bilder/produkte/klein/T-MN3110-7.jpg",
+      "source_url": "https://www.premium-modellbau.de/t-motor-mn3110-26-470kv-tiger-brushless-motor-3s-6s-80g-quad-hexa-multicopter",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "Antigravity MN5008 KV340 UAV Motor for Aerial Photograph Drone",
+      "price_est": 89.99,
+      "specs": {
+        "mounting_pattern_mm": "25mm / 30mm",
+        "stator_size": "50x8",
+        "kv_rating": 400,
+        "shaft_diameter_mm": 6.0,
+        "wire_gauge_awg": 18,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1A1A1A",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://store.tmotor.com/data/category_img/1697184850630732768.jpg",
+      "source_url": "https://store.tmotor.com/product/mn5008-kv340-motor-antigravity-type.html",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "FC_Stack",
+      "model_name": "Holybro Pixhawk 6X | PX4 Guide (main)",
+      "price_est": 1.16,
+      "specs": {
+        "mounting_pattern_mm": "Not Specified",
+        "mcu": "STM32H753",
+        "gyro": "3x ICM-45686",
+        "has_barometer": true,
+        "input_voltage_range": "0-36V",
+        "uart_count": 8,
+        "has_dedicated_esc_connector": true,
+        "has_blackbox_flash": true,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1E1E1E",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://docs.px4.io/main/assets/HB_Jetson_BB.yrTa5ZEd.jpg",
+      "source_url": "https://docs.px4.io/main/en/flight_controller/pixhawk6x",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "Jetson AGX Orin for Next-Gen Robotics | NVIDIA",
+      "price_est": 4.25,
+      "specs": {
+        "cpu_model": "12-core Arm Cortex-A78AE v8.2",
+        "ram_gb": 64.0,
+        "power_input_type": "DC Jack",
+        "csi_port_count": 1,
+        "has_gigabit_ethernet": true,
+        "usb_3_port_count": 6,
+        "has_microsd_slot": true,
+        "has_m2_slot": true,
+        "has_emmc": true,
+        "source": "active_refinery_agent",
+        "power_consumption_watts": "15W and 60W",
+        "gpu_model": "2048-core NVIDIA Ampere architecture GPU with 64 Tensor Cores"
+      },
+      "visuals": {
+        "primary_color_hex": "#40E0D0",
+        "secondary_color_hex": "#C832E0",
+        "material_type": "PLASTIC",
+        "surface_finish": "GLOSSY",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#40E0D0"
+      },
+      "image_url": "https://www.nvidia.com/content/nvidiaGDC/us/en_US/autonomous-machines/embedded-systems/jetson-orin/_jcr_content/root/responsivegrid/nv_container_copy_15_880656104/nv_container/nv_teaser_copy.coreimg.100.410.jpeg/1734419993999/nvidia-metropolis-ari.jpeg",
+      "source_url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)",
+        "AI_CAPABLE"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "NVIDIA Jetson Xavier NX Developer Kit - JetsonHacks",
+      "price_est": 62.0,
+      "specs": {
+        "processor_model": "NVIDIA Jetson Xavier NX",
+        "ram_gb": 8,
+        "csi_port_count": 2,
+        "has_gigabit_ethernet": true,
+        "usb_3_port_count": 4,
+        "power_input_type": "DC Barrel Jack",
+        "has_microsd_slot": true,
+        "source": "active_refinery_agent",
+        "dimensions_mm": "103 mm x 90.5 mm x 34.66 mm",
+        "input_voltage_range": "19V"
+      },
+      "visuals": {
+        "primary_color_hex": null,
+        "secondary_color_hex": null,
+        "material_type": null,
+        "surface_finish": null,
+        "texture_pattern": null,
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://secure.gravatar.com/avatar/0db640865e5fdeb0e98654996dceeb5d?s=42&d=mm&r=g",
+      "source_url": "https://jetsonhacks.com/2020/05/16/nvidia-jetson-xavier-nx-developer-kit/",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)",
+        "AI_CAPABLE"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Lidar_Module",
+      "model_name": "Benewake TFS20-L LiDAR User Manual: Specifications, Operation ...",
+      "price_est": 1719.0,
+      "specs": {
+        "model_name": "TFS20-L",
+        "interface_type": "UART / I2C",
+        "connector_type": "WF08006-01207 (0.8mm pitch, 6-pin)",
+        "input_voltage_v": "3.3",
+        "max_range_m": 20.0,
+        "mounting_pattern_mm": "13.0",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://manuals.plus/m/da82fd8e2b4d5dd7f47a5982fbedce60b02958c034a382c87989f886bc8eba53.png",
+      "source_url": "https://manuals.plus/m/7eaea0930bea51f0b8680e67abb6d7ceac7b322e30b5c4e7895270f6bd4c7401",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)",
+        "OBSTACLE_AVOIDANCE"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Lidar_Module",
+      "model_name": "SLAMTEC RPLIDAR S2 Low Cost 360 Degree Laser Range ...",
+      "price_est": 1719.0,
+      "specs": {
+        "model_name": "RPLIDAR S2",
+        "interface_protocol": "UART",
+        "input_voltage_v": 5.0,
+        "max_range_m": 30.0,
+        "mounting_pattern_mm": "29x37",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://manuals.plus/m/449f97a3f1ad24888445fa857beccd8a6329b395b14c89d823e2578a31f7d9a3.png",
+      "source_url": "https://manuals.plus/slamtec/rplidar-s2-low-cost-360-degree-laser-range-scanner-manual",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)",
+        "OBSTACLE_AVOIDANCE"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "RTK GNSS (GPS) | PX4 Guide (main)",
+      "price_est": 1.16,
+      "specs": {
+        "gnss_chipset": "u-blox ZED-F9P",
+        "has_magnetometer": true,
+        "magnetometer_chipset": "RM3100",
+        "interface_protocols": [
+          "DroneCAN",
+          "UART"
+        ],
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#2B2B2B",
+        "secondary_color_hex": "#EAEAEA",
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#EAEAEA"
+      },
+      "image_url": "https://docs.px4.io/main/assets/qgc_rtk_streaming.CPFyQvYI.png",
+      "source_url": "https://docs.px4.io/main/en/gps_compass/rtk_gps",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)",
+        "AUTONOMOUS_NAVIGATION"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "CUAV C-RTK 9Ps GNSS High Precise Positioning Module - WDM",
+      "price_est": 409.0,
+      "specs": {
+        "gnss_receiver_model": "ZED-F9P",
+        "has_compass": true,
+        "compass_model": "IST8310",
+        "antenna_type": "MMCX",
+        "connector_type": "JST-GH",
+        "pin_count": 10,
+        "input_voltage_v": 5.0,
+        "protocols": [
+          "NMEA",
+          "UBX binary",
+          "RTCM 3.x"
+        ],
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1A1A1A",
+        "secondary_color_hex": "#D9D9D9",
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#33FF33"
+      },
+      "image_url": "https://i0.wp.com/www.worldronemarket.com/wp-content/uploads/2022/09/CUAV-C-RTK-9Ps-GNSS-High-Precise-Positioning-Module-4.jpg?fit=810%2C810&ssl=1",
+      "source_url": "https://www.worldronemarket.com/product/cuav-c-rtk-9ps-gnss-module/",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)",
+        "AUTONOMOUS_NAVIGATION"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "SIYI ZR30 4K 8MP Ultra HD 30X Optical Gimbal Camera HDR ...",
+      "price_est": 1115.0,
+      "specs": {
+        "input_voltage_v": "11 ~ 25.2",
+        "video_output_ports": [
+          "Ethernet",
+          "Micro-HDMI"
+        ],
+        "control_interfaces": [
+          "S.Bus",
+          "UART",
+          "Ethernet"
+        ],
+        "has_microsd_slot": true,
+        "sensor_model": "1/2.7 Inch Sony CMOS",
+        "max_video_resolution": "4096x2160 @ 25fps",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1E1E20",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#FF0000"
+      },
+      "image_url": "https://www.motionew.com/wp-content/uploads/2025/09/zr30.t2-150x150.jpg",
+      "source_url": "https://www.motionew.com/shop/gimbal-and-payload/siyi-zr30-4k-8mp-ultra-hd-30x-optical-gimbal-camera-hdr-starlight-night-vision-3-axis-stabilizer-uav-ugv-usv-pod-payload-for-drone-surveillance-inspection/",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "FREEFLY Systems Astro Max Drone - Industrial Precision",
+      "price_est": 20000.0,
+      "specs": {
+        "video_system_type": "Digital",
+        "receiver_protocol": "Herelink",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#202022",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://s3.amazonaws.com/gresco/product/116268_MD_Screenshot_2023_12_06_105407.png",
+      "source_url": "https://grescouas.com/item/950-00158",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "Inspired Flight IF1200A Hexacopter with Blue Herelink Controller - Cer",
+      "price_est": 31000.0,
+      "specs": {
+        "frame_class_inch": 47.2,
+        "fc_usb_type": "USB-C",
+        "video_system_type": "Herelink Digital HD",
+        "has_gps": true,
+        "has_compass": true,
+        "battery_cell_count": 12,
+        "source": "active_refinery_agent",
+        "frame_wheelbase": 1025,
+        "frame_weight": 7800,
+        "fc_mcu": "CubePilot Cube Blue H7",
+        "fc_bec_voltage": "5v, 12v/15v, 18v, 44.4v",
+        "battery_capacity": 16000,
+        "battery_c_rating": 15
+      },
+      "visuals": {
+        "primary_color_hex": "#1D1D1F",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "SATIN",
+        "texture_pattern": "WEAVE",
+        "is_emissive": true,
+        "emissive_color_hex": "#00FF00"
+      },
+      "image_url": "https://www.floridadronesupply.com/cdn/shop/files/IF1200AWorkswellEnterprise.png?v=1691177836&width=1124",
+      "source_url": "https://www.floridadronesupply.com/products/inspired-flight-if1200a-hexacopter-with-blue-herelink-controller-certified-blue-uas",
+      "verified": true,
+      "tags": [
+        "The Fence Rider",
+        "Industrial Inspection Hexacopter (13-inch+)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Frame_Kit",
+      "model_name": "RR Alligator x8 12s v2 BNF",
+      "price_est": 7950.0,
+      "specs": {
+        "wheelbase_mm": 480.0,
+        "max_prop_size_inch": 10.0,
+        "stack_mount_patterns_mm": [
+          "30.5x30.5",
+          "20x20"
+        ],
+        "motor_mount_pattern_mm": "19x19 / 16x16",
+        "fpv_camera_width_mm": 19.0,
+        "arm_thickness_mm": 8.0,
+        "rear_mount_patterns_mm": [
+          "30.5x30.5",
+          "20x20"
+        ],
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#111111",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "MATTE",
+        "texture_pattern": "WEAVE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://d2j6dbq0eux0bg.cloudfront.net/images/42465021/1845848503.jpg",
+      "source_url": "https://rrfpv.com/RR-Alligator-x8-12s-v2-BNF-p463794255",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Frame_Kit",
+      "model_name": "Full Part Listing TEXT - Computer Alliance Pty Ltd",
+      "price_est": 29.0,
+      "specs": {
+        "wheelbase_mm": 225.0,
+        "max_prop_size_inch": 5.0,
+        "fc_mounting_patterns_mm": [
+          "30.5x30.5",
+          "20x20"
+        ],
+        "motor_mounting_pattern_mm": "16x16",
+        "camera_mount_width_mm": 20.0,
+        "arm_thickness_mm": 5.0,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": null,
+      "source_url": "https://www.computeralliance.com.au/partsText.aspx",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "FC_Stack",
+      "model_name": "Pixhawk Jetson Baseboard Bundle \u2013 Holybro Store",
+      "price_est": 1940.0,
+      "specs": {
+        "mounting_mm": "N/A (Case Mount)",
+        "mcu": "STM32H753IIK6",
+        "gyro": "ICM-42688-P",
+        "has_barometer": true,
+        "uart_count": 8,
+        "input_voltage_lipocells": "4S-12S (via Power Module)",
+        "usb_type": "USB-C",
+        "target_firmware": "PX4 / ArduPilot",
+        "source": "active_refinery_agent",
+        "BEC Voltage": "7-21V"
+      },
+      "visuals": {
+        "primary_color_hex": "#1A1A1A",
+        "secondary_color_hex": "#C8A468",
+        "material_type": "PCB",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://holybro.com/cdn/shop/files/SKU11072A_2.jpg?v=1731671869&width=180",
+      "source_url": "https://holybro.com/products/pixhawk-jetson-baseboard",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)",
+        "AI_CAPABLE"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "Jetson Xavier NX for Embedded & Edge Systems | NVIDIA",
+      "price_est": 4.25,
+      "specs": {
+        "cpu_model": "6-core NVIDIA Carmel ARM v8.2 64-bit",
+        "ram_gb": 16.0,
+        "csi_port_count": 2,
+        "has_gigabit_ethernet": true,
+        "usb_3_port_count": 4,
+        "has_microsd_slot": true,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#181818",
+        "secondary_color_hex": null,
+        "material_type": "PCB",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://cdn.bizible.com/u?mapType=mkto&mapValue=id%3A156-OFN-742%26token%3A_mch-nvidia.com-fe055c0dbe5107cc1fa994c653ca40e1&_biz_u=fef4bf41567e493789ca26a82a8675d8&_biz_l=https%3A%2F%2Fwww.nvidia.com%2Fen-in%2Fautonomous-machines%2Fembedded-systems%2Fjetson-xavier-nx%2F&_biz_t=1764348850704&_biz_i=Jetson%20Xavier%20NX%20for%20Embedded%20%26%20Edge%20Systems%20%7C%20NVIDIA&_biz_n=2&a=nvidia.com&rnd=590424&cdn_o=a&_biz_z=1764348850704",
+      "source_url": "https://www.nvidia.com/en-in/autonomous-machines/embedded-systems/jetson-xavier-nx/",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)",
+        "AI_CAPABLE"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "NEO 3 Pro GNSS module",
+      "price_est": 8.16,
+      "specs": {
+        "gnss_chipset": "UBLOX NEO M9N",
+        "has_compass": true,
+        "compass_chipset": "RM3100",
+        "connector_type": "GH1.25-4P",
+        "pin_count": 4,
+        "pinout_labels": [
+          "VCC",
+          "CAN_L",
+          "CAN_H",
+          "GND"
+        ],
+        "antenna_dimensions_mm": "40x40",
+        "input_voltage": "4.7-5.2V",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "../assets/fc-set.png",
+      "source_url": "https://doc.cuav.net/gps/neo-series-gnss/en/neo-3-pro.html",
+      "verified": true,
+      "tags": [
+        "AUTONOMOUS_NAVIGATION",
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "M10 GPS \u2013 Holybro Store",
+      "price_est": 43.99,
+      "specs": {
+        "gnss_chip_model": "Ublox M10",
+        "has_magnetometer": true,
+        "magnetometer_chip_model": "IST8310",
+        "antenna_size_mm": "25x25",
+        "connector_type": "Molex 1.25mm",
+        "connector_pin_count": 6,
+        "interface_protocol": "UART",
+        "input_voltage": "4.7-5.2V",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://holybro.com/cdn/shop/files/12041-1_{width}x.jpg?v=1762501431",
+      "source_url": "https://holybro.com/products/m10-gps",
+      "verified": true,
+      "tags": [
+        "AUTONOMOUS_NAVIGATION",
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "SIYI ZR10 2K 30X Zoom Camera Gimbal - World Drone Market",
+      "price_est": 510.34,
+      "specs": {
+        "sensor_model": "SIYI ZR10",
+        "data_interface": "Ethernet",
+        "lens_mount": "Integrated",
+        "mounting_pattern_mm": "Not specified in provided sources",
+        "input_voltage": "11-25.2V",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1E1E1F",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://i0.wp.com/www.worldronemarket.com/wp-content/uploads/2022/11/SIYI-ZR10-2K-30X-Zoom-Camera-Gimbal_2-1.png?fit=810%2C810&ssl=1",
+      "source_url": "https://www.worldronemarket.com/product/siyi-zr10-30x-zoom-camera-gimbal/",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "GREMSY INTRODUCES G-HADRON SOLUTION FOR DRONE ...",
+      "price_est": 8.41,
+      "specs": {
+        "form_factor_width_mm": 63.0,
+        "connector_type": "USB 2.0, UART, Sbus",
+        "video_signal_standard": "MIPI CSI-2",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#222325",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#52E8FF"
+      },
+      "image_url": "https://gremsy.com/Data/Sites/1/media/news/ghadron/02.jpg",
+      "source_url": "https://gremsy.com/gremsy-introduces-g-hadron-solution-for-drone-integrators",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Battery",
+      "model_name": "Tattu R-Line Version 5.0 1200mAh 6S 150C 22.2V Lipo Battery ...",
+      "price_est": 27.99,
+      "specs": {
+        "capacity_mah": 1200,
+        "cell_count_s": 6,
+        "voltage_v": 22.2,
+        "c_rating": "150C / 260C Burst",
+        "connector_type": "XT60U",
+        "balance_connector_pins": 7,
+        "weight_g": 197.0,
+        "dimensions_mm": {
+          "length": 78.0,
+          "width": 40.0,
+          "height": 34.0
+        },
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1A1A1A",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://cdn11.bigcommerce.com/s-99ohneivnb/images/stencil/100x100/products/3071/10839/_1_2__52304.1654074347.jpg?c=1",
+      "source_url": "https://genstattu.com/tattu-r-line-version-5-0-1200mah-6s-150c-22-2v-lipo-battery-pack-with-xt60-plug/",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "Support for Mavic 2 Enterprise Advanced - DJI United States",
+      "price_est": 0.65,
+      "specs": {
+        "drone_class": "Industrial",
+        "primary_connector": "Proprietary",
+        "has_gps": true,
+        "source": "active_refinery_agent",
+        "Weight": "909g",
+        "Wheelbase": "354 mm",
+        "Dimensions": "Folded: 214\u00d791\u00d784mm Unfolded: 322\u00d7242\u00d784mm"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://www-cdn.djiits.com/dps/9cfbb1b0655baa1ce0dc1ae58aca9c84.svg",
+      "source_url": "https://www.dji.com/support/product/mavic-2-enterprise-advanced",
+      "verified": true,
+      "tags": [
+        "The Coyote Chaser",
+        "Heavy 9-inch Interceptor (X8)"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Frame_Kit",
+      "model_name": "Makeflyeasy Fighter 2430mm UAV Fixed Wing Drones \u2013 UAVMODEL",
+      "price_est": 392.0,
+      "specs": {
+        "wheelbase_mm": 225.0,
+        "max_prop_size_inches": 5.0,
+        "stack_mount_patterns_mm": [
+          "30.5x30.5",
+          "20x20"
+        ],
+        "motor_mount_pattern_mm": "16x16",
+        "fpv_camera_widths_mm": [
+          19
+        ],
+        "arm_thickness_mm": 5.5,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://cdn3.hextom.com/img/currency_flag/pln.svg",
+      "source_url": "https://www.uavmodel.com/products/makeflyeasy-fighter-striver-2430mm-uav-fixed-wing",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Frame_Kit",
+      "model_name": "BABY SHARK 260 VTOL Industrial Drone Solutions",
+      "price_est": 8369.0,
+      "specs": {
+        "wheelbase_mm": 1720.0,
+        "source": "active_refinery_agent",
+        "weight": "55.00 KGS"
+      },
+      "visuals": {
+        "primary_color_hex": "#F5F5F5",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://cdn11.bigcommerce.com/s-zj3gvq95ll/images/stencil/600x600/attribute_rule_images/40_source_1683604388.jpg",
+      "source_url": "https://store.foxtech.com/baby-shark-260-vtol-industrial-drone-solutions/",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "SunnySky V4006 High Efficiency Brushless Motors \u2013 SunnySky USA",
+      "price_est": 52.99,
+      "specs": {
+        "stator_size": "4006",
+        "kv_rating": 380,
+        "mounting_bolt_pattern_mm": "16x19",
+        "shaft_diameter_mm": 4.0,
+        "wire_gauge_awg": 18,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#A7A9AC",
+        "secondary_color_hex": null,
+        "material_type": "STEEL",
+        "surface_finish": "BRUSHED",
+        "texture_pattern": "GRAIN",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://cdn.shopify.com/s/files/1/2024/0305/files/V4006__04.jpg?v=1496804404",
+      "source_url": "https://sunnyskyusa.com/products/sunnysky-v4006-motors",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "UAV Motor (1-100kg Thrust)",
+      "price_est": 8.41,
+      "specs": {
+        "mounting_pattern_mm": "16x16",
+        "kv_rating": 2550,
+        "stator_size": "2205",
+        "shaft_diameter_mm": 4.0,
+        "wire_awg": 20,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#D8A5A1",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://www.ligpower.com/data/category_img/1697175705900594424.jpg",
+      "source_url": "https://www.ligpower.com/categorys/drone-motors",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Motors",
+      "model_name": "TMOTOR Antigravity MN4006 KV380 Brushless Multirotor Motor",
+      "price_est": 149.9,
+      "specs": {
+        "mounting_pattern_mm": "4-M3 \u230019mm / 4-M3 \u230025mm",
+        "kv_rating": 380,
+        "stator_size": "4006",
+        "shaft_diameter_mm": 4.0,
+        "recommended_lipo_cells": "4-6S",
+        "source": "active_refinery_agent",
+        "weight": "57g"
+      },
+      "visuals": {
+        "primary_color_hex": "#1A1A1A",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://store.tmotor.com/data/category_img/1697184850630732768.jpg",
+      "source_url": "https://shop.tmotor.com/products/mn4006-brushless-multirotor-motor",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "World's Smallest AI Supercomputer: Jetson Xavier NX | NVIDIA",
+      "price_est": 4.25,
+      "specs": {
+        "cpu_model": "6-core NVIDIA Carmel ARM v8.2",
+        "ram_gb": 16,
+        "mipi_csi_ports": 2,
+        "has_gigabit_ethernet": true,
+        "usb_3_ports": 4,
+        "power_input_type": "Barrel Jack",
+        "power_input_voltage": "9-19V",
+        "m2_slots_count": 1,
+        "dimensions_mm": "69.6 x 45",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#000000",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://t.co/i/adsct?bci=5&dv=America%2FChicago%26en-US%26Google%20Inc.%26Linux%20x86_64%26255%261920%261080%2632%2624%261920%261080%260%26na&eci=2&event_id=8f7bcdcb-981d-4192-8350-0e402d780447&events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=7a3848a9-5eb9-480f-ac2b-027ea82a0e57&pt=World%E2%80%99s%20Smallest%20AI%20Supercomputer%3A%20Jetson%20Xavier%20NX%20%7C%20NVIDIA&tw_document_href=https%3A%2F%2Fwww.nvidia.com%2Fen-us%2Fautonomous-machines%2Fembedded-systems%2Fjetson-xavier-nx%2F&tw_iframe_status=0&tw_order_quantity=0&tw_sale_amount=0&txn_id=nutdh&type=javascript&version=2.3.35",
+      "source_url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-xavier-nx/",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "AI_CAPABLE",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Companion_Computer",
+      "model_name": "Raspberry Pi 4 Model B specifications \u2013 Raspberry Pi",
+      "price_est": 5.15,
+      "specs": {
+        "cpu_model": "Broadcom BCM2711",
+        "ram_gb": 8.0,
+        "csi_port_count": 1,
+        "has_gigabit_ethernet": true,
+        "usb3_port_count": 2,
+        "power_input_connector_type": "USB-C",
+        "power_input_voltage_range": "5V DC",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20height='1671'%20width='2236'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E",
+      "source_url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "AI_CAPABLE",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "H-RTK F9P GNSS Series (IST8310 Compass) \u2013 Holybro Store",
+      "price_est": 296.99,
+      "specs": {
+        "gps_chipset": "u-blox ZED-F9P",
+        "has_compass": true,
+        "compass_chipset": "IST8310",
+        "input_voltage": "4.75V~5.25V",
+        "source": "active_refinery_agent"
+      },
+      "visuals": {
+        "primary_color_hex": "#222222",
+        "secondary_color_hex": null,
+        "material_type": "ALUMINUM",
+        "surface_finish": "ANODIZED",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://holybro.com/cdn/shop/files/12018-10_f16caf02-2727-44d6-9553-9948d1ff8f15_400x.jpg?v=1762850201",
+      "source_url": "https://holybro.com/products/h-rtk-f9p-gnss-series",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "AUTONOMOUS_NAVIGATION",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "GPS_Module",
+      "model_name": "Cubepilot Here3+ GPS Unit for Cube & Pixhawk with iStand",
+      "price_est": 579.5,
+      "specs": {
+        "gnss_chip": "u-blox M8P",
+        "has_magnetometer": true,
+        "magnetometer_chip": "ICM20948",
+        "connector_type": "JST-GH",
+        "connector_pin_count": 8,
+        "protocol": "CAN",
+        "input_voltage_v": "5",
+        "antenna_type": "Internal Patch",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#1A1A1A",
+        "secondary_color_hex": "#F56B2A",
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://s3.amazonaws.com/content.readymaderc.com/product_images/images/000/016/817/half_thumb/phawk_orange_cube_2.jpg?1658163119",
+      "source_url": "https://www.readymaderc.com/products/details/here3-plus-gps-for-cube-and-pixhhawk-with-istand",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "AUTONOMOUS_NAVIGATION",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "Sony a7R IV: Digital Photography Review",
+      "price_est": 240.0,
+      "specs": {
+        "sensor_model": "IMX-455-C",
+        "resolution_mp": 61.0,
+        "interface_type": "MIPI CSI-2",
+        "mipi_lanes": 2,
+        "lens_mount": "Sony E",
+        "mounting_pattern_mm": "20x20",
+        "input_voltage_v": "7.2-14.8",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://2.img-dpreview.com/files/p/TC60x60S60x60~sample_galleries/0635778599/9367445772.jpg",
+      "source_url": "https://www.dpreview.com/products/sony/slrs/sony_a7riv",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "component",
+      "category": "Camera_Payload",
+      "model_name": "MicaSense RedEdge-P - Multispectral and panchromatic camera ...",
+      "price_est": 3.32,
+      "specs": {
+        "sensor_model": "MicaSense RedEdge-P",
+        "focal_length_mm": 5.4,
+        "dimensions_mm": "82 x 62 x 54",
+        "mounting_pattern_mm": "30 x 30",
+        "input_voltage_v": "5.0 - 25.2",
+        "data_interface_type": "Ethernet / Serial / USB",
+        "weight_g": 350.0,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "data:image/svg+xml;nitro-empty-id=MzE2MzozMTk=-1;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQ3IDExOCIgd2lkdGg9IjE0NyIgaGVpZ2h0PSIxMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PC9zdmc+",
+      "source_url": "https://wingtra.com/mapping-drone-wingtraone/drone-sensors/micasense-rededge-p/",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "WingtraRAY | Survey drone for fast results and full confidence ...",
+      "price_est": 29900.0,
+      "specs": {
+        "frame_class_inches": 5.0,
+        "fc_mounting_mm": "30.5x30.5",
+        "fc_mcu": "STM32F405",
+        "fc_usb_port": "USB-C",
+        "firmware_target": "FURYF4OSD",
+        "motor_stator_size": "2207",
+        "motor_kv": 1900,
+        "battery_cell_count_s": 6,
+        "battery_capacity_mah": 1100,
+        "battery_c_rating": 120,
+        "battery_connector": "XT60",
+        "video_system_type": "Digital HD",
+        "receiver_protocol": "Crossfire",
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "data:image/svg+xml;nitro-empty-id=MzEwNDo1NDU=-1;base64,PHN2ZyB2aWV3Qm94PSIwIDAgOTUgMTUwIiB3aWR0aD0iOTUiIGhlaWdodD0iMTUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==",
+      "source_url": "https://wingtra.com/ray/",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    },
+    {
+      "type": "complete_drone",
+      "category": "Complete_Drone",
+      "model_name": "Trinity Pro - Quantum Systems",
+      "price_est": 1616.0,
+      "specs": {
+        "system_voltage_s_count": 8,
+        "has_barometer": true,
+        "source": "multimodal_fusion"
+      },
+      "visuals": {
+        "primary_color_hex": "#C9CBCD",
+        "secondary_color_hex": "#DDE0E3",
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "GRAIN",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      },
+      "image_url": "https://quantum-systems.com/wp-content/uploads/2025/07/QS_15-1.jpg",
+      "source_url": "https://quantum-systems.com/trinity-pro/",
+      "verified": true,
+      "tags": [
+        "VTOL Fixed-Wing Surveyor",
+        "The Surveyor"
+      ]
+    }
+  ]
+}

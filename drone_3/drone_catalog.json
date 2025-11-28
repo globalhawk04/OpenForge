@@ -1,0 +1,1362 @@
+[
+  {
+    "sku_id": "OF-AI-2509",
+    "anchor_frame": "IFLIGHT CHIMERA7 PRO V2 FRAME KIT - ANUBIS RC",
+    "class": "7_INCH",
+    "ai_reasoning": "The Chimera7 Pro frame is a 7-inch long-range platform. The selected iFlight 2809 1250KV motors are a perfect match, offering high torque for the 7-inch Gemfan props and ideal efficiency for the 6S battery voltage. All components are physically compatible: the motor's 19x19mm mount fits the frame, the 7-inch props are within the frame's 7.5-inch limit, and the prop hub matches the motor shaft. The Holybro Pixhawk 6X is a professional-grade flight controller well-suited for the long-range and autonomous capabilities of this large platform.",
+    "performance": {
+      "twr": 60.21,
+      "flight_time": 4.2,
+      "total_weight": 552.2
+    },
+    "bom": [
+      {
+        "part_type": "Frame_Kit",
+        "category": "Frame_Kit",
+        "product_name": "IFLIGHT CHIMERA7 PRO V2 FRAME KIT - ANUBIS RC",
+        "model_name": "IFLIGHT CHIMERA7 PRO V2 FRAME KIT - ANUBIS RC",
+        "engineering_specs": {
+          "electronics_mount_mm": "30.5*30.5/25.5*25.5/20*20",
+          "motor_mount_mm": "16x16",
+          "wheelbase_mm": 327.0,
+          "max_prop_size_inch": 7.5,
+          "fpv_camera_width_mm": 20.0,
+          "arm_thickness_mm": 6.0,
+          "source": "active_refinery_agent",
+          "Weight": "175grams",
+          "Mounting Pattern": "Motor Mounting: 16x16mm / 19*19mm\nVTX Mounting: 30.5*30.5 \u03c63mm / 25*25 \u03c61.6mm / 20*20 \u03c62mm"
+        },
+        "specs": {
+          "electronics_mount_mm": "30.5*30.5/25.5*25.5/20*20",
+          "motor_mount_mm": "16x16",
+          "wheelbase_mm": 327.0,
+          "max_prop_size_inch": 7.5,
+          "fpv_camera_width_mm": 20.0,
+          "arm_thickness_mm": 6.0,
+          "source": "active_refinery_agent",
+          "Weight": "175grams",
+          "Mounting Pattern": "Motor Mounting: 16x16mm / 19*19mm\nVTX Mounting: 30.5*30.5 \u03c63mm / 25*25 \u03c61.6mm / 20*20 \u03c62mm"
+        },
+        "price": 250.0,
+        "source_url": "https://anubisrc.com/product/iflight-chimera7-pro-v2-frame-kit/",
+        "visuals": {
+          "primary_color_hex": "#2A2A2A",
+          "secondary_color_hex": null,
+          "material_type": "CARBON_FIBER",
+          "surface_finish": "SATIN",
+          "texture_pattern": "WEAVE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      },
+      {
+        "part_type": "Motors",
+        "category": "Motors",
+        "product_name": "iFlight XING2 2809 Cinelifter Motor (1250kv)",
+        "model_name": "iFlight XING2 2809 Cinelifter Motor (1250kv)",
+        "engineering_specs": {
+          "mounting_bolt_pattern_mm": "19x19",
+          "stator_size": "2809",
+          "kv_rating": 1250,
+          "shaft_diameter_mm": 5.0,
+          "wire_gauge_awg": 18,
+          "source": "active_refinery_agent",
+          "weight": "60.7g"
+        },
+        "specs": {
+          "mounting_bolt_pattern_mm": "19x19",
+          "stator_size": "2809",
+          "kv_rating": 1250,
+          "shaft_diameter_mm": 5.0,
+          "wire_gauge_awg": 18,
+          "source": "active_refinery_agent",
+          "weight": "60.7g"
+        },
+        "price": 30.2,
+        "source_url": "https://yourfpv.co.uk/product/iflight-xing2-2809-cinelifter-motor-1250kv/",
+        "visuals": {
+          "primary_color_hex": "#2E2E2E",
+          "secondary_color_hex": null,
+          "material_type": "ALUMINUM",
+          "surface_finish": "ANODIZED",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      },
+      {
+        "part_type": "Propellers",
+        "category": "Propellers",
+        "product_name": "Gemfan CL Cinelifter 7037 3-Blade Propeller (Set of 4)",
+        "model_name": "Gemfan CL Cinelifter 7037 3-Blade Propeller (Set of 4)",
+        "engineering_specs": {
+          "diameter_inches": 7.0,
+          "pitch_inches": 3.7,
+          "blade_count": 3,
+          "hub_mount_type": "5mm Shaft",
+          "rotation": "CW & CCW",
+          "source": "text_inference_fallback",
+          "diameter_mm": 177.79999999999998
+        },
+        "specs": {
+          "diameter_inches": 7.0,
+          "pitch_inches": 3.7,
+          "blade_count": 3,
+          "hub_mount_type": "5mm Shaft",
+          "rotation": "CW & CCW",
+          "source": "text_inference_fallback",
+          "diameter_mm": 177.79999999999998
+        },
+        "price": 5.49,
+        "source_url": "https://www.getfpv.com/gemfan-cl-cinelifter-7037-3-blade-propeller-set-of-4-polycarbonate.html",
+        "visuals": {
+          "primary_color_hex": "#FBC42F",
+          "secondary_color_hex": null,
+          "material_type": "PLASTIC",
+          "surface_finish": "MATTE",
+          "texture_pattern": "NONE",
+          "is_emissive": true,
+          "emissive_color_hex": "#FBC42F"
+        }
+      },
+      {
+        "part_type": "Battery",
+        "category": "Battery",
+        "product_name": "Tattu R-Line Version 5.0 1200mAh 6S 150C 22.2V Lipo Battery ...",
+        "model_name": "Tattu R-Line Version 5.0 1200mAh 6S 150C 22.2V Lipo Battery ...",
+        "engineering_specs": {
+          "capacity_mah": 1200,
+          "cell_count_s": 6,
+          "voltage_v": 22.2,
+          "c_rating": "150C / 260C Burst",
+          "connector_type": "XT60U",
+          "balance_connector_pins": 7,
+          "weight_g": 197.0,
+          "dimensions_mm": {
+            "length": 78.0,
+            "width": 40.0,
+            "height": 34.0
+          },
+          "source": "multimodal_fusion"
+        },
+        "specs": {
+          "capacity_mah": 1200,
+          "cell_count_s": 6,
+          "voltage_v": 22.2,
+          "c_rating": "150C / 260C Burst",
+          "connector_type": "XT60U",
+          "balance_connector_pins": 7,
+          "weight_g": 197.0,
+          "dimensions_mm": {
+            "length": 78.0,
+            "width": 40.0,
+            "height": 34.0
+          },
+          "source": "multimodal_fusion"
+        },
+        "price": 27.99,
+        "source_url": "https://genstattu.com/tattu-r-line-version-5-0-1200mah-6s-150c-22-2v-lipo-battery-pack-with-xt60-plug/",
+        "visuals": {
+          "primary_color_hex": "#1A1A1A",
+          "secondary_color_hex": null,
+          "material_type": "PLASTIC",
+          "surface_finish": "SATIN",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      },
+      {
+        "part_type": "FC_Stack",
+        "category": "FC_Stack",
+        "product_name": "Holybro Pixhawk 6X | PX4 Guide (main)",
+        "model_name": "Holybro Pixhawk 6X | PX4 Guide (main)",
+        "engineering_specs": {
+          "mounting_pattern_mm": "Not Specified",
+          "mcu": "STM32H753",
+          "gyro": "3x ICM-45686",
+          "has_barometer": true,
+          "input_voltage_range": "0-36V",
+          "uart_count": 8,
+          "has_dedicated_esc_connector": true,
+          "has_blackbox_flash": true,
+          "source": "multimodal_fusion"
+        },
+        "specs": {
+          "mounting_pattern_mm": "Not Specified",
+          "mcu": "STM32H753",
+          "gyro": "3x ICM-45686",
+          "has_barometer": true,
+          "input_voltage_range": "0-36V",
+          "uart_count": 8,
+          "has_dedicated_esc_connector": true,
+          "has_blackbox_flash": true,
+          "source": "multimodal_fusion"
+        },
+        "price": 1.16,
+        "source_url": "https://docs.px4.io/main/en/flight_controller/pixhawk6x",
+        "visuals": {
+          "primary_color_hex": "#1E1E1E",
+          "secondary_color_hex": null,
+          "material_type": "ALUMINUM",
+          "surface_finish": "ANODIZED",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      }
+    ],
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.552,
+        "motor_max_force_n": 81.55,
+        "collider_size_m": [
+          0.218,
+          0.05,
+          0.218
+        ],
+        "center_of_mass_offset": [
+          0,
+          -0.02,
+          0
+        ],
+        "dynamics": {
+          "twr": 60.21,
+          "hover_throttle": 0.02,
+          "linear_damping": 0.3,
+          "angular_damping": 0.1,
+          "max_velocity_ms": 45.0
+        },
+        "meta": {
+          "total_weight_g": 552.2,
+          "est_flight_time_min": 4.2
+        }
+      },
+      "scene_graph": {
+        "environment": {
+          "type": "LAB",
+          "sky_color": "#050505",
+          "ground_color": "#111111",
+          "obstacles": []
+        },
+        "components": [
+          {
+            "id": "frame_core",
+            "type": "FRAME_CORE",
+            "visuals": {
+              "primary_color_hex": "#2A2A2A",
+              "secondary_color_hex": null,
+              "material_type": "CARBON_FIBER",
+              "surface_finish": "SATIN",
+              "texture_pattern": "WEAVE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 130.8,
+              "width": 45,
+              "thickness": 4
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "arm_1",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#2A2A2A",
+              "secondary_color_hex": null,
+              "material_type": "CARBON_FIBER",
+              "surface_finish": "SATIN",
+              "texture_pattern": "WEAVE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 163.49843202748153,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              -0.7853981633974483,
+              0
+            ]
+          },
+          {
+            "id": "motor_1",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              115.61084999999999,
+              2,
+              115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_1",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              115.61084999999999,
+              23,
+              115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "arm_2",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#2A2A2A",
+              "secondary_color_hex": null,
+              "material_type": "CARBON_FIBER",
+              "surface_finish": "SATIN",
+              "texture_pattern": "WEAVE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 163.49843202748153,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              -2.356194490192345,
+              0
+            ]
+          },
+          {
+            "id": "motor_2",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              -115.61084999999999,
+              2,
+              115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_2",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              -115.61084999999999,
+              23,
+              115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "arm_3",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#2A2A2A",
+              "secondary_color_hex": null,
+              "material_type": "CARBON_FIBER",
+              "surface_finish": "SATIN",
+              "texture_pattern": "WEAVE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 163.49843202748153,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              2.356194490192345,
+              0
+            ]
+          },
+          {
+            "id": "motor_3",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              -115.61084999999999,
+              2,
+              -115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_3",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              -115.61084999999999,
+              23,
+              -115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "arm_4",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#2A2A2A",
+              "secondary_color_hex": null,
+              "material_type": "CARBON_FIBER",
+              "surface_finish": "SATIN",
+              "texture_pattern": "WEAVE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 163.49843202748153,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              0.7853981633974483,
+              0
+            ]
+          },
+          {
+            "id": "motor_4",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              115.61084999999999,
+              2,
+              -115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_4",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              115.61084999999999,
+              23,
+              -115.61084999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "stack",
+            "type": "PCB_STACK",
+            "visuals": {
+              "primary_color_hex": "#1E1E1E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "width": 30.5,
+              "length": 30.5,
+              "height": 15.0
+            },
+            "pos": [
+              0,
+              6,
+              0
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "battery",
+            "type": "BATTERY",
+            "visuals": {
+              "primary_color_hex": "#1A1A1A",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "SATIN",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 78.0,
+              "width": 40.0,
+              "height": 34.0
+            },
+            "pos": [
+              0,
+              43.0,
+              0
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "fpv_cam",
+            "type": "CAMERA",
+            "visuals": null,
+            "dims": {
+              "width": 19.0
+            },
+            "pos": [
+              0,
+              10,
+              93.42857142857143
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "meta": {
+          "total_weight_est_g": 197.0,
+          "wheelbase": 327.0
+        }
+      }
+    }
+  },
+  {
+    "sku_id": "OF-AI-3988",
+    "anchor_frame": "HGLRC Rekon7 Long Range PRO HD O3 Frame Kit User Manual",
+    "class": "7_INCH",
+    "ai_reasoning": "This build is optimized for the 'Long Range' class of the Rekon7 frame. The low 1250KV of the iFlight XING2 motor is an ideal match for the 6S battery voltage and 7-inch propellers, ensuring high efficiency for extended flight times. The motor's 19x19mm mounting pattern and the propeller's 7-inch diameter are a perfect physical fit for the frame. The Holybro Pixhawk 6X is selected as a powerful flight controller suitable for advanced, autonomous long-range missions. While the battery's 1200mAh capacity is modest for this frame size, it is the best fit from the available options. A custom mounting solution would be required for the flight controller, as the frame is designed for a 20x20mm stack.",
+    "performance": {
+      "twr": 60.21,
+      "flight_time": 4.2,
+      "total_weight": 552.2
+    },
+    "bom": [
+      {
+        "part_type": "Frame_Kit",
+        "category": "Frame_Kit",
+        "product_name": "HGLRC Rekon7 Long Range PRO HD O3 Frame Kit User Manual",
+        "model_name": "HGLRC Rekon7 Long Range PRO HD O3 Frame Kit User Manual",
+        "engineering_specs": {
+          "wheelbase_mm": 324.0,
+          "max_prop_size_inch": 7.0,
+          "electronics_mounting_patterns_mm": [
+            "20x20"
+          ],
+          "motor_mounting_pattern_mm": "16x16 / 19x19",
+          "arm_thickness_mm": 6.0,
+          "fpv_camera_mount_width_mm": "19x19 / 20x20",
+          "material": "3K Carbon Fiber",
+          "source": "multimodal_fusion"
+        },
+        "specs": {
+          "wheelbase_mm": 324.0,
+          "max_prop_size_inch": 7.0,
+          "electronics_mounting_patterns_mm": [
+            "20x20"
+          ],
+          "motor_mounting_pattern_mm": "16x16 / 19x19",
+          "arm_thickness_mm": 6.0,
+          "fpv_camera_mount_width_mm": "19x19 / 20x20",
+          "material": "3K Carbon Fiber",
+          "source": "multimodal_fusion"
+        },
+        "price": 1719.0,
+        "source_url": "https://manuals.plus/asin/B0DL2LD45C",
+        "visuals": {
+          "primary_color_hex": "#888888",
+          "secondary_color_hex": null,
+          "material_type": "PLASTIC",
+          "surface_finish": "MATTE",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      },
+      {
+        "part_type": "Motors",
+        "category": "Motors",
+        "product_name": "iFlight XING2 2809 Cinelifter Motor (1250kv)",
+        "model_name": "iFlight XING2 2809 Cinelifter Motor (1250kv)",
+        "engineering_specs": {
+          "mounting_bolt_pattern_mm": "19x19",
+          "stator_size": "2809",
+          "kv_rating": 1250,
+          "shaft_diameter_mm": 5.0,
+          "wire_gauge_awg": 18,
+          "source": "active_refinery_agent",
+          "weight": "60.7g"
+        },
+        "specs": {
+          "mounting_bolt_pattern_mm": "19x19",
+          "stator_size": "2809",
+          "kv_rating": 1250,
+          "shaft_diameter_mm": 5.0,
+          "wire_gauge_awg": 18,
+          "source": "active_refinery_agent",
+          "weight": "60.7g"
+        },
+        "price": 30.2,
+        "source_url": "https://yourfpv.co.uk/product/iflight-xing2-2809-cinelifter-motor-1250kv/",
+        "visuals": {
+          "primary_color_hex": "#2E2E2E",
+          "secondary_color_hex": null,
+          "material_type": "ALUMINUM",
+          "surface_finish": "ANODIZED",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      },
+      {
+        "part_type": "Propellers",
+        "category": "Propellers",
+        "product_name": "Gemfan CL Cinelifter 7037 3-Blade Propeller (Set of 4)",
+        "model_name": "Gemfan CL Cinelifter 7037 3-Blade Propeller (Set of 4)",
+        "engineering_specs": {
+          "diameter_inches": 7.0,
+          "pitch_inches": 3.7,
+          "blade_count": 3,
+          "hub_mount_type": "5mm Shaft",
+          "rotation": "CW & CCW",
+          "source": "text_inference_fallback",
+          "diameter_mm": 177.79999999999998
+        },
+        "specs": {
+          "diameter_inches": 7.0,
+          "pitch_inches": 3.7,
+          "blade_count": 3,
+          "hub_mount_type": "5mm Shaft",
+          "rotation": "CW & CCW",
+          "source": "text_inference_fallback",
+          "diameter_mm": 177.79999999999998
+        },
+        "price": 5.49,
+        "source_url": "https://www.getfpv.com/gemfan-cl-cinelifter-7037-3-blade-propeller-set-of-4-polycarbonate.html",
+        "visuals": {
+          "primary_color_hex": "#FBC42F",
+          "secondary_color_hex": null,
+          "material_type": "PLASTIC",
+          "surface_finish": "MATTE",
+          "texture_pattern": "NONE",
+          "is_emissive": true,
+          "emissive_color_hex": "#FBC42F"
+        }
+      },
+      {
+        "part_type": "Battery",
+        "category": "Battery",
+        "product_name": "Tattu R-Line Version 5.0 1200mAh 6S 150C 22.2V Lipo Battery ...",
+        "model_name": "Tattu R-Line Version 5.0 1200mAh 6S 150C 22.2V Lipo Battery ...",
+        "engineering_specs": {
+          "capacity_mah": 1200,
+          "cell_count_s": 6,
+          "voltage_v": 22.2,
+          "c_rating": "150C / 260C Burst",
+          "connector_type": "XT60U",
+          "balance_connector_pins": 7,
+          "weight_g": 197.0,
+          "dimensions_mm": {
+            "length": 78.0,
+            "width": 40.0,
+            "height": 34.0
+          },
+          "source": "multimodal_fusion"
+        },
+        "specs": {
+          "capacity_mah": 1200,
+          "cell_count_s": 6,
+          "voltage_v": 22.2,
+          "c_rating": "150C / 260C Burst",
+          "connector_type": "XT60U",
+          "balance_connector_pins": 7,
+          "weight_g": 197.0,
+          "dimensions_mm": {
+            "length": 78.0,
+            "width": 40.0,
+            "height": 34.0
+          },
+          "source": "multimodal_fusion"
+        },
+        "price": 27.99,
+        "source_url": "https://genstattu.com/tattu-r-line-version-5-0-1200mah-6s-150c-22-2v-lipo-battery-pack-with-xt60-plug/",
+        "visuals": {
+          "primary_color_hex": "#1A1A1A",
+          "secondary_color_hex": null,
+          "material_type": "PLASTIC",
+          "surface_finish": "SATIN",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      },
+      {
+        "part_type": "FC_Stack",
+        "category": "FC_Stack",
+        "product_name": "Holybro Pixhawk 6X | PX4 Guide (main)",
+        "model_name": "Holybro Pixhawk 6X | PX4 Guide (main)",
+        "engineering_specs": {
+          "mounting_pattern_mm": "Not Specified",
+          "mcu": "STM32H753",
+          "gyro": "3x ICM-45686",
+          "has_barometer": true,
+          "input_voltage_range": "0-36V",
+          "uart_count": 8,
+          "has_dedicated_esc_connector": true,
+          "has_blackbox_flash": true,
+          "source": "multimodal_fusion"
+        },
+        "specs": {
+          "mounting_pattern_mm": "Not Specified",
+          "mcu": "STM32H753",
+          "gyro": "3x ICM-45686",
+          "has_barometer": true,
+          "input_voltage_range": "0-36V",
+          "uart_count": 8,
+          "has_dedicated_esc_connector": true,
+          "has_blackbox_flash": true,
+          "source": "multimodal_fusion"
+        },
+        "price": 1.16,
+        "source_url": "https://docs.px4.io/main/en/flight_controller/pixhawk6x",
+        "visuals": {
+          "primary_color_hex": "#1E1E1E",
+          "secondary_color_hex": null,
+          "material_type": "ALUMINUM",
+          "surface_finish": "ANODIZED",
+          "texture_pattern": "NONE",
+          "is_emissive": false,
+          "emissive_color_hex": null
+        }
+      }
+    ],
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.552,
+        "motor_max_force_n": 81.55,
+        "collider_size_m": [
+          0.216,
+          0.05,
+          0.216
+        ],
+        "center_of_mass_offset": [
+          0,
+          -0.02,
+          0
+        ],
+        "dynamics": {
+          "twr": 60.21,
+          "hover_throttle": 0.02,
+          "linear_damping": 0.3,
+          "angular_damping": 0.1,
+          "max_velocity_ms": 45.0
+        },
+        "meta": {
+          "total_weight_g": 552.2,
+          "est_flight_time_min": 4.2
+        }
+      },
+      "scene_graph": {
+        "environment": {
+          "type": "LAB",
+          "sky_color": "#050505",
+          "ground_color": "#111111",
+          "obstacles": []
+        },
+        "components": [
+          {
+            "id": "frame_core",
+            "type": "FRAME_CORE",
+            "visuals": {
+              "primary_color_hex": "#888888",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 129.6,
+              "width": 45,
+              "thickness": 4
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "arm_1",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#888888",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 161.9984464125505,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              -0.7853981633974483,
+              0
+            ]
+          },
+          {
+            "id": "motor_1",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              114.55019999999999,
+              2,
+              114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_1",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              114.55019999999999,
+              23,
+              114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "arm_2",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#888888",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 161.9984464125505,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              -2.356194490192345,
+              0
+            ]
+          },
+          {
+            "id": "motor_2",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              -114.55019999999999,
+              2,
+              114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_2",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              -114.55019999999999,
+              23,
+              114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "arm_3",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#888888",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 161.9984464125505,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              2.356194490192345,
+              0
+            ]
+          },
+          {
+            "id": "motor_3",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              -114.55019999999999,
+              2,
+              -114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_3",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              -114.55019999999999,
+              23,
+              -114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "arm_4",
+            "type": "FRAME_ARM",
+            "visuals": {
+              "primary_color_hex": "#888888",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 161.9984464125505,
+              "width": 12,
+              "thickness": 5
+            },
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "rot": [
+              0,
+              0.7853981633974483,
+              0
+            ]
+          },
+          {
+            "id": "motor_4",
+            "type": "MOTOR",
+            "visuals": {
+              "primary_color_hex": "#2E2E2E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "radius": 16.5,
+              "height": 19
+            },
+            "pos": [
+              114.55019999999999,
+              2,
+              -114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "prop_4",
+            "type": "PROPELLER",
+            "visuals": {
+              "primary_color_hex": "#FBC42F",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "MATTE",
+              "texture_pattern": "NONE",
+              "is_emissive": true,
+              "emissive_color_hex": "#FBC42F"
+            },
+            "dims": {
+              "radius": 88.89999999999999
+            },
+            "pos": [
+              114.55019999999999,
+              23,
+              -114.55019999999999
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ],
+            "is_dynamic": true
+          },
+          {
+            "id": "stack",
+            "type": "PCB_STACK",
+            "visuals": {
+              "primary_color_hex": "#1E1E1E",
+              "secondary_color_hex": null,
+              "material_type": "ALUMINUM",
+              "surface_finish": "ANODIZED",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "width": 30.5,
+              "length": 30.5,
+              "height": 15.0
+            },
+            "pos": [
+              0,
+              6,
+              0
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "battery",
+            "type": "BATTERY",
+            "visuals": {
+              "primary_color_hex": "#1A1A1A",
+              "secondary_color_hex": null,
+              "material_type": "PLASTIC",
+              "surface_finish": "SATIN",
+              "texture_pattern": "NONE",
+              "is_emissive": false,
+              "emissive_color_hex": null
+            },
+            "dims": {
+              "length": 78.0,
+              "width": 40.0,
+              "height": 34.0
+            },
+            "pos": [
+              0,
+              43.0,
+              0
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "fpv_cam",
+            "type": "CAMERA",
+            "visuals": null,
+            "dims": {
+              "width": 19.0
+            },
+            "pos": [
+              0,
+              10,
+              92.57142857142857
+            ],
+            "rot": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "meta": {
+          "total_weight_est_g": 197.0,
+          "wheelbase": 324.0
+        }
+      }
+    }
+  }
+]
