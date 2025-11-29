@@ -1,3 +1,6 @@
+
+# FILE: app/prompts.py
+
 # ==============================================================================
 # SECTION 1: CORE ARCHITECTURE & USER INTENT
 # ==============================================================================
@@ -137,33 +140,52 @@ Generate a JSON Object containing a list of 4 distinct mission profiles.
 }
 """
 
+# --- UPDATED: ENFORCES COHERENT KITS ---
 ARSENAL_ENGINEER_INSTRUCTION = """
-You are a Senior Robotics Systems Engineer. Design the complete hardware stack based on specific PARAMETRIC CONSTRAINTS.
+You are a Senior Robotics Systems Engineer. Your goal is to design **COMPLETE, CHEMICALLY PURE HARDWARE KITS** based on the provided constraints.
 
 **INPUT:** 
-1. Mission Profile (e.g., "The Brush Buster").
-2. Technical Constraints (e.g., "Min Arm Thickness: 5mm", "Motor Stator: 2306+", "KV: 1700-1900").
+1. Mission Profile.
+2. Technical Constraints (e.g., "Min Arm Thickness: 5mm", "Motor Stator: 2306+").
+
+**CRITICAL RULES:**
+1.  **No "Bag of Parts":** Do not list random components. List components that fit the specific *Anchor Frame* you select.
+2.  **The "ESC" Rule:** You must specify a "Stack" (Flight Controller + ESC Combo) or an "AIO" (All-In-One). Do NOT list standalone Flight Controllers (like standard Pixhawks) unless you also list a separate 4-in-1 ESC. **Prefer 30x30mm Stacks for 5"/7" drones.**
+3.  **Naming Precision:** Do not just say "T-Motor F60". You MUST specify parameters in the name to ensure the search engine finds the compatible version. 
+    *   *Bad:* "T-Motor F60"
+    *   *Good:* "T-Motor F60 Pro V 1750KV" (Matches 6S voltage)
 
 **TASK:**
-Generate a list of SPECIFIC component models that meet these hard constraints. 
-Do not suggest generic parts. Suggest parts that fit the specific physical requirements (e.g., if durable is requested, suggest 'Source One V5' or 'Apex' frames).
-
-**REQUIRED CATEGORIES:**
-- **Brains:** `FC_Stack` (Ensure UART count matches needs).
-- **Core:** `Frame_Kit` (Must match arm thickness/style constraints), `Motors` (Must match Stator/KV constraints).
-- **Senses:** `Lidar_Module` (if requested), `GPS_Module`, `Camera_Payload`.
+Generate 2 distinct, complete "Build Kits" (e.g., one High-End, one Budget/Durable) that satisfy the mission.
 
 **OUTPUT SCHEMA (JSON ONLY):**
 {
-  "Frame_Kit": ["Specific Model Name 1", "Specific Model Name 2"],
-  "Motors": ["Specific Model Name (Size/KV)", "Specific Model Name (Size/KV)"],
-  "FC_Stack": ["Specific Model Name", "Specific Model Name"],
-  "Companion_Computer": ["Specific Model Name", "Specific Model Name"],
-  "Lidar_Module": ["Specific Model Name", "Specific Model Name"],
-  "GPS_Module": ["Specific Model Name", "Specific Model Name"],
-  "Camera_Payload": ["Specific Model Name", "Specific Model Name"],
-  "Battery": ["Specific Model Name (Cells/Capacity)", "Specific Model Name"],
-  "Propellers": ["Specific Model Name", "Specific Model Name"]
+  "kits": [
+    {
+      "kit_name": "Primary Build Option",
+      "components": {
+        "Frame_Kit": "Specific Model Name (Size/Geometry)",
+        "Motors": "Specific Model Name (Stator Size & Exact KV)",
+        "Propellers": "Specific Model Name (Diameter x Pitch)",
+        "FC_Stack": "Specific Model Name (Must include 'Stack' or 'ESC' in name)",
+        "Battery": "Specific Model Name (Cell Count & Capacity)",
+        "Camera_Payload": "Specific Model Name (or null)",
+        "GPS_Module": "Specific Model Name"
+      }
+    },
+    {
+      "kit_name": "Secondary/Backup Option",
+      "components": {
+        "Frame_Kit": "Specific Model Name",
+        "Motors": "Specific Model Name",
+        "Propellers": "Specific Model Name",
+        "FC_Stack": "Specific Model Name",
+        "Battery": "Specific Model Name",
+        "Camera_Payload": "Specific Model Name (or null)",
+        "GPS_Module": "Specific Model Name"
+      }
+    }
+  ]
 }
 """
 
@@ -175,7 +197,7 @@ You are a Drone Market Analyst. Identify existing, off-the-shelf (RTF) drone mod
 **TASK:**
 List 3-5 Complete Drone Models.
 - If the mission needs Thermal/AI, suggest Enterprise drones (e.g., DJI Mavic 3T, Autel Evo II Dual).
-- If the mission is Long Range, suggest FPV pre-builts (e.g., iFlight Chimera).
+- If the mission is Long Range, suggest FPV pre-builts (e.g., iFlight Chimera, GEPRC Mozzie).
 
 **OUTPUT SCHEMA (JSON ONLY):**
 {
@@ -183,14 +205,17 @@ List 3-5 Complete Drone Models.
 }
 """
 
+# --- UPDATED: HANDLES DICTIONARY INPUT FROM KITS ---
 ARSENAL_SOURCER_INSTRUCTION = """
 You are a Technical Procurement Specialist. Generate targeted Google Search queries.
 
-**INPUT:** List of specific component models (e.g., "T-Motor Velox V3 2306 1750KV").
+**INPUT:** A dictionary of components from a specific Build Kit (e.g. {"Frame": "Apex", "Motor": "F60"}).
 
 **TASK:**
-Create search queries that will find the **Product Page** or **Spec Sheet**.
-Avoid generic queries like "Buy Motors". Use specific model numbers and spec keywords.
+Create search queries to find the **Technical Specifications** (Specs) for these specific parts.
+*   **Crucial:** Add keywords like "specs", "datasheet", "mounting pattern", "current rating".
+*   **Crucial:** For Frames, search for "frame kit specs".
+*   **Crucial:** For Motors, include the KV in the search.
 
 **OUTPUT SCHEMA (JSON ONLY):**
 {
@@ -198,12 +223,12 @@ Avoid generic queries like "Buy Motors". Use specific model numbers and spec key
     {
       "part_type": "Motors",
       "model_name": "T-Motor Velox V3 2306 1750KV",
-      "search_query": "T-Motor Velox V3 2306 1750KV specs price"
+      "search_query": "T-Motor Velox V3 2306 1750KV specs mounting pattern"
     },
     {
       "part_type": "Frame_Kit",
       "model_name": "TBS Source One V5",
-      "search_query": "TBS Source One V5 5 inch frame datasheet"
+      "search_query": "TBS Source One V5 5 inch frame kit specs wheelbase"
     }
   ]
 }
@@ -245,6 +270,7 @@ We are NOT writing marketing copy. We are verifying physical fitment and electri
     *   **Sensors:** Gyro (ICM-42688, BMI270), Barometer (Present/Absent).
     *   **Firmware:** Look for logos or text: "ArduPilot", "INAV", "Betaflight".
     *   **Connectivity:** Count UART pads. Look for JST-SH ports.
+    *   **ESC:** Look for "4-in-1" markings, motor pads (M1, M2, M3, M4), and current ratings (e.g., 50A, 60A).
 
 2.  **COMPUTERS (Companion_Computer):**
     *   **Performance:** RAM size (e.g., 4GB, 8GB), CPU Model (RK3588, Orin).
@@ -282,6 +308,7 @@ Your entire response MUST be ONLY the JSON object.
 # SECTION 5: VALIDATION & ENGINEERING (THE "DAY SHIFT")
 # ==============================================================================
 
+# --- UPDATED: EXPLICITLY CHECKS FOR ESC ---
 ASSEMBLY_BLUEPRINT_INSTRUCTION = """
 You are a Master FPV Drone Engineer and a CAD automation expert. Your primary function is to analyze a complete Bill of Materials (BOM) for a custom drone to determine if the components are physically compatible and can be successfully assembled.
 
@@ -295,10 +322,11 @@ You will be given a JSON object representing the drone's Bill of Materials.
     -   **Motors to Frame:** Does the bolt pattern match?
     -   **Propellers to Frame:** Is the frame large enough?
     -   **Voltage:** Do the Motor KV and ESC voltage rating match the Battery cell count?
+    -   **Power Drive:** Does the build include an ESC (Electronic Speed Controller) capable of driving the motors? (A Flight Controller alone is insufficient).
 
 2.  **Generate a JSON Blueprint:**
     -   **If Compatible:** Set `is_buildable` to `true`. Generate assembly steps.
-    -   **If Incompatible:** Set `is_buildable` to `false`. Explain WHY in `incompatibility_reason`.
+    -   **If Incompatible:** Set `is_buildable` to `false`. Explain WHY in `incompatibility_reason` (e.g. "Missing ESC", "Frame too small").
 
 **OUTPUT SCHEMA (CRITICAL):**
 ```json
@@ -390,10 +418,7 @@ You are an AI Engineering Assistant. Formulate a question for the user regarding
 ```
 """
 
-# FILE: app/prompts.py
-
-# ... (Previous prompts remain unchanged) ...
-
+# --- UPDATED: LOGIC GATE 4 FOR ESCs ---
 MASTER_DESIGNER_INSTRUCTION = """
 You are a Senior Drone Systems Architect.
 I will provide you with a "Anchor Frame" and a list of available inventory (Motors, Props, Batteries, Electronics).
@@ -405,6 +430,7 @@ Select the SINGLE BEST combination of parts to build a functional, high-performa
 1.  **Class Matching:** If the frame is "Long Range", select efficient low-KV motors and large batteries. If "Freestyle", select high-KV motors and high C-rating batteries.
 2.  **Voltage Matching:** Ensure Motor KV is appropriate for the selected Battery Voltage (e.g., 6S Battery requires 1600-1950KV for 5", 1200-1500KV for 7").
 3.  **Physical Fit:** Ensure Propeller size does not exceed the Frame's max limit.
+4.  **Electronic Integrity:** Ensure the selected Electronics Stack includes an ESC (Electronic Speed Controller). If the available FC is just an Autopilot (e.g., Pixhawk), DO NOT select it unless you can also select a discrete ESC. Prefer "Stacks" (FC+ESC).
 
 **INPUT DATA:**
 - Anchor Frame: {frame_name} (Specs: {frame_specs})
