@@ -13,7 +13,7 @@ design_fleet.py
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Status](https://img.shields.io/badge/Status-V2_Architecture-green.svg)]()
 
-An AI system that builds its own inventory, creates virtual products, and simulates mission-critical robotics.
+I challenged myself to test the new Gemini 3.0 to see how far its reasoning capabilities could push actual engineering tasks. The result is OpenForge: a Neuro-Symbolic Manufacturing Engine that translates user intent into flight-proven hardware designs and generates a physics-based simulation to test them. An AI system that builds its own inventory, creates virtual products, and simulates mission-critical robotics.
 
 </div>
 
