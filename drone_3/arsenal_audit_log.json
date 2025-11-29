@@ -2024,6 +2024,1136 @@
         "model": "Autel Dragonfish Pro",
         "reason": "No Search Results"
       }
+    },
+    {
+      "timestamp": "2025-11-29T14:59:13.345872",
+      "type": "RANCHER_DECISION",
+      "data": {
+        "prompt": "Define fleet...",
+        "result": {
+          "missions": [
+            {
+              "mission_name": "The Herd Tracker",
+              "primary_goal": "Livestock Monitoring & Identification",
+              "autonomy_level": "L3 (AI-Assisted Target Identification)",
+              "key_requirements": [
+                "Thermal Optics",
+                "AI Companion Computer",
+                "Long-Range Telemetry",
+                "Extended Flight Time Battery"
+              ]
+            },
+            {
+              "mission_name": "The Fence Patroller",
+              "primary_goal": "Autonomous Fence Line Inspection",
+              "autonomy_level": "L4 (Obstacle Avoidance + Waypoints)",
+              "key_requirements": [
+                "Lidar",
+                "High-Precision GPS",
+                "4K Inspection Camera",
+                "Onboard Edge Processor"
+              ]
+            },
+            {
+              "mission_name": "The Night Stalker",
+              "primary_goal": "Predator Deterrence & Monitoring",
+              "autonomy_level": "L3 (Autonomous Patrol, Manual Intervention)",
+              "key_requirements": [
+                "Night Vision Camera",
+                "High-Torque Motors (for Agility)",
+                "Acoustic Deterrent Device",
+                "High-Intensity Spotlight"
+              ]
+            },
+            {
+              "mission_name": "The Ranch Surveyor",
+              "primary_goal": "High-Precision Topographical Mapping",
+              "autonomy_level": "L4 (Fully Automated Waypoint Navigation)",
+              "key_requirements": [
+                "RTK GPS Module",
+                "High-Resolution Mapping Camera",
+                "Long-Endurance Airframe",
+                "Photogrammetry Software Suite"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T14:59:28.543831",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Herd Tracker",
+        "derived_constraints": {
+          "project_name": "The Herd Tracker",
+          "topology": {
+            "class": "Industrial 10-inch",
+            "target_voltage": "6S",
+            "prop_size_inch": 10.0,
+            "radio_protocol": "ELRS 900MHz"
+          },
+          "technical_constraints": {
+            "frame_style": "Cruiser / Industrial",
+            "min_arm_thickness_mm": 8.0,
+            "motor_stator_index": "2812 or larger",
+            "preferred_kv_range": "700-900",
+            "video_system_preference": "High Power Digital FPV + Onboard Thermal"
+          },
+          "reasoning_trace": "The mission requires lifting a heavy payload (Thermal Optics, AI Computer) for an extended duration. This necessitates a highly efficient, large-scale platform. An 'Industrial 10-inch' class with large, low-KV motors (2812+) on a 6S Li-Ion power system provides the necessary thrust and endurance. The robust frame and 8mm arms support the weight and operational environment. Long-Range Telemetry is best achieved with a 900MHz control link like ELRS for its superior penetration and range in a rural setting."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:02:17.702467",
+      "type": "RANCHER_DECISION",
+      "data": {
+        "prompt": "Define fleet...",
+        "result": {
+          "missions": [
+            {
+              "mission_name": "The Herd Tracker",
+              "primary_goal": "Livestock Monitoring & Identification",
+              "autonomy_level": "L4 (AI-Assisted Object Recognition)",
+              "key_requirements": [
+                "Thermal Optics",
+                "AI Companion Computer",
+                "4K EO Camera",
+                "Long-Range Datalink"
+              ]
+            },
+            {
+              "mission_name": "The Fence Patroller",
+              "primary_goal": "Autonomous Fence Line Inspection",
+              "autonomy_level": "L4 (Obstacle Avoidance + Waypoints)",
+              "key_requirements": [
+                "Lidar",
+                "High-Precision GPS",
+                "Obstacle Avoidance Sensors",
+                "Extended Flight Time Battery"
+              ]
+            },
+            {
+              "mission_name": "The Night Guardian",
+              "primary_goal": "Predator Deterrence & Monitoring",
+              "autonomy_level": "L3 (Human on the Loop for Engagement)",
+              "key_requirements": [
+                "Night Vision Optics",
+                "High-Maneuverability Frame",
+                "Low-Noise Propellers",
+                "Spotlight/Loudspeaker Payload"
+              ]
+            },
+            {
+              "mission_name": "The Surveyor",
+              "primary_goal": "High-Resolution Ranch Mapping",
+              "autonomy_level": "L4 (Pre-Planned Grid Flight)",
+              "key_requirements": [
+                "RTK GPS Module",
+                "High-Resolution Mapping Camera",
+                "Photogrammetry Software Compatibility",
+                "Stable Flight Controller"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:02:33.382774",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Herd Tracker",
+        "derived_constraints": {
+          "project_name": "The Herd Tracker",
+          "topology": {
+            "class": "Heavy Lift Industrial 10-inch+",
+            "target_voltage": "12S",
+            "prop_size_inch": 10.0,
+            "radio_protocol": "ELRS 900MHz / Dedicated IP Datalink"
+          },
+          "technical_constraints": {
+            "frame_style": "Quad X / Hexacopter",
+            "min_arm_thickness_mm": 8.0,
+            "motor_stator_index": "3110 or larger",
+            "preferred_kv_range": "300-600",
+            "video_system_preference": "Custom Gimbal (EO/IR) with IP-based Datalink"
+          },
+          "reasoning_trace": "The specified payload (Thermal, 4K Camera, AI Computer) and long-range mission profile classify this as an Industrial/Commercial build. This heavy payload requires a large-class frame (10-inch+ props) for lift capacity and efficiency. A high-voltage (12S) system with low KV motors is optimal for endurance and managing current draw. The frame must be robust (8mm+ arms) to handle the significant weight and motor torque. The complex data requirements for L4 autonomy and multiple high-resolution video feeds necessitate a dedicated IP-based datalink, supplemented by a reliable, long-range RC protocol like ELRS 900MHz for flight control."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:03:05.442801",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Herd Tracker",
+        "context": "{\"mission\": {\"mission_name\": \"The Herd Tracker\", \"primary_goal\": \"Livestock Monitoring & Identification\", \"autonomy_level\": \"L4 (AI-Assisted Object Recognition)\", \"key_requirements\": [\"Thermal Optics\", \"AI Companion Computer\", \"4K EO Camera\", \"Long-Range Datalink\"]}, \"constraints\": {\"frame_style\": \"Quad X / Hexacopter\", \"min_arm_thickness_mm\": 8.0, \"motor_stator_index\": \"3110 or larger\", \"preferred_kv_range\": \"300-600\", \"video_system_preference\": \"Custom Gimbal (EO/IR) with IP-based Datalink\"}, \"topology\": {\"class\": \"Heavy Lift Industrial 10-inch+\", \"target_voltage\": \"12S\", \"prop_size_inch\": 10.0, \"radio_protocol\": \"ELRS 900MHz / Dedicated IP Datalink\"}}",
+        "proposed_parts": {
+          "kits": [
+            {
+              "kit_name": "Primary: Hexacopter Heavy-Lift (Max Redundancy)",
+              "components": {
+                "Frame_Kit": "Tarot X6 Pro II 960mm Hexcopter Frame Kit",
+                "Motors": "T-Motor MN601-S 320KV Navigator Series (x6)",
+                "Propellers": "T-Motor G22x6.6 Carbon Fiber Propeller (3 pairs)",
+                "FC_Stack": "CubePilot Cube Orange+ & 6x T-Motor Flame 80A 12S HV ESCs",
+                "Battery": "Tattu 12S 22000mAh 25C LiPo Battery",
+                "Camera_Payload": null,
+                "GPS_Module": "CubePilot Here3+ CAN GPS/GNSS"
+              }
+            },
+            {
+              "kit_name": "Secondary: Quadcopter Workhorse (Durable/Cost-Effective)",
+              "components": {
+                "Frame_Kit": "Tarot X4 960mm Quadcopter Frame Kit",
+                "Motors": "BrotherHobby Avenger 3115 500KV (x4)",
+                "Propellers": "HQProp MacroQuad 10x5x3 Carbon Reinforced Nylon Propeller (2 pairs)",
+                "FC_Stack": "Holybro Pixhawk 6C & 4x APD F-Series 80A 12S ESCs",
+                "Battery": "CNHL G+Plus Series 12S 8000mAh 30C LiPo Battery",
+                "Camera_Payload": null,
+                "GPS_Module": "Holybro M9N GPS"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:03:20.366199",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Herd Tracker",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Mavic 3T",
+            "Autel EVO II Dual 640T V3",
+            "DJI Matrice 30T",
+            "Teledyne FLIR SIRAS"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:03:37.183877",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Herd Tracker",
+        "input_list": [
+          "kits: {'kit_name': 'Primary: Hexacopter Heavy-Lift (Max Redundancy)', 'components': {'Frame_Kit': 'Tarot X6 Pro II 960mm Hexcopter Frame Kit', 'Motors': 'T-Motor MN601-S 320KV Navigator Series (x6)', 'Propellers': 'T-Motor G22x6.6 Carbon Fiber Propeller (3 pairs)', 'FC_Stack': 'CubePilot Cube Orange+ & 6x T-Motor Flame 80A 12S HV ESCs', 'Battery': 'Tattu 12S 22000mAh 25C LiPo Battery', 'Camera_Payload': None, 'GPS_Module': 'CubePilot Here3+ CAN GPS/GNSS'}}",
+          "kits: {'kit_name': 'Secondary: Quadcopter Workhorse (Durable/Cost-Effective)', 'components': {'Frame_Kit': 'Tarot X4 960mm Quadcopter Frame Kit', 'Motors': 'BrotherHobby Avenger 3115 500KV (x4)', 'Propellers': 'HQProp MacroQuad 10x5x3 Carbon Reinforced Nylon Propeller (2 pairs)', 'FC_Stack': 'Holybro Pixhawk 6C & 4x APD F-Series 80A 12S ESCs', 'Battery': 'CNHL G+Plus Series 12S 8000mAh 30C LiPo Battery', 'Camera_Payload': None, 'GPS_Module': 'Holybro M9N GPS'}}",
+          "Complete_Drone: DJI Mavic 3T",
+          "Complete_Drone: Autel EVO II Dual 640T V3",
+          "Complete_Drone: DJI Matrice 30T",
+          "Complete_Drone: Teledyne FLIR SIRAS"
+        ],
+        "generated_queries": []
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:03:55.032939",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Fence Patroller",
+        "derived_constraints": {
+          "project_name": "The Fence Patroller",
+          "topology": {
+            "class": "Industrial Survey Drone 12-inch+",
+            "target_voltage": "12S",
+            "prop_size_inch": 12.0,
+            "radio_protocol": "Long Range C2 Link (e.g., Herelink, 4G/LTE)"
+          },
+          "technical_constraints": {
+            "frame_style": "Industrial Quad/Hexa (Payload Focused)",
+            "min_arm_thickness_mm": 10.0,
+            "motor_stator_index": "3110 or larger",
+            "preferred_kv_range": "170-320",
+            "video_system_preference": "Digital IP Camera or Companion Computer Interface"
+          },
+          "reasoning_trace": "The user's request for L4 autonomy with a heavy sensor payload (Lidar, High-Precision GPS) classifies this as an 'Industrial' mission. This heavy payload requires a large, efficient platform to achieve extended flight times. This leads to the selection of large props (12-inch+), a high voltage power system (12S) for efficiency, and large, low-KV motors to provide the necessary torque. The frame must be a robust industrial style to accommodate the payload, including a companion computer needed for processing sensor data for obstacle avoidance."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:04:32.540250",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Fence Patroller",
+        "context": "{\"mission\": {\"mission_name\": \"The Fence Patroller\", \"primary_goal\": \"Autonomous Fence Line Inspection\", \"autonomy_level\": \"L4 (Obstacle Avoidance + Waypoints)\", \"key_requirements\": [\"Lidar\", \"High-Precision GPS\", \"Obstacle Avoidance Sensors\", \"Extended Flight Time Battery\"]}, \"constraints\": {\"frame_style\": \"Industrial Quad/Hexa (Payload Focused)\", \"min_arm_thickness_mm\": 10.0, \"motor_stator_index\": \"3110 or larger\", \"preferred_kv_range\": \"170-320\", \"video_system_preference\": \"Digital IP Camera or Companion Computer Interface\"}, \"topology\": {\"class\": \"Industrial Survey Drone 12-inch+\", \"target_voltage\": \"12S\", \"prop_size_inch\": 12.0, \"radio_protocol\": \"Long Range C2 Link (e.g., Herelink, 4G/LTE)\"}}",
+        "proposed_parts": {
+          "kits": [
+            {
+              "kit_name": "High-End Enterprise Patroller",
+              "components": {
+                "Frame_Kit": "Tarot X4 TL4X001 960mm Quadcopter Frame Kit",
+                "Motors": "T-Motor U8 II Lite KV190 Brushless Motor",
+                "Propellers": "T-Motor G28x9.2 Carbon Fiber Propeller",
+                "FC_Stack": "CubePilot Cube Orange+ Flight Controller & 4x T-Motor Flame 80A 12S ESC System",
+                "Battery": "Tattu 12S 16000mAh 15C LiPo Battery Pack",
+                "Camera_Payload": "FLIR Hadron 640R - Radiometric Thermal & Visible Camera Module",
+                "GPS_Module": "CubePilot Here3+ RTK GNSS"
+              }
+            },
+            {
+              "kit_name": "Modular Open-Source Surveyor",
+              "components": {
+                "Frame_Kit": "Tarot 680 Pro Hexacopter Folding Frame",
+                "Motors": "T-Motor MN5006 KV260 Brushless Motor",
+                "Propellers": "Tarot 15x5.5 Carbon Fiber Propellers",
+                "FC_Stack": "Holybro Pixhawk 6X Flight Controller & 6x APD F-Series 80F3[X] 12S 80A ESCs",
+                "Battery": "CNHL G+Plus 12S 10000mAh 25C LiPo Battery Pack",
+                "Camera_Payload": "Arducam 64MP Hawkeye High-Resolution Camera Module",
+                "GPS_Module": "Holybro H-RTK F9P Rover Lite"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:04:47.679052",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Fence Patroller",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Matrice 350 RTK",
+            "WingtraOne GEN II",
+            "Freefly Astro",
+            "Inspired Flight IF1200A"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:05:07.150993",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Fence Patroller",
+        "input_list": [
+          "kits: {'kit_name': 'High-End Enterprise Patroller', 'components': {'Frame_Kit': 'Tarot X4 TL4X001 960mm Quadcopter Frame Kit', 'Motors': 'T-Motor U8 II Lite KV190 Brushless Motor', 'Propellers': 'T-Motor G28x9.2 Carbon Fiber Propeller', 'FC_Stack': 'CubePilot Cube Orange+ Flight Controller & 4x T-Motor Flame 80A 12S ESC System', 'Battery': 'Tattu 12S 16000mAh 15C LiPo Battery Pack', 'Camera_Payload': 'FLIR Hadron 640R - Radiometric Thermal & Visible Camera Module', 'GPS_Module': 'CubePilot Here3+ RTK GNSS'}}",
+          "kits: {'kit_name': 'Modular Open-Source Surveyor', 'components': {'Frame_Kit': 'Tarot 680 Pro Hexacopter Folding Frame', 'Motors': 'T-Motor MN5006 KV260 Brushless Motor', 'Propellers': 'Tarot 15x5.5 Carbon Fiber Propellers', 'FC_Stack': 'Holybro Pixhawk 6X Flight Controller & 6x APD F-Series 80F3[X] 12S 80A ESCs', 'Battery': 'CNHL G+Plus 12S 10000mAh 25C LiPo Battery Pack', 'Camera_Payload': 'Arducam 64MP Hawkeye High-Resolution Camera Module', 'GPS_Module': 'Holybro H-RTK F9P Rover Lite'}}",
+          "Complete_Drone: DJI Matrice 350 RTK",
+          "Complete_Drone: WingtraOne GEN II",
+          "Complete_Drone: Freefly Astro",
+          "Complete_Drone: Inspired Flight IF1200A"
+        ],
+        "generated_queries": [
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Tarot X4 TL4X001 960mm Quadcopter Frame Kit",
+            "search_query": "Tarot X4 TL4X001 960mm frame kit specs wheelbase datasheet"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor U8 II Lite KV190 Brushless Motor",
+            "search_query": "T-Motor U8 II Lite KV190 specs datasheet mounting pattern thrust data current rating"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "T-Motor G28x9.2 Carbon Fiber Propeller",
+            "search_query": "T-Motor G28x9.2 propeller specs datasheet hub thickness mounting hole"
+          },
+          {
+            "part_type": "Flight_Controller",
+            "model_name": "CubePilot Cube Orange+",
+            "search_query": "CubePilot Cube Orange+ flight controller specs datasheet pinout"
+          },
+          {
+            "part_type": "ESC",
+            "model_name": "T-Motor Flame 80A 12S ESC",
+            "search_query": "T-Motor Flame 80A 12S ESC datasheet specs current rating protocol"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Tattu 12S 16000mAh 15C LiPo Battery Pack",
+            "search_query": "Tattu 12S 16000mAh 15C datasheet specs dimensions weight connector type"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "FLIR Hadron 640R",
+            "search_query": "FLIR Hadron 640R camera module datasheet technical specifications interface"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "CubePilot Here3+ RTK GNSS",
+            "search_query": "CubePilot Here3+ RTK GNSS specs datasheet pinout accuracy"
+          },
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Tarot 680 Pro Hexacopter Folding Frame",
+            "search_query": "Tarot 680 Pro Hexacopter frame kit specs datasheet wheelbase"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor MN5006 KV260 Brushless Motor",
+            "search_query": "T-Motor MN5006 KV260 specs datasheet mounting pattern thrust data"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "Tarot 15x5.5 Carbon Fiber Propellers",
+            "search_query": "Tarot 15x5.5 propeller specs datasheet hub mounting"
+          },
+          {
+            "part_type": "Flight_Controller",
+            "model_name": "Holybro Pixhawk 6X Flight Controller",
+            "search_query": "Holybro Pixhawk 6X specs datasheet pinout wiring diagram"
+          },
+          {
+            "part_type": "ESC",
+            "model_name": "APD F-Series 80F3[X] 12S 80A ESC",
+            "search_query": "APD F-Series 80F3[X] 12S 80A ESC datasheet specs current rating"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "CNHL G+Plus 12S 10000mAh 25C LiPo Battery Pack",
+            "search_query": "CNHL G+Plus 12S 10000mAh 25C datasheet specs dimensions weight"
+          },
+          {
+            "part_type": "Camera_Payload",
+            "model_name": "Arducam 64MP Hawkeye High-Resolution Camera Module",
+            "search_query": "Arducam 64MP Hawkeye camera specs datasheet sensor information"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Holybro H-RTK F9P Rover Lite",
+            "search_query": "Holybro H-RTK F9P Rover Lite datasheet technical specifications pinout"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "DJI Matrice 350 RTK",
+            "search_query": "DJI Matrice 350 RTK technical specifications datasheet payload capacity flight time"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "WingtraOne GEN II",
+            "search_query": "WingtraOne GEN II drone technical specifications datasheet sensor options"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Freefly Astro",
+            "search_query": "Freefly Astro drone specs datasheet payload capacity manual"
+          },
+          {
+            "part_type": "Complete_Drone",
+            "model_name": "Inspired Flight IF1200A",
+            "search_query": "Inspired Flight IF1200A technical specifications datasheet max payload"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:06:19.461772",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Tarot X4 TL4X001 960mm Quadcopter Frame Kit",
+        "url": "https://www.flyingtech.co.uk/product/tarot-x6-960mm-carbon-fibre-foldable-hexacopter-frame/",
+        "specs_found": {
+          "wheelbase_mm": 960.0,
+          "material": "Carbon Fiber",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:07:19.801076",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor U8 II Lite KV190 Brushless Motor",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:07:40.698431",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor G28x9.2 Carbon Fiber Propeller",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:08:42.978207",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CubePilot Cube Orange+",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:09:34.704756",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor Flame 80A 12S ESC",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:10:22.583450",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Tattu 12S 16000mAh 15C LiPo Battery Pack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:11:28.923029",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "FLIR Hadron 640R",
+        "url": "https://www.flircameras.com/product/hadron-640r-htm/",
+        "specs_found": {
+          "interface_type": "Hirose DF40, MIPI, USB",
+          "input_voltage_v": "5",
+          "sensor_model": "IR: Boson/Boson+, EO: IMX586",
+          "lens_mount": "Fixed / Integrated",
+          "dimensions_mm": {
+            "width": 49.0,
+            "height": 45.0,
+            "depth": 35.0
+          },
+          "has_sd_card_slot": false,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:12:27.099818",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "CubePilot Here3+ RTK GNSS",
+        "url": "https://irlock.com/products/here3-with-istand",
+        "specs_found": {
+          "gnss_receiver_model": "u-blox M8P-2",
+          "magnetometer_model": "RM3100",
+          "has_magnetometer": true,
+          "antenna_size_mm": "68x68x16",
+          "interface_type": "DroneCAN",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:13:39.097224",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Tarot 680 Pro Hexacopter Folding Frame",
+        "url": "https://www.amazon.com/Carbon-Folding-Hexacopter-Aircraft-Copter/dp/B00O1WIYCY",
+        "specs_found": {
+          "wheelbase_mm": 680,
+          "arm_thickness_mm": 16.0,
+          "frame_layout": "Hexacopter",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:13:56.805601",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor MN5006 KV260 Brushless Motor",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:15:09.488756",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Tarot 15x5.5 Carbon Fiber Propellers",
+        "url": "https://indianrobostore.com/product/generic-prop-x8-3011-propellers-cw-without-mount-for-agricultural-drones",
+        "specs_found": {
+          "diameter_inches": 30.0,
+          "pitch_inches": 11.0,
+          "blade_count": 2,
+          "mount_type": "3-hole direct mount",
+          "rotation": "CW",
+          "source": "text_inference_fallback",
+          "diameter_mm": 76.19999999999999
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:16:16.008678",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Holybro Pixhawk 6X Flight Controller",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:17:33.740040",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "APD F-Series 80F3[X] 12S 80A ESC",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:18:28.974162",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CNHL G+Plus 12S 10000mAh 25C LiPo Battery Pack",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:19:28.872472",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Arducam 64MP Hawkeye High-Resolution Camera Module",
+        "url": "https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/64MP-Hawkeye/",
+        "specs_found": {
+          "sensor_model": "64MP Hawkeye",
+          "resolution_mp": 64.0,
+          "interface_type": "MIPI CSI-2",
+          "input_voltage_v": "3.3",
+          "lens_mount": "Stock",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:20:17.765838",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro H-RTK F9P Rover Lite",
+        "url": "https://holybro.com/products/h-rtk-f9p-gnss-series",
+        "specs_found": {
+          "gnss_chip": "u-blox M9N",
+          "has_magnetometer": true,
+          "magnetometer_chip": "Not specified",
+          "antenna_type": "Internal Patch",
+          "antenna_size_mm": "Not specified",
+          "connector_type": "JST-GH, USB-C",
+          "pin_count": 10,
+          "input_voltage": "4.75V~5.25V",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:21:20.749411",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "DJI Matrice 350 RTK",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:22:14.111034",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "WingtraOne GEN II",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:23:20.224620",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Freefly Astro",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:24:07.425791",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Inspired Flight IF1200A",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:24:22.406389",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Night Guardian",
+        "derived_constraints": {
+          "project_name": "The Night Guardian",
+          "topology": {
+            "class": "Heavy Payload 7-inch",
+            "target_voltage": "6S",
+            "prop_size_inch": 7.0,
+            "radio_protocol": "ELRS 900MHz"
+          },
+          "technical_constraints": {
+            "frame_style": "Freestyle Long Range",
+            "min_arm_thickness_mm": 6.0,
+            "motor_stator_index": "2806.5 or larger",
+            "preferred_kv_range": "1300-1500",
+            "video_system_preference": "Digital HD with Low-Light Capability or Thermal"
+          },
+          "reasoning_trace": "The user request for 'Predator Deterrence' with a 'Spotlight/Loudspeaker Payload' requires significant thrust and payload capacity, pushing the design towards a 7-inch class. The 'Low-Noise' and 'Monitoring' aspects favor larger props on lower KV motors for efficiency and reduced acoustic signature. A 6S power system is standard for this class to efficiently power large motors (2806.5+) and the payload. 'High-Maneuverability' is achieved with a freestyle frame geometry, while a 900MHz radio link ensures robust control for a mission-critical application. The 'Night Vision' requirement is directly addressed by specifying a video system with strong low-light or thermal capabilities."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:24:50.067956",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Night Guardian",
+        "context": "{\"mission\": {\"mission_name\": \"The Night Guardian\", \"primary_goal\": \"Predator Deterrence & Monitoring\", \"autonomy_level\": \"L3 (Human on the Loop for Engagement)\", \"key_requirements\": [\"Night Vision Optics\", \"High-Maneuverability Frame\", \"Low-Noise Propellers\", \"Spotlight/Loudspeaker Payload\"]}, \"constraints\": {\"frame_style\": \"Freestyle Long Range\", \"min_arm_thickness_mm\": 6.0, \"motor_stator_index\": \"2806.5 or larger\", \"preferred_kv_range\": \"1300-1500\", \"video_system_preference\": \"Digital HD with Low-Light Capability or Thermal\"}, \"topology\": {\"class\": \"Heavy Payload 7-inch\", \"target_voltage\": \"6S\", \"prop_size_inch\": 7.0, \"radio_protocol\": \"ELRS 900MHz\"}}",
+        "proposed_parts": {
+          "kits": [
+            {
+              "kit_name": "Tier 1: Thermal Reconnaissance",
+              "components": {
+                "Frame_Kit": "AOS 7 EVO Frame Kit (8mm Arms)",
+                "Motors": "T-Motor Velox V2808 1300KV",
+                "Propellers": "HQProp 7x3.5x3 V1S",
+                "FC_Stack": "Holybro Kakute H7 V2 + Tekko32 F4 65A 30x30 Stack",
+                "Battery": "CNHL Black Series 6S 3000mAh 100C LiPo Battery",
+                "Camera_Payload": "DJI O3 Air Unit Digital HD FPV System",
+                "GPS_Module": "Holybro M9N GPS with Magnetometer"
+              }
+            },
+            {
+              "kit_name": "Tier 2: Durable Low-Light Workhorse",
+              "components": {
+                "Frame_Kit": "iFlight Chimera7 Pro V2 Frame Kit (6mm Arms)",
+                "Motors": "Emax ECO II Series 2807 1300KV",
+                "Propellers": "Gemfan 7040 3-Blade Propeller",
+                "FC_Stack": "SpeedyBee F405 V3 BLS 50A 30x30 FC & ESC Stack",
+                "Battery": "CNHL Black Series 6S 2200mAh 100C LiPo Battery",
+                "Camera_Payload": "RunCam Link HD Digital FPV Air Unit with RunCam Night Eagle 3 Camera",
+                "GPS_Module": "Beitian BN-880 Flight Control GPS Module"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:24:58.752143",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Night Guardian",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Mavic 3T",
+            "Autel EVO II Dual 640T V3",
+            "DJI Matrice 30T"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:25:11.471187",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Night Guardian",
+        "input_list": [
+          "kits: {'kit_name': 'Tier 1: Thermal Reconnaissance', 'components': {'Frame_Kit': 'AOS 7 EVO Frame Kit (8mm Arms)', 'Motors': 'T-Motor Velox V2808 1300KV', 'Propellers': 'HQProp 7x3.5x3 V1S', 'FC_Stack': 'Holybro Kakute H7 V2 + Tekko32 F4 65A 30x30 Stack', 'Battery': 'CNHL Black Series 6S 3000mAh 100C LiPo Battery', 'Camera_Payload': 'DJI O3 Air Unit Digital HD FPV System', 'GPS_Module': 'Holybro M9N GPS with Magnetometer'}}",
+          "kits: {'kit_name': 'Tier 2: Durable Low-Light Workhorse', 'components': {'Frame_Kit': 'iFlight Chimera7 Pro V2 Frame Kit (6mm Arms)', 'Motors': 'Emax ECO II Series 2807 1300KV', 'Propellers': 'Gemfan 7040 3-Blade Propeller', 'FC_Stack': 'SpeedyBee F405 V3 BLS 50A 30x30 FC & ESC Stack', 'Battery': 'CNHL Black Series 6S 2200mAh 100C LiPo Battery', 'Camera_Payload': 'RunCam Link HD Digital FPV Air Unit with RunCam Night Eagle 3 Camera', 'GPS_Module': 'Beitian BN-880 Flight Control GPS Module'}}",
+          "Complete_Drone: DJI Mavic 3T",
+          "Complete_Drone: Autel EVO II Dual 640T V3",
+          "Complete_Drone: DJI Matrice 30T"
+        ],
+        "generated_queries": []
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:25:27.307675",
+      "type": "ARCHITECT_CONSTRAINTS",
+      "data": {
+        "mission": "The Surveyor",
+        "derived_constraints": {
+          "project_name": "The Surveyor",
+          "topology": {
+            "class": "13-inch Industrial Hexacopter",
+            "target_voltage": "12S",
+            "prop_size_inch": 13.0,
+            "radio_protocol": "Long Range C2/Telemetry (e.g., MAVLink Radio)"
+          },
+          "technical_constraints": {
+            "frame_style": "Hexacopter (X6)",
+            "min_arm_thickness_mm": 20.0,
+            "motor_stator_index": "4114 or larger",
+            "preferred_kv_range": "300-500",
+            "video_system_preference": "Payload-centric (Mapping Camera Primary, Optional FPV)"
+          },
+          "reasoning_trace": "The user request for 'High-Resolution Ranch Mapping' with RTK GPS implies a heavy payload and long flight times. This classifies the intent as 'Industrial'. A heavy payload requires significant lift and stability, leading to a large-prop (13-inch), multi-rotor (Hexacopter) design for redundancy. To efficiently spin large props and maximize flight time, a high-voltage (12S) system with low-KV, high-torque motors (4114 stator, 300-500KV) is mandated. The autonomous grid flight requirement necessitates an advanced flight controller compatible with ArduPilot/PX4 and MAVLink for robust mission planning and control."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:26:01.623286",
+      "type": "ENGINEER_DESIGN",
+      "data": {
+        "mission": "The Surveyor",
+        "context": "{\"mission\": {\"mission_name\": \"The Surveyor\", \"primary_goal\": \"High-Resolution Ranch Mapping\", \"autonomy_level\": \"L4 (Pre-Planned Grid Flight)\", \"key_requirements\": [\"RTK GPS Module\", \"High-Resolution Mapping Camera\", \"Photogrammetry Software Compatibility\", \"Stable Flight Controller\"]}, \"constraints\": {\"frame_style\": \"Hexacopter (X6)\", \"min_arm_thickness_mm\": 20.0, \"motor_stator_index\": \"4114 or larger\", \"preferred_kv_range\": \"300-500\", \"video_system_preference\": \"Payload-centric (Mapping Camera Primary, Optional FPV)\"}, \"topology\": {\"class\": \"13-inch Industrial Hexacopter\", \"target_voltage\": \"12S\", \"prop_size_inch\": 13.0, \"radio_protocol\": \"Long Range C2/Telemetry (e.g., MAVLink Radio)\"}}",
+        "proposed_parts": {
+          "kits": [
+            {
+              "kit_name": "Pro Surveyor RTK",
+              "components": {
+                "Frame_Kit": "Tarot X6 TL6X001 Hexacopter Frame Kit (960mm)",
+                "Motors": "T-Motor Antigravity MN5008 KV340 (6 units)",
+                "Propellers": "T-Motor G13x5 Carbon Fiber Propellers (3 CW, 3 CCW)",
+                "FC_Stack": "CubePilot Cube Orange+ with Holybro Kore Carrier Board & 6x Hobbywing X-Rotor Pro 50A 12S ESCs",
+                "Battery": "Tattu 12S 16000mAh 15C LiPo Battery Pack with AS150U-F Plug",
+                "Camera_Payload": "Sony a7R IV Full-Frame Mirrorless Camera with Sigma 24mm f/1.4 Art Lens",
+                "GPS_Module": "Holybro H-RTK F9P Rover Lite High Precision GNSS Module"
+              }
+            },
+            {
+              "kit_name": "Field-Ready Surveyor",
+              "components": {
+                "Frame_Kit": "Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+                "Motors": "EMAX MT4114 340KV Brushless Motor (6 units)",
+                "Propellers": "Generic 1355 (13x5.5) Carbon Fiber Propellers (3 CW, 3 CCW)",
+                "FC_Stack": "Matek H743-SLIM V3 Flight Controller with Matek FCHUB-12S PDB & 6x Flycolor X-Cross HV3 80A 12S ESCs",
+                "Battery": "CNHL G+Plus 12S 12000mAh 25C LiPo Battery Pack with AS150 Plug",
+                "Camera_Payload": "Sony a6100 APS-C Mirrorless Camera with Sigma 16mm f/1.4 DC DN Lens",
+                "GPS_Module": "CUAV C-RTK 9P High Precision GNSS Positioning System"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:26:12.139219",
+      "type": "SCOUT_SEARCH",
+      "data": {
+        "mission": "The Surveyor",
+        "found_drones": {
+          "Complete_Drone": [
+            "DJI Phantom 4 RTK",
+            "DJI Mavic 3 Enterprise",
+            "Autel EVO II Pro RTK V3",
+            "Wingtra WingtraOne GEN II"
+          ]
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:26:36.815046",
+      "type": "SOURCER_QUERIES",
+      "data": {
+        "mission": "The Surveyor",
+        "input_list": [
+          "kits: {'kit_name': 'Pro Surveyor RTK', 'components': {'Frame_Kit': 'Tarot X6 TL6X001 Hexacopter Frame Kit (960mm)', 'Motors': 'T-Motor Antigravity MN5008 KV340 (6 units)', 'Propellers': 'T-Motor G13x5 Carbon Fiber Propellers (3 CW, 3 CCW)', 'FC_Stack': 'CubePilot Cube Orange+ with Holybro Kore Carrier Board & 6x Hobbywing X-Rotor Pro 50A 12S ESCs', 'Battery': 'Tattu 12S 16000mAh 15C LiPo Battery Pack with AS150U-F Plug', 'Camera_Payload': 'Sony a7R IV Full-Frame Mirrorless Camera with Sigma 24mm f/1.4 Art Lens', 'GPS_Module': 'Holybro H-RTK F9P Rover Lite High Precision GNSS Module'}}",
+          "kits: {'kit_name': 'Field-Ready Surveyor', 'components': {'Frame_Kit': 'Tarot T960 Folding Hexacopter Frame Kit (960mm)', 'Motors': 'EMAX MT4114 340KV Brushless Motor (6 units)', 'Propellers': 'Generic 1355 (13x5.5) Carbon Fiber Propellers (3 CW, 3 CCW)', 'FC_Stack': 'Matek H743-SLIM V3 Flight Controller with Matek FCHUB-12S PDB & 6x Flycolor X-Cross HV3 80A 12S ESCs', 'Battery': 'CNHL G+Plus 12S 12000mAh 25C LiPo Battery Pack with AS150 Plug', 'Camera_Payload': 'Sony a6100 APS-C Mirrorless Camera with Sigma 16mm f/1.4 DC DN Lens', 'GPS_Module': 'CUAV C-RTK 9P High Precision GNSS Positioning System'}}",
+          "Complete_Drone: DJI Phantom 4 RTK",
+          "Complete_Drone: DJI Mavic 3 Enterprise",
+          "Complete_Drone: Autel EVO II Pro RTK V3",
+          "Complete_Drone: Wingtra WingtraOne GEN II"
+        ],
+        "generated_queries": [
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Tarot X6 TL6X001 Hexacopter Frame Kit (960mm)",
+            "search_query": "Tarot X6 TL6X001 960mm frame kit specs wheelbase mounting pattern"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "T-Motor Antigravity MN5008 KV340",
+            "search_query": "T-Motor Antigravity MN5008 340KV motor specs datasheet current rating mounting pattern"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "T-Motor G13x5 Carbon Fiber Propellers",
+            "search_query": "T-Motor G13x5 carbon fiber propeller specs hub thickness bore diameter"
+          },
+          {
+            "part_type": "Flight_Controller",
+            "model_name": "CubePilot Cube Orange+",
+            "search_query": "CubePilot Cube Orange+ datasheet specs pinout dimensions"
+          },
+          {
+            "part_type": "Carrier_Board",
+            "model_name": "Holybro Kore Carrier Board",
+            "search_query": "Holybro Kore Carrier Board specs datasheet mounting pattern"
+          },
+          {
+            "part_type": "ESC",
+            "model_name": "Hobbywing X-Rotor Pro 50A 12S",
+            "search_query": "Hobbywing X-Rotor Pro 50A 12S ESC specs datasheet current rating"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "Tattu 12S 16000mAh 15C LiPo",
+            "search_query": "Tattu 12S 16000mAh 15C LiPo datasheet specs dimensions weight"
+          },
+          {
+            "part_type": "Camera",
+            "model_name": "Sony a7R IV Full-Frame Mirrorless Camera",
+            "search_query": "Sony a7R IV camera technical specifications datasheet"
+          },
+          {
+            "part_type": "Lens",
+            "model_name": "Sigma 24mm f/1.4 Art Lens",
+            "search_query": "Sigma 24mm f/1.4 Art Lens specs dimensions weight datasheet"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "Holybro H-RTK F9P Rover Lite",
+            "search_query": "Holybro H-RTK F9P Rover Lite specs datasheet pinout"
+          },
+          {
+            "part_type": "Frame_Kit",
+            "model_name": "Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+            "search_query": "Tarot T960 960mm frame kit specs wheelbase mounting dimensions"
+          },
+          {
+            "part_type": "Motors",
+            "model_name": "EMAX MT4114 340KV",
+            "search_query": "EMAX MT4114 340KV motor specs datasheet current rating mounting pattern"
+          },
+          {
+            "part_type": "Propellers",
+            "model_name": "1355 (13x5.5) Carbon Fiber Propellers",
+            "search_query": "13x5.5 carbon fiber propeller specs hub thickness bore diameter"
+          },
+          {
+            "part_type": "Flight_Controller",
+            "model_name": "Matek H743-SLIM V3",
+            "search_query": "Matek H743-SLIM V3 flight controller specs datasheet pinout"
+          },
+          {
+            "part_type": "PDB",
+            "model_name": "Matek FCHUB-12S",
+            "search_query": "Matek FCHUB-12S PDB specs datasheet mounting pattern"
+          },
+          {
+            "part_type": "ESC",
+            "model_name": "Flycolor X-Cross HV3 80A 12S",
+            "search_query": "Flycolor X-Cross HV3 80A 12S ESC specs datasheet current rating"
+          },
+          {
+            "part_type": "Battery",
+            "model_name": "CNHL G+Plus 12S 12000mAh 25C",
+            "search_query": "CNHL G+Plus 12S 12000mAh 25C LiPo battery specs dimensions weight datasheet"
+          },
+          {
+            "part_type": "Camera",
+            "model_name": "Sony a6100 APS-C Mirrorless Camera",
+            "search_query": "Sony a6100 camera technical specifications datasheet"
+          },
+          {
+            "part_type": "Lens",
+            "model_name": "Sigma 16mm f/1.4 DC DN Lens",
+            "search_query": "Sigma 16mm f/1.4 DC DN lens specs dimensions weight datasheet"
+          },
+          {
+            "part_type": "GPS_Module",
+            "model_name": "CUAV C-RTK 9P",
+            "search_query": "CUAV C-RTK 9P GNSS specs datasheet pinout"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:27:43.569891",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Tarot X6 TL6X001 Hexacopter Frame Kit (960mm)",
+        "url": "https://alpha-rc-heli.com/shop/tarot-x6-drone-kit/",
+        "specs_found": {
+          "wheelbase_mm": 960.0,
+          "max_prop_size_in": 18.0,
+          "arm_thickness_mm": 25.0,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:28:26.958039",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "T-Motor Antigravity MN5008 KV340",
+        "url": "https://shop.tmotor.com/products/mn5008-multirotor-motor",
+        "specs_found": {
+          "stator_size": "5008",
+          "kv_rating": 340,
+          "shaft_diameter_mm": 6.0,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:28:44.208168",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "T-Motor G13x5 Carbon Fiber Propellers",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:29:44.128513",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CubePilot Cube Orange+",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:30:54.676513",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro Kore Carrier Board",
+        "url": "https://docs.px4.io/main/en/flight_controller/cubepilot_cube_orangeplus",
+        "specs_found": {
+          "som_compatibility": "Cube Autopilot",
+          "power_input_voltage": "4.1V - 5.7V",
+          "power_connector_type": "6-pin JST GH",
+          "ethernet_gbe_count": 0,
+          "usb_3_count": 0,
+          "mipi_csi_count": 0,
+          "m2_key_m_count": 0,
+          "m2_key_e_count": 0,
+          "can_bus_count": 2,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:31:53.146104",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Hobbywing X-Rotor Pro 50A 12S",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:32:44.780092",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Tattu 12S 16000mAh 15C LiPo",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:33:33.474645",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Sony a7R IV Full-Frame Mirrorless Camera",
+        "url": "https://www.stereolabs.com/store/products/zed-2i",
+        "specs_found": {
+          "sensor_model": "ZED 2i",
+          "interface_type": "USB Type-C",
+          "lens_mount": "Interchangeable",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:34:42.780966",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Sigma 24mm f/1.4 Art Lens",
+        "url": "https://www.the-digital-picture.com/Reviews/Lens-Specifications.aspx?Lens=985",
+        "specs_found": {
+          "focal_length_mm": 24.0,
+          "aperture_f_number": 1.4,
+          "sensor_format_inch": "Full-Frame",
+          "has_ir_cut_filter": false,
+          "field_of_view_degrees": 84.1,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:35:47.824739",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Holybro H-RTK F9P Rover Lite",
+        "url": "https://holybro.com/products/dronecan-h-rtk-f9p-rover",
+        "specs_found": {
+          "dimensions_mm": "Diameter: 80, Height: 20",
+          "gnss_chipset": "U-blox ZED-F9P",
+          "has_compass": true,
+          "compass_chipset": "BMM150 or IST8310",
+          "connector_type": "JST-GH",
+          "pin_count": 4,
+          "input_voltage": "4.75-5.25V",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:36:34.650078",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "Tarot T960 Folding Hexacopter Frame Kit (960mm)",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:36:52.930595",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "EMAX MT4114 340KV",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:37:41.283205",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "1355 (13x5.5) Carbon Fiber Propellers",
+        "reason": "No Search Results"
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:39:14.507126",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Matek H743-SLIM V3",
+        "url": "https://www.mateksys.com/?portfolio=h743-mini",
+        "specs_found": {
+          "mounting_mm": "20x20",
+          "mcu": "STM32H743VIT6",
+          "gyro": "ICM42688P & ICM42605",
+          "has_barometer": true,
+          "uart_count": 5,
+          "input_voltage_s_rating": "2-8S",
+          "target_firmware": "ArduPilot, INAV, BetaFlight",
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:40:28.813334",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Matek FCHUB-12S",
+        "url": "https://manuals.plus/asin/B0D97TN8SJ",
+        "specs_found": {
+          "mounting_mm": "30.5x30.5",
+          "input_voltage_lipo_s": "3-8S",
+          "max_current_continuous_a": 90.0,
+          "max_current_burst_a": 220.0,
+          "esc_output_count": 2,
+          "has_current_sensor": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:41:18.460148",
+      "type": "VERIFICATION_SUCCESS",
+      "data": {
+        "model": "Flycolor X-Cross HV3 80A 12S",
+        "url": "https://manuals.plus/asin/B0C3CZ3ZFG",
+        "specs_found": {
+          "mounting_mm": "49",
+          "continuous_current_a": 80,
+          "input_voltage_s": "5-12S",
+          "is_4_in_1": false,
+          "firmware": "BLHeli-32",
+          "has_current_sensor": true,
+          "source": "multimodal_fusion"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-29T15:42:10.004113",
+      "type": "VERIFICATION_REJECTED",
+      "data": {
+        "model": "CNHL G+Plus 12S 12000mAh 25C",
+        "reason": "No Search Results"
+      }
     }
   ]
 }

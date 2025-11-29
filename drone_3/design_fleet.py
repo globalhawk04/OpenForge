@@ -4,6 +4,7 @@ import json
 import os
 import random
 import re
+import shutil # <--- Needed for moving STLs
 from datetime import datetime
 
 # Import services
@@ -12,9 +13,14 @@ from app.services.physics_service import generate_physics_config
 from app.services.digital_twin_service import generate_scene_graph
 from app.prompts import MASTER_DESIGNER_INSTRUCTION
 
+# --- NEW IMPORTS FOR ISAAC SIM ---
+from app.services.isaac_service import IsaacService
+from app.services.cad_service import generate_assets
+
 # --- CONFIG ---
 ARSENAL_FILE = "drone_arsenal.json"
 CATALOG_FILE = "drone_catalog.json"
+ASSETS_DIR = os.path.abspath("assets") # <--- Define Assets Directory
 
 def load_arsenal():
     if not os.path.exists(ARSENAL_FILE): return []
@@ -73,6 +79,9 @@ def determine_size_class(part):
 
 async def design_fleet():
     print("🧠 OPENFORGE DESIGNER: Initializing AI Assembly Line...")
+    
+    # Ensure assets dir exists
+    os.makedirs(ASSETS_DIR, exist_ok=True)
     
     inventory = load_arsenal()
     catalog = []
@@ -191,6 +200,16 @@ async def design_fleet():
             "visuals": p.get('visuals')
         } for p in bom]
 
+        # --- BLUEPRINT GENERATION & CHECK ---
+        print("      🧠 Master Builder is analyzing component compatibility...")
+        blueprint = await generate_assembly_blueprint(ai_bom)
+        
+        if not blueprint.get("is_buildable", False):
+            print(f"      ❌ Build Rejected by AI: {blueprint.get('incompatibility_reason')}")
+            # Stop here. Do not save to catalog. Do not generate assets.
+            continue 
+
+        # --- PHYSICS ---
         physics = generate_physics_config(ai_bom)
         twr = physics['dynamics']['twr']
         
@@ -213,6 +232,7 @@ async def design_fleet():
             },
             "bom": ai_bom,
             "technical_data": {
+                "blueprint": blueprint, # Save blueprint so Asset Generator can use it
                 "physics_config": physics,
                 "scene_graph": scene_graph
             }
@@ -220,6 +240,24 @@ async def design_fleet():
         
         catalog.append(sku)
         save_catalog(catalog)
+
+        # 7. GENERATE DIGITAL TWIN (ISAAC SIM ASSETS)
+        print(f"      👾 Generative CAD: Sculpting 3D Assets...")
+        
+        # Call CAD service to make STLs
+        cad_assets = generate_assets(sku['sku_id'], blueprint, ai_bom)
+        
+        # Move STLs to Assets Directory (where Isaac Service expects them)
+        for part_type, path in cad_assets.get('individual_parts', {}).items():
+            if path and os.path.exists(path):
+                filename = os.path.basename(path)
+                dest = os.path.join(ASSETS_DIR, filename)
+                shutil.copy2(path, dest)
+                
+        # Generate USD for Isaac Sim
+        print(f"      👾 NVIDIA Isaac: Compiling Universal Scene Description (USD)...")
+        isaac_bridge = IsaacService()
+        isaac_bridge.generate_drone_usd(sku)
 
 if __name__ == "__main__":
     asyncio.run(design_fleet())

@@ -1,9 +1,9 @@
 [
   {
-    "sku_id": "OF-AI-2509",
+    "sku_id": "OF-AI-6087",
     "anchor_frame": "IFLIGHT CHIMERA7 PRO V2 FRAME KIT - ANUBIS RC",
     "class": "7_INCH",
-    "ai_reasoning": "The Chimera7 Pro frame is a 7-inch long-range platform. The selected iFlight 2809 1250KV motors are a perfect match, offering high torque for the 7-inch Gemfan props and ideal efficiency for the 6S battery voltage. All components are physically compatible: the motor's 19x19mm mount fits the frame, the 7-inch props are within the frame's 7.5-inch limit, and the prop hub matches the motor shaft. The Holybro Pixhawk 6X is a professional-grade flight controller well-suited for the long-range and autonomous capabilities of this large platform.",
+    "ai_reasoning": "The IFLIGHT CHIMERA7 PRO V2 is a 7-inch long-range frame. The selected iFlight XING2 motor at 1250KV is the ideal choice for a 6S battery on a 7-inch platform, providing excellent efficiency and torque for cruising. The Gemfan 7037 propellers are well within the frame's 7.5-inch maximum size and match the motor's 5mm shaft. The Holybro Pixhawk 6X is a high-end flight controller with features like a barometer and triple IMU redundancy, making it perfect for reliable long-range missions. All components are physically compatible: the motor's 19x19mm mounting fits the frame, and the Pixhawk is assumed to use the standard 30.5x30.5mm mounting supported by the frame.",
     "performance": {
       "twr": 60.21,
       "flight_time": 4.2,
@@ -679,10 +679,10 @@
     }
   },
   {
-    "sku_id": "OF-AI-3988",
+    "sku_id": "OF-AI-7568",
     "anchor_frame": "HGLRC Rekon7 Long Range PRO HD O3 Frame Kit User Manual",
     "class": "7_INCH",
-    "ai_reasoning": "This build is optimized for the 'Long Range' class of the Rekon7 frame. The low 1250KV of the iFlight XING2 motor is an ideal match for the 6S battery voltage and 7-inch propellers, ensuring high efficiency for extended flight times. The motor's 19x19mm mounting pattern and the propeller's 7-inch diameter are a perfect physical fit for the frame. The Holybro Pixhawk 6X is selected as a powerful flight controller suitable for advanced, autonomous long-range missions. While the battery's 1200mAh capacity is modest for this frame size, it is the best fit from the available options. A custom mounting solution would be required for the flight controller, as the frame is designed for a 20x20mm stack.",
+    "ai_reasoning": "The HGLRC Rekon7 is a 7-inch long-range frame, dictating a build focused on efficiency. The iFlight 2809 motor's low 1250KV rating is perfectly matched with the 6S Tattu battery for efficient, high-torque performance on a 7-inch propeller. The Gemfan 7037 propeller fits both the frame's maximum size limit and the motor's 5mm shaft. The Holybro Pixhawk 6X is chosen as the only functional flight controller available, though its non-standard mounting would require a custom solution to fit the frame's 20x20mm pattern. The battery capacity is lower than ideal for maximum range, but it is the correct voltage for this efficient powertrain combination.",
     "performance": {
       "twr": 60.21,
       "flight_time": 4.2,
