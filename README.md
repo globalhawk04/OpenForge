@@ -1,5 +1,10 @@
 Drone_3 works end to end however the physics video game simulator needs work as drones are difficult to control and graphics could be less blocky.  The program will render 2 drone constructions which is pretty good since we start from scratch with some basic user requriments and end up with enough parts with good specs through the fusion process to create unique drones.  However these drones are not perfectly aligned or matched up perfectly.  This can be fixed by running the seed and refine .py's multiple times to populate the inventory robustly then seed_ecosystem to look sideways and find the parts needed.  this verges on just a really advanced scrape project with some nifty tricks to force a way to create a catalog robust enough to generate a drone by creating its own kit.  it would be interesting to see how this worked on real database but for now it is a good excersize in llm orch as well as viz. 
 
+seed.py
+seed_ecosystem.py
+refine_arsenal.py
+design_fleet.py
+
 # OpenForge: Neuro-Symbolic Manufacturing Engine
 
 <div align="center">
