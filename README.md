@@ -1,5 +1,7 @@
-System now works from seed to simulation for drones! I cheated a little bit in the make_fleet.py to rely less on LLM to create the fleet but I had to remind myself that this was a test of Gem 3.0 reasoning and not making things absolutely perfect to avoid going down a needless rabithole.  Now that I have the pipeline completed to a point in which i am satified the simulation is as best as i can get i will shift from drones to something else like quad or robot arms using hugging face tut: https://huggingface.co/docs/lerobot/en/so101
+Drone_4 works from seed to simulation for drones! I cheated a little bit in the make_fleet.py to rely less on LLM to create the fleet but I had to remind myself that this was a test of Gem 3.0 reasoning and not making things absolutely perfect to avoid going down a needless rabithole.  
+Now that I have the pipeline completed to a point in which i am satified the simulation is as best as i can get i will shift from drones to something else like quad or robot arms using hugging face tut: https://huggingface.co/docs/lerobot/en/so101
 
+Quad is had been uploaded.  It is an attempt to create quadruped robot from user inference to simulation
 # OpenForge: Neuro-Symbolic Manufacturing Engine
 
 <div align="center">
