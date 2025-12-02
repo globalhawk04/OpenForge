@@ -37,10 +37,12 @@ class CompatibilityService:
             min_v, max_v = self._parse_voltage_range(servo_volts_str)
             
             # 3. Compare
-            if sys_voltage > max_v:
-                errors.append(f"CRITICAL VOLTAGE OVERLOAD: Battery is {sys_voltage}V (nominal), but Servos are rated max {max_v}V. Magic smoke imminent. Use a BEC or lower voltage battery.")
-            elif sys_voltage < min_v:
-                warnings.append(f"Under-voltage: Battery provides {sys_voltage}V, servos usually need minimum {min_v}V.")
+            # Only run check if we actually found a valid battery S-rating
+            if bat_s > 0:
+                if sys_voltage > max_v:
+                    errors.append(f"CRITICAL VOLTAGE OVERLOAD: Battery is {sys_voltage}V (nominal), but Servos are rated max {max_v}V. Magic smoke imminent. Use a BEC or lower voltage battery.")
+                elif sys_voltage < min_v:
+                    warnings.append(f"Under-voltage: Battery provides {sys_voltage}V, servos usually need minimum {min_v}V.")
 
         # --- CHECK B: CONTROL ARCHITECTURE ---
         # Can the brain actually move the legs?
@@ -92,8 +94,8 @@ class CompatibilityService:
             
             max_bat_amps = (capacity_mah / 1000.0) * c_rating
             
-            if total_stall_amps > max_bat_amps:
-                warnings.append(f"Brownout Risk: Servos can draw {total_stall_amps}A, battery only supplies {max_bat_amps}A. Robot may shut down under load.")
+            if max_bat_amps > 0 and total_stall_amps > max_bat_amps:
+                warnings.append(f"Brownout Risk: Servos can draw {total_stall_amps}A, battery only supplies {max_bat_amps:.1f}A. Robot may shut down under load.")
 
         return {
             "valid": len(errors) == 0,
@@ -123,16 +125,21 @@ class CompatibilityService:
     def _parse_voltage_range(self, val_str):
         """Parses '6.0-8.4V' into (6.0, 8.4)."""
         if not val_str: return (4.8, 6.0) # Default PWM range
-        nums = [float(x) for x in re.findall(r"(\d+(\.\d+)?)", str(val_str))]
-        if len(nums) == 0: return (4.8, 6.0)
+        
+        # FIX: Use simple regex without capturing groups to return strings, not tuples
+        matches = re.findall(r"\d+\.?\d*", str(val_str))
+        
+        nums = []
+        for m in matches:
+            try:
+                nums.append(float(m))
+            except ValueError:
+                pass
+                
+        if not nums: return (4.8, 6.0)
         if len(nums) == 1: return (nums[0], nums[0])
-        # re.findall with groups returns tuples, we need the first element
-        cleaned_nums = [n[0] if isinstance(n, tuple) else n for n in nums]
-        # Actually re.findall returns strings or tuples. 
-        # Simpler regex:
-        simple_nums = [float(x) for x in re.findall(r"\d+\.?\d*", str(val_str))]
-        if not simple_nums: return (4.8, 6.0)
-        return (min(simple_nums), max(simple_nums))
+        
+        return (min(nums), max(nums))
 
     def _extract_number(self, val, default=0):
         if not val: return default

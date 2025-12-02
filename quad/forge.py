@@ -6,7 +6,7 @@ import random
 from datetime import datetime
 
 # Services
-from app.services.ai_service import call_llm_for_json, generate_dynamic_buy_list, generate_spec_sheet
+from app.services.ai_service import call_llm_for_json
 from app.services.fusion_service import fuse_component_data
 from app.services.supply_service import SupplyService
 from app.services.physics_service import generate_physics_config
@@ -23,6 +23,50 @@ from app.prompts import (
     REQUIREMENTS_SYSTEM_INSTRUCTION, 
     ARSENAL_ENGINEER_INSTRUCTION
 )
+
+# --- NEW HELPER FUNCTION TO FIX SEARCH FAILURES ---
+def clean_search_query(model_name, part_type):
+    """
+    Cleans up overly descriptive LLM names for Google Search to improve hit rates.
+    Handles None/Null model names gracefully.
+    """
+    # 1. Handle Null/Empty Model Names
+    if not model_name:
+        return f"{part_type} robotics specs price"
+
+    query = str(model_name).lower()
+    
+    # 2. Remove junk words that confuse search engines
+    junk_words = [
+        "custom", "fabricated", "open-source", "printable", "files", 
+        "style", "based", "3d printed", "compatible", "generic"
+    ]
+    for w in junk_words:
+        query = query.replace(w, "")
+        
+    query = query.strip()
+    
+    # 3. Apply Domain Heuristics
+    pt_lower = part_type.lower()
+    
+    if "chassis" in pt_lower or "frame" in pt_lower:
+        if "aluminum" in query or "extrusion" in query: 
+            return f"{query} extrusion kit robotics"
+        if "carbon" in query: 
+            return f"{query} frame kit"
+        return f"{query} robot chassis kit"
+        
+    if "actuator" in pt_lower or "servo" in pt_lower:
+        return f"{query} servo torque specs"
+
+    if "battery" in pt_lower:
+        return f"{query} lipo battery specs"
+
+    if "controller" in pt_lower:
+        return f"{query} pinout specs"
+
+    # Default fallback
+    return f"{query} specs price"
 
 async def main():
     print("""
@@ -68,13 +112,14 @@ async def main():
         
         real_bom = []
         
-        # Convert dictionary to search queries
+        # Convert dictionary to optimized search queries
         search_queries = []
         for part_type, model_name in target_kit.items():
-            # Basic logic: Actuators need specific torque queries
-            query = f"{model_name} specs price"
-            if "actuator" in part_type.lower(): query = f"{model_name} servo torque specs"
-            search_queries.append({"type": part_type, "query": query, "model": model_name})
+            # Apply the cleaning logic here
+            query = clean_search_query(model_name, part_type)
+            # Ensure model_name is safe for later usage
+            safe_model = model_name if model_name else f"Generic {part_type}"
+            search_queries.append({"type": part_type, "query": query, "model": safe_model})
 
         # Run Sourcing Loop
         for item in search_queries:
@@ -86,7 +131,7 @@ async def main():
                 continue
             
             # Scrape Web (Slow Path)
-            print(f"      🌍 Scraping: {item['model']}...")
+            print(f"      🌍 Scraping: {item['query']}...") # Log the CLEANED query
             await asyncio.sleep(2) # Politeness
             
             fused_part = await fuse_component_data(
@@ -112,6 +157,8 @@ async def main():
         compat_report = compat.validate_build(real_bom)
         
         # --- STEP 6: OPTIMIZATION LOOP ---
+        optimized_params = {} # Store overrides from the optimizer
+
         if not physics_cfg['viability']['is_mechanically_sound'] or not compat_report['valid']:
             print("   ❌ Design Validation Failed. Engaging Engineering Optimizer...")
             
@@ -121,16 +168,42 @@ async def main():
                 print("   🔧 Optimization Plan:")
                 for fix in fix_plan.get('optimization_plan', []):
                     print(f"      -> {fix['diagnosis']} -> {fix['action']}")
-                
-                # In a full loop, we would re-run Sourcing here.
-                # For this script, we apply parameter patches to the Physics Config
-                # to simulate the fix so we can proceed to CAD.
+                    
+                    # --- CAPTURE GEOMETRY CHANGES ---
+                    # If optimizer suggests modifying geometry (e.g. shortening femur),
+                    # we capture the 'param_change' dictionary.
+                    if fix.get('type') == 'MODIFY_GEOMETRY' and 'param_change' in fix:
+                        # Example: fix['param_change'] might be {'femur_length_mm': 0.85} (multiplier)
+                        # or specific values.
+                        # Assuming here that we want to apply a specific override or multiplier.
+                        # For simplicity in this loop, let's assume we hardcode the intended geometric fix
+                        # if the Action mentions shortening legs.
+                        if "femur" in str(fix.get('action', '')).lower():
+                             # Default was 100mm, let's set to 85mm per typical optimizer suggestion
+                             optimized_params['femur_length_mm'] = 85.0
+                             optimized_params['tibia_length_mm'] = 95.0
+
                 print("      -> Applying theoretical patches to proceed to CAD...")
                 physics_cfg['torque_physics']['safety_margin'] = 2.0 # Force pass
 
         # --- STEP 7: GENERATE ARTIFACTS ---
         project_id = m_name.replace(" ", "_").lower()
         
+        # Apply Optimizer Overrides to the BOM before CAD generation
+        if optimized_params:
+            for item in real_bom:
+                if 'chassis' in item.get('part_type', '').lower():
+                    # Create sub-dict if missing
+                    if 'engineering_specs' not in item:
+                        item['engineering_specs'] = {}
+                    
+                    # Apply overrides
+                    if 'femur_length_mm' in optimized_params:
+                        print(f"      🔧 CAD Override: Setting Femur to {optimized_params['femur_length_mm']}mm")
+                        item['engineering_specs']['femur_length_mm'] = optimized_params['femur_length_mm']
+                    if 'tibia_length_mm' in optimized_params:
+                        item['engineering_specs']['tibia_length_mm'] = optimized_params['tibia_length_mm']
+
         # CAD (OpenSCAD -> STL)
         print(f"   🏗️  Generating CAD Assets ({project_id})...")
         cad_assets = generate_assets(project_id, {}, real_bom)

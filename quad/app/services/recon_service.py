@@ -7,8 +7,6 @@ import re
 import json
 import random
 
-# You would typically install this: pip install playwright-stealth
-# For this code to run without it, we add a try/except block or manual injection.
 try:
     from playwright_stealth import stealth_async
 except ImportError:
@@ -16,8 +14,7 @@ except ImportError:
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 ]
 
 class Scraper:
@@ -27,16 +24,9 @@ class Scraper:
 
     async def __aenter__(self):
         self.playwright = await async_playwright().start()
-        
-        # Launch with arguments that mimic a real display
         self.browser = await self.playwright.chromium.launch(
             headless=True,
-            args=[
-                "--disable-blink-features=AutomationControlled",
-                "--no-sandbox",
-                "--disable-infobars",
-                "--window-size=1920,1080"
-            ]
+            args=["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-infobars"]
         )
         return self
 
@@ -45,121 +35,77 @@ class Scraper:
         if self.playwright: await self.playwright.stop()
 
     async def scrape_product_page(self, url: str):
-        # Create context with random User Agent
         context = await self.browser.new_context(
             user_agent=random.choice(USER_AGENTS),
-            viewport={"width": 1920, "height": 1080},
-            locale="en-US"
+            viewport={"width": 1920, "height": 1080}
         )
-        
         page = await context.new_page()
+        if stealth_async: await stealth_async(page)
         
-        # Apply Stealth (Crucial for RobotShop / Mouser)
-        if stealth_async:
-            await stealth_async(page)
-        
-        # Resource Optimization: Block junk to speed up scrape
+        # RELAXED BLOCKING: Only block heavy media. 
+        # Blocking 'script' or 'other' crashes React/Vue apps (AliExpress, RobotShop).
         await page.route("**/*", lambda route: route.abort() 
-            if route.request.resource_type in ["font", "media", "stylesheet", "other"] 
+            if route.request.resource_type in ["font", "image", "media"] 
             else route.continue_()
         )
 
         try:
-            # Randomize timeout to act human
-            await page.goto(url, timeout=45000, wait_until="domcontentloaded")
+            # Short timeout, retry logic handled by caller
+            await page.goto(url, timeout=15000, wait_until="domcontentloaded")
             
-            # Anti-Lazy Load: Scroll naturally
-            await page.evaluate("window.scrollTo(0, document.body.scrollHeight / 2)")
-            await asyncio.sleep(random.uniform(0.5, 1.5))
-            await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            await asyncio.sleep(1.0)
+            # Quick scroll
+            await page.evaluate("window.scrollTo(0, document.body.scrollHeight/2)")
+            await asyncio.sleep(0.5)
 
             content = await page.content()
-            title = await page.title()
             soup = BeautifulSoup(content, 'html.parser')
             
-            # --- EXTRACTION LOGIC ---
-            
-            # 1. Structured Data (Tables)
-            tables_data = []
-            for table in soup.find_all("table"):
-                rows = []
-                for tr in table.find_all("tr"):
-                    cells = [td.get_text(strip=True) for td in tr.find_all(["td", "th"])]
-                    if len(cells) >= 2:
-                        rows.append(" : ".join(cells))
-                if rows:
-                    tables_data.append("\n".join(rows))
-            
-            structured_specs = "\n--- SPEC TABLE ---\n".join(tables_data)
-
-            # 2. Images
-            images = self._extract_images(soup, page.url)
-
-            # 3. Price
+            # 1. Price
             price = self._extract_price(soup, content)
 
-            # 4. Clean Text
-            for tag in soup(["script", "style", "nav", "footer", "svg", "button", "iframe"]):
-                tag.decompose()
+            # 2. Text Content (Limit size)
+            for tag in soup(["script", "style", "nav", "footer", "svg"]): tag.decompose()
+            text = soup.get_text(separator=' ', strip=True)[:10000]
             
-            # Prioritize Lists (<ul> often contains "Features" or "Specs")
-            ul_text = "\n".join([ul.get_text(separator="\n", strip=True) for ul in soup.find_all("ul")])
-            body_text = soup.get_text(separator=' ', strip=True)
+            # 3. Tables
+            tables = []
+            for t in soup.find_all("table"):
+                rows = [tr.get_text(":", strip=True) for tr in t.find_all("tr")]
+                tables.append("\n".join(rows))
             
-            clean_text = (ul_text + "\n" + body_text)[:12000]
+            # 4. Images
+            images = self._extract_images(soup, url)
 
             return {
-                "title": title,
-                "text": clean_text,
-                "structured_tables": structured_specs,
+                "title": await page.title(),
+                "text": text,
+                "structured_tables": "\n".join(tables),
                 "image_url": images[0] if images else None,
                 "images": images,
                 "price": price
             }
 
         except Exception as e:
-            print(f"   ❌ Scrape Error ({url[:30]}...): {e}")
+            # Silence expected timeout errors
             return None
         finally:
             await page.close()
             await context.close()
 
     def _extract_images(self, soup, base_url):
-        candidates = set()
-        # Common gallery classes in robotics ecommerce
-        selectors = ['.gallery', '.product-images', '#image-block', '.slick-track', '.swiper-wrapper']
-        
-        for sel in selectors:
-            for img in soup.select(f"{sel} img"):
-                src = img.get('src') or img.get('data-src')
-                if src: candidates.add(self._fix_url(src, base_url))
-        
-        # Fallback
-        if not candidates:
-            for img in soup.find_all('img'):
-                src = img.get('src')
-                if src and 'product' in src.lower() and not 'icon' in src.lower():
-                     candidates.add(self._fix_url(src, base_url))
-                     
-        return list(candidates)[:5]
+        candidates = []
+        for img in soup.find_all('img'):
+            src = img.get('src') or img.get('data-src')
+            if src and 'icon' not in src.lower():
+                if src.startswith("//"): src = "https:" + src
+                elif src.startswith("/"): src = urljoin(base_url, src)
+                candidates.append(src)
+        return candidates[:5]
 
     def _extract_price(self, soup, content_str):
-        # 1. Regex (Fastest)
-        # Look for $24.99 or 24.99 USD
-        price_match = re.search(r'[\$€£]\s?(\d{1,4}\.\d{2})', content_str[:5000])
-        if price_match:
-            return float(price_match.group(1))
-            
-        # 2. Meta Tags (Most Reliable)
+        # Meta tag first
         meta = soup.find("meta", property="product:price:amount")
-        if meta and meta.get("content"):
-            return float(meta["content"])
-            
-        return None
-
-    def _fix_url(self, src, base_url):
-        if not src: return None
-        if src.startswith("//"): return "https:" + src
-        if src.startswith("/"): return urljoin(base_url, src)
-        return src
+        if meta and meta.get("content"): return float(meta["content"])
+        # Regex fallback
+        match = re.search(r'[\$€£]\s?(\d{1,4}\.\d{2})', content_str[:2000])
+        return float(match.group(1)) if match else None
