@@ -1,7 +1,15 @@
+I challenged myself to test the new Gemini 3.0 to see how far its reasoning capabilities could push actual engineering tasks. The result is OpenForge: a Neuro-Symbolic Manufacturing Engine that translates user intent into flight-proven hardware designs and generates a physics-based simulation to test them. An AI system that builds its own inventory, creates virtual products, and simulates mission-critical robotics.
+
+These are moy unstructured human notes.  I will clean them up later:
+
+The key learning so far has been the switch from drone to quad.  Intially I thought that it would be an easy switch to refactor code using gemini by giving it the drone code as archeticture and recontext gemini to adjust the code so that it would create quadrupeds rather than codes.  It very confidently spit out new code for each .py module as well as new simulation code.  However, as I tested this code it has show serious limitations.  From what I can infer these limitations are due to gemini trying to lump all the archteicture context code into one working program that looks right on the surface but glosses over the nuance and depth of the orignial code.  For instance the drone code I used was broken into a serious of distinct linear steps with remarks and other battle scares from the build.  Rather than noticing that gemini lumped them all together into one process.  This has created serious problems in trouble shooting because as things break and are fixed they lead other errors.  Bascially the code it provided led to cascading failures.  While they can be debugged I am finding that if I would have archtectured the project differently ie showing gemini the step by step process and the logic i used it would have more than likely created a better code base up front.  This is the key difference imo between 2.5 and 3.0.  2.5 would try to do the same thing but the code was truncated and clearly limited forcing the dev to work with the ai to create step by step instrcutions and task lists execute the build.  3.0 wants to skip this and the code it puts out intially looks really good and will function to a certian degree but the scaffolding is broken from the start.  
+
+I guess this means intial arch is still critical and while gemini 3.0 has sig improvments in terms of speed and non hallucinated workable code you still to be cognizant of how you build the intial foundation.  If you expect it to one shot pivot code based on an orginal codebase you are going to be dissapointed.  
+
 Drone_4 works from seed to simulation for drones! I cheated a little bit in the make_fleet.py to rely less on LLM to create the fleet but I had to remind myself that this was a test of Gem 3.0 reasoning and not making things absolutely perfect to avoid going down a needless rabithole.  
 Now that I have the pipeline completed to a point in which i am satified the simulation is as best as i can get i will shift from drones to something else like quad or robot arms using hugging face tut: https://huggingface.co/docs/lerobot/en/so101
 
-Quad is had been uploaded.  It is an attempt to create quadruped robot from user inference to simulation
+Quad has been uploaded.  It is an attempt to create quadruped robot from user inference to simulation
 # OpenForge: Neuro-Symbolic Manufacturing Engine
 
 <div align="center">
@@ -10,11 +18,15 @@ Quad is had been uploaded.  It is an attempt to create quadruped robot from user
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Status](https://img.shields.io/badge/Status-V2_Architecture-green.svg)]()
 
-I challenged myself to test the new Gemini 3.0 to see how far its reasoning capabilities could push actual engineering tasks. The result is OpenForge: a Neuro-Symbolic Manufacturing Engine that translates user intent into flight-proven hardware designs and generates a physics-based simulation to test them. An AI system that builds its own inventory, creates virtual products, and simulates mission-critical robotics.
 
 </div>
 
 This is a portfolio piece.  I am actively looking for high-level consulting gigs (Fractional CTO, Principal Engineer) or Team Lead roles.
+
+forge.py: Running the entire search and construction loop using async calls:
+<img width="936" height="876" alt="image" src="https://github.com/user-attachments/assets/75de7f4a-3d27-42f3-b831-2d6528306e5d" />
+
+sim_in_issac.py: Static simulation of quad robot. Simulation is very blocky.  This is due to limited run of forge.py
 
 seed.py: Understanding intent, generating model, creating search, and looking for parts:
 <img width="805" height="467" alt="image" src="https://github.com/user-attachments/assets/f5380ad2-d31f-4dcd-a22d-216c33fe6d55" />
