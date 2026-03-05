@@ -17,7 +17,7 @@ End HUman notes
 
 </div>
 
-forge.py: Running the entire search and construction loop using async calls:
+Running the entire search and construction loop using async calls:
 <img width="936" height="876" alt="image" src="https://github.com/user-attachments/assets/75de7f4a-3d27-42f3-b831-2d6528306e5d" />
 
 sim_in_issac.py: Static simulation of quad robot. Simulation is very blocky.  This is due to limited run of forge.py
