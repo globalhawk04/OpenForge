@@ -17,8 +17,6 @@ End HUman notes
 
 </div>
 
-This is a portfolio piece.  I am actively looking for high-level consulting gigs (Fractional CTO, Principal Engineer) or Team Lead roles.
-
 forge.py: Running the entire search and construction loop using async calls:
 <img width="936" height="876" alt="image" src="https://github.com/user-attachments/assets/75de7f4a-3d27-42f3-b831-2d6528306e5d" />
 
