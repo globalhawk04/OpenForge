@@ -1,0 +1,386 @@
+<!-- FILE: templates/animate.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Assembly Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d3748; }
+        ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #718096; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans h-screen flex overflow-hidden">
+    
+    <!-- LEFT SIDEBAR: GUIDE -->
+    <div class="w-1/3 bg-gray-800 p-6 flex flex-col shadow-xl z-10 border-r border-gray-700">
+        <div class="mb-6">
+            <h1 class="text-2xl font-bold text-blue-400">Assembly Guide</h1>
+            <p class="text-xs text-gray-500 mt-1">Interactive 3D Build Instructions</p>
+            
+            <!-- ACTION BUTTONS -->
+            <div class="grid grid-cols-2 gap-2 mt-4">
+                <button onclick="toggleSchematic()" class="bg-gray-700 hover:bg-gray-600 text-yellow-300 text-xs font-bold py-2 px-3 rounded border border-gray-600 flex items-center justify-center gap-2 transition-all">
+                    <span>⚡</span> Wiring Diagram
+                </button>
+                <button onclick="toggleCost()" class="bg-gray-700 hover:bg-gray-600 text-green-300 text-xs font-bold py-2 px-3 rounded border border-gray-600 flex items-center justify-center gap-2 transition-all">
+                    <span>💰</span> Project Cost
+                </button>
+            </div>
+        </div>
+        
+        <div id="instruction-box" class="flex-1 overflow-y-auto pr-2 space-y-4">
+            <!-- Steps injected here -->
+        </div>
+        
+        <!-- FLIGHT STATS MINI-DASHBOARD -->
+        <div class="mt-4 bg-gray-900/50 p-3 rounded border border-gray-700 grid grid-cols-3 gap-2 text-center">
+            <div>
+                <div class="text-xs text-gray-500 uppercase">TWR</div>
+                <div class="font-bold text-blue-400" id="stat-twr">0.0</div>
+            </div>
+            <div>
+                <div class="text-xs text-gray-500 uppercase">Speed</div>
+                <div class="font-bold text-yellow-400" id="stat-speed">0 km/h</div>
+            </div>
+            <div>
+                <div class="text-xs text-gray-500 uppercase">Time</div>
+                <div class="font-bold text-green-400" id="stat-time">0 min</div>
+            </div>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-gray-700 flex justify-between items-center">
+            <button onclick="prevStep()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-medium transition-colors">Previous</button>
+            <span id="step-indicator" class="text-gray-400 text-sm font-mono">Start</span>
+            <button onclick="nextStep()" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded text-sm font-bold shadow-lg shadow-blue-500/30 transition-all hover:scale-105">Next Step</button>
+        </div>
+    </div>
+
+    <!-- MAIN VIEWER -->
+    <div id="3d-viewer" class="flex-1 bg-gradient-to-br from-gray-900 to-gray-800 relative cursor-move">
+        <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-white/10 text-xs text-gray-300 pointer-events-none select-none z-0">
+            <span class="font-bold text-blue-400">Controls:</span> Left Click: Rotate • Right Click: Pan • Scroll: Zoom
+        </div>
+    </div>
+
+    <!-- MODAL: SCHEMATIC -->
+    <div id="schematic-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-10 backdrop-blur-sm transition-opacity duration-300" onclick="toggleSchematic()">
+        <div class="bg-gray-800 p-1 rounded-lg shadow-2xl max-w-5xl w-full max-h-full overflow-auto border border-gray-600 relative" onclick="event.stopPropagation()">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-white" onclick="toggleSchematic()">✕</button>
+            <div class="p-4 border-b border-gray-700 mb-2 bg-gray-900 rounded-t">
+                <h2 class="text-xl font-bold text-yellow-300 flex items-center gap-2">⚡ Wiring Schematic <span class="text-xs font-normal text-gray-500 ml-2">(Generated via Graphviz)</span></h2>
+            </div>
+            <div class="p-4 bg-white rounded min-h-[400px] flex items-center justify-center">
+                <img id="schematic-img" src="" class="max-w-full h-auto rounded" alt="Wiring Diagram">
+                <p id="no-schematic-msg" class="hidden text-black">No schematic generated for this build.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: COST BREAKDOWN -->
+    <div id="cost-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-10 backdrop-blur-sm transition-opacity duration-300" onclick="toggleCost()">
+        <div class="bg-gray-800 p-0 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col border border-gray-600" onclick="event.stopPropagation()">
+            <div class="p-6 border-b border-gray-700 bg-gray-900 rounded-t flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl font-bold text-green-300 flex items-center gap-2">💰 Procurement Manifest</h2>
+                    <p class="text-xs text-gray-400 mt-1">Consolidated Budget & Vendor List</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-xs text-gray-400 uppercase">Total Est.</div>
+                    <div class="text-3xl font-bold text-white" id="total-cost-display">$0.00</div>
+                </div>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-6 bg-gray-800" id="cost-content">
+                <!-- Vendors injected here -->
+            </div>
+            
+            <div class="p-4 border-t border-gray-700 bg-gray-900 rounded-b text-center">
+                <button onclick="toggleCost()" class="text-gray-400 hover:text-white text-sm">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA INJECTION ---
+        const ASSETS = {
+            frame: "[[FRAME_B64]]", 
+            motor: "[[MOTOR_B64]]", 
+            fc: "[[FC_B64]]",
+            prop: "[[PROP_B64]]", 
+            battery: "[[BATTERY_B64]]", 
+            camera: "[[CAMERA_B64]]"
+        };
+        const WHEELBASE = [[WHEELBASE]];
+        const STEPS = [[STEPS_JSON]];
+        const PHYSICS = [[PHYSICS_JSON]];
+        const COST = [[COST_JSON]];
+        const SCHEMATIC_B64 = "[[SCHEMATIC_B64]]"; // Raw B64 string
+
+        // --- UI INIT ---
+        // Fill Stats
+        if(PHYSICS) {
+            document.getElementById('stat-twr').innerText = PHYSICS.twr;
+            document.getElementById('stat-speed').innerText = (PHYSICS.top_speed_kmh || 0) + " km/h";
+            document.getElementById('stat-time').innerText = PHYSICS.est_flight_time_min + " min";
+        }
+
+        // Fill Cost Modal
+        if(COST) {
+            document.getElementById('total-cost-display').innerText = "$" + COST.total_estimated_cost;
+            const costBox = document.getElementById('cost-content');
+            
+            for (const [vendor, items] of Object.entries(COST.vendors)) {
+                let html = `<div class="bg-gray-700/50 rounded-lg p-4 border border-gray-600">
+                    <h3 class="font-bold text-white mb-3 flex justify-between border-b border-gray-600 pb-2">
+                        <span>${vendor}</span>
+                        <span class="text-xs bg-blue-900 text-blue-200 px-2 py-1 rounded">${items.length} Items</span>
+                    </h3>
+                    <ul class="space-y-3">`;
+                
+                items.forEach(item => {
+                    html += `<li class="flex justify-between items-start text-sm">
+                        <a href="${item.link}" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline flex-1 pr-4 truncate">${item.name}</a>
+                        <span class="font-mono text-gray-300">$${item.price}</span>
+                    </li>`;
+                });
+                html += `</ul></div>`;
+                costBox.innerHTML += html;
+            }
+        }
+
+        // --- MODAL LOGIC ---
+        function toggleSchematic() {
+            const modal = document.getElementById('schematic-modal');
+            const img = document.getElementById('schematic-img');
+            const msg = document.getElementById('no-schematic-msg');
+            
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                if(SCHEMATIC_B64 && SCHEMATIC_B64.length > 100) {
+                    img.src = "data:image/png;base64," + SCHEMATIC_B64;
+                    img.classList.remove('hidden');
+                    msg.classList.add('hidden');
+                } else {
+                    img.classList.add('hidden');
+                    msg.classList.remove('hidden');
+                }
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function toggleCost() {
+            const modal = document.getElementById('cost-modal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // --- THREE.JS SETUP ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, (window.innerWidth * 0.66) / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, -150, 150);
+        
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth * 0.66, window.innerHeight);
+        document.getElementById('3d-viewer').appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Lighting
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+        dirLight.position.set(50, -50, 100);
+        scene.add(dirLight);
+        const backLight = new THREE.DirectionalLight(0x5555ff, 0.5);
+        backLight.position.set(-50, 50, -50);
+        scene.add(backLight);
+        scene.add(new THREE.AmbientLight(0x404040, 1.5));
+
+        // --- OBJECT LOADING ---
+        const loader = new THREE.STLLoader();
+        const meshes = { motors: [], props: [], fc: null, frame: null, battery: null, cam: null };
+
+        function loadSTL(b64, color, opacity=1.0) {
+            return new Promise(resolve => {
+                if(!b64 || b64.length < 100) resolve(null);
+                loader.load(b64, geo => {
+                    geo.computeBoundingBox();
+                    const center = geo.boundingBox.getCenter(new THREE.Vector3());
+                    geo.translate(-center.x, -center.y, -center.z);
+                    
+                    const mat = new THREE.MeshStandardMaterial({ 
+                        color: color, opacity: opacity, transparent: opacity < 1,
+                        roughness: 0.5, metalness: 0.3
+                    });
+                    resolve(new THREE.Mesh(geo, mat));
+                });
+            });
+        }
+
+        async function initScene() {
+            // 1. Frame
+            meshes.frame = await loadSTL(ASSETS.frame, 0x333333);
+            if(meshes.frame) scene.add(meshes.frame);
+
+            const dist = (WHEELBASE / 2) * 0.707;
+            const positions = [{x: dist, y: dist}, {x: -dist, y: dist}, {x: -dist, y: -dist}, {x: dist, y: -dist}];
+
+            // 2. Motors & Props
+            const motorRaw = await loadSTL(ASSETS.motor, 0xaaaaaa);
+            const propRaw = await loadSTL(ASSETS.prop, 0x00ffff, 0.85);
+
+            if(motorRaw && propRaw) {
+                positions.forEach(pos => {
+                    const m = motorRaw.clone();
+                    m.position.set(pos.x, pos.y, 150); 
+                    m.visible = false;
+                    meshes.motors.push(m);
+                    scene.add(m);
+
+                    const p = propRaw.clone();
+                    p.position.set(pos.x, pos.y, 200);
+                    p.visible = false;
+                    meshes.props.push(p);
+                    scene.add(p);
+                });
+            }
+
+            // 3. FC
+            meshes.fc = await loadSTL(ASSETS.fc, 0xff4444);
+            if(meshes.fc) {
+                meshes.fc.position.set(0, 0, 100);
+                meshes.fc.visible = false;
+                scene.add(meshes.fc);
+            }
+
+            // 4. Battery
+            meshes.battery = await loadSTL(ASSETS.battery, 0xffdd00);
+            if(meshes.battery) {
+                meshes.battery.position.set(0, 0, -100);
+                meshes.battery.visible = false;
+                scene.add(meshes.battery);
+            }
+
+            // 5. Camera
+            meshes.cam = await loadSTL(ASSETS.camera, 0x111111);
+            if(meshes.cam) {
+                meshes.cam.position.set(0, -(WHEELBASE/2) - 50, 0);
+                meshes.cam.visible = false;
+                scene.add(meshes.cam);
+            }
+
+            renderSteps();
+        }
+        
+        initScene();
+
+        // --- ANIMATION LOGIC ---
+        let currentStepIndex = -1;
+
+        function renderSteps() {
+            const box = document.getElementById('instruction-box');
+            box.innerHTML = "";
+            STEPS.forEach((s, i) => {
+                const isActive = i === currentStepIndex;
+                const isPast = i < currentStepIndex;
+                
+                const div = document.createElement('div');
+                div.className = `p-4 rounded-lg border transition-all duration-500 cursor-pointer ${
+                    isActive ? 'bg-gray-700 border-blue-500 shadow-lg scale-100 opacity-100' 
+                    : isPast ? 'bg-gray-800 border-green-900/50 opacity-60 grayscale'
+                    : 'bg-gray-800 border-gray-700 opacity-40'
+                }`;
+                
+                if(isActive) setTimeout(() => div.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+
+                div.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isActive ? 'bg-blue-500 text-white' : 'bg-gray-600 text-gray-300'}">
+                            ${i + 1}
+                        </div>
+                        <h3 class="font-bold ${isActive ? 'text-blue-300' : 'text-gray-400'}">${s.step}</h3>
+                    </div>
+                    ${isActive ? `<p class="text-sm mt-2 text-gray-200 pl-9 leading-relaxed">${s.detail}</p>` : ''}
+                `;
+                box.appendChild(div);
+            });
+            
+            const displayIndex = currentStepIndex === -1 ? 0 : currentStepIndex + 1;
+            document.getElementById('step-indicator').innerText = `Step ${displayIndex} / ${STEPS.length}`;
+        }
+
+        window.nextStep = () => {
+            if (currentStepIndex < STEPS.length - 1) {
+                currentStepIndex++;
+                animateStep(currentStepIndex);
+                renderSteps();
+            }
+        };
+        
+        window.prevStep = () => {
+            if (currentStepIndex > -1) {
+                currentStepIndex--;
+                renderSteps();
+            }
+        };
+
+        function animateStep(index) {
+            const text = (STEPS[index].step + " " + STEPS[index].detail).toLowerCase();
+
+            if (text.includes("motor")) {
+                meshes.motors.forEach((m, i) => {
+                    m.visible = true;
+                    gsap.to(m.position, { z: 0, duration: 0.8, ease: "bounce.out", delay: i * 0.15 });
+                });
+            } else if (text.includes("fc") || text.includes("stack") || text.includes("controller")) {
+                if(meshes.fc) {
+                    meshes.fc.visible = true;
+                    gsap.to(meshes.fc.position, { z: 3, duration: 1, ease: "power2.out" });
+                }
+            } else if (text.includes("prop")) {
+                meshes.props.forEach((p, i) => {
+                    p.visible = true;
+                    gsap.to(p.position, { z: 8, duration: 0.8, ease: "back.out(1.5)", delay: i * 0.1 });
+                    gsap.to(p.rotation, { z: Math.PI * 4, duration: 2, ease: "power1.out", delay: 0.8 + (i*0.1) });
+                });
+            } else if (text.includes("battery")) {
+                if(meshes.battery) {
+                    meshes.battery.visible = true;
+                    gsap.to(meshes.battery.position, { z: -6, duration: 1.2, ease: "power2.out" });
+                }
+            } else if (text.includes("cam") || text.includes("video")) {
+                if(meshes.cam) {
+                    meshes.cam.visible = true;
+                    gsap.to(meshes.cam.position, { y: -(WHEELBASE/2), duration: 1, ease: "power2.out" });
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth * 0.66;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
